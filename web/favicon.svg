@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Ayqyn">
+  <!--
+    The mark is the product's own four-step level scale — the same object as
+    the stepper inside the verdict chip, and the reason the interface can be
+    read with the colour removed.
+
+    Two channels carry it, deliberately: ascending TONE and ascending HEIGHT.
+    At 16px the darkest step is nearly invisible against the plate, so height
+    is what keeps the mark reading as four steps rather than three. This is the
+    same redundancy rule the interface uses everywhere else.
+
+    The plate is fixed dark in both colour schemes. A favicon that changed with
+    the theme would be a different mark in half the tabs, which is the opposite
+    of what a favicon is for.
+  -->
+  <rect width="64" height="64" rx="14" fill="#0a0c0e"/>
+  <g>
+    <rect x="6"  y="36" width="10" height="16" rx="2.5" fill="#7a5a3e"/>
+    <rect x="20" y="28" width="10" height="24" rx="2.5" fill="#8c674a"/>
+    <rect x="34" y="20" width="10" height="32" rx="2.5" fill="#bd8a6b"/>
+    <rect x="48" y="12" width="10" height="40" rx="2.5" fill="#f2b497"/>
+  </g>
+</svg>

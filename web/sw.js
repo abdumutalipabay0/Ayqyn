@@ -13,7 +13,7 @@
    screen says so.
    ────────────────────────────────────────────────────────────────────────── */
 
-const VERSION = 'v59';
+const VERSION = 'v60';
 const SHELL = `shell-${VERSION}`;
 const DATA = `data-${VERSION}`;
 
@@ -26,6 +26,8 @@ const SHELL_ASSETS = [
   '/chart.js',
   '/tape.js',
   '/explorer.js',
+  '/favicon.svg',
+  '/favicon.ico',
   '/offline.html',
   '/fonts/geist-var.woff2',
   '/fonts/geist-mono-400.woff2'

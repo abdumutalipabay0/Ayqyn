@@ -21,13 +21,16 @@ coverage/
 *.tsbuildinfo
 .fontsrc/
 
-# Screenshots and scratch captures
+# Screenshots and scratch captures. The blanket *.png rule is for captures,
+# not for shipped artwork — the icons below are part of the build.
 screenshots/
 *.png
 *.jpg
 *.jpeg
 *.gif
 !web/**/*.svg
+!web/apple-touch-icon.png
+!web/favicon-32.png
 
 # Editor and OS
 .vscode/
