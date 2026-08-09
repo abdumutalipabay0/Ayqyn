@@ -320,3 +320,66 @@ export function seasonChart(o) {
 
   return svg;
 }
+
+/**
+ * A sparkline: one series, one colour, no frame, no gridlines.
+ *
+ * `scaleMax` is passed in rather than derived, so a column of sparklines can
+ * share one scale. Normalising each line to its own maximum is the classic
+ * defect — unequal changes come out looking identical.
+ *
+ * `log: true` compresses a wide dynamic range. Say so in the caption when you
+ * use it; a log axis that is not announced is a lie by omission.
+ *
+ * Gaps break the path. At this size a bridged gap is invisible and would read
+ * as a genuine low.
+ */
+// NB: the accessor is called `value`, not `valueOf`. Destructuring a default
+// for `valueOf` never fires — every object inherits Object.prototype.valueOf,
+// so the lookup succeeds and the default is skipped.
+export function sparkline({ series, value = (r) => r.count_per_m3, scaleMax, width = 132, height = 26, log = false }) {
+  if (!series || !series.length) return null;
+  const w = width;
+  const h = height;
+  const top = log ? Math.log1p(Math.max(1, scaleMax)) : Math.max(1, scaleMax);
+  const norm = (v) => (log ? Math.log1p(Math.max(0, v)) : Math.max(0, v)) / top;
+
+  const t0 = Date.parse(series[0].date);
+  const span = Math.max(1, Date.parse(series.at(-1).date) - t0);
+  const x = (d) => ((Date.parse(d) - t0) / span) * (w - 2) + 1;
+  const y = (v) => h - 1 - Math.min(1, norm(v)) * (h - 3);
+
+  const runs = [];
+  let cur = [];
+  for (let i = 0; i < series.length; i++) {
+    if (i > 0 && Math.round((Date.parse(series[i].date) - Date.parse(series[i - 1].date)) / 86400000) > 1) {
+      if (cur.length) runs.push(cur);
+      cur = [];
+    }
+    cur.push(series[i]);
+  }
+  if (cur.length) runs.push(cur);
+
+  const ns = 'http://www.w3.org/2000/svg';
+  const svg = document.createElementNS(ns, 'svg');
+  svg.setAttribute('class', 'spark');
+  svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+  svg.setAttribute('width', String(w));
+  svg.setAttribute('height', String(h));
+  svg.setAttribute('preserveAspectRatio', 'none');
+  svg.setAttribute('aria-hidden', 'true');
+  svg.setAttribute('focusable', 'false');
+
+  for (const run of runs) {
+    const d = run.map((r, i) => `${i ? 'L' : 'M'}${x(r.date).toFixed(1)} ${y(value(r)).toFixed(1)}`).join(' ');
+    const path = document.createElementNS(ns, 'path');
+    path.setAttribute('d', d);
+    path.setAttribute('fill', 'none');
+    path.setAttribute('stroke', 'currentColor');
+    path.setAttribute('stroke-width', '1.5');
+    path.setAttribute('stroke-linejoin', 'round');
+    path.setAttribute('stroke-linecap', 'round');
+    svg.append(path);
+  }
+  return svg;
+}

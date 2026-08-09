@@ -13,7 +13,7 @@
    screen says so.
    ────────────────────────────────────────────────────────────────────────── */
 
-const VERSION = 'v47';
+const VERSION = 'v54';
 const SHELL = `shell-${VERSION}`;
 const DATA = `data-${VERSION}`;
 
@@ -27,8 +27,7 @@ const SHELL_ASSETS = [
   '/tape.js',
   '/explorer.js',
   '/offline.html',
-  '/fonts/geist-400.woff2',
-  '/fonts/geist-600.woff2',
+  '/fonts/geist-var.woff2',
   '/fonts/geist-mono-400.woff2'
 ];
 

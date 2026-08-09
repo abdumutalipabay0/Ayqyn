@@ -59,6 +59,11 @@ export function dayReport(ds, date) {
     date,
     measured: true,
     year: yearOf(date),
+    // Published for measured days too, not only for gaps. Without it a client
+    // has no way to say "so much more than the previous measured day" and can
+    // only compare with yesterday — which on this record is often a day the
+    // trap did not run.
+    ...nearestMeasured(ds, date),
     taxa,
     taxa_reported: rows.length,
     taxa_non_zero: nonZero.length,
@@ -81,4 +86,26 @@ export function dayReport(ds, date) {
     },
     weather
   };
+}
+
+/**
+ * The daily pollen total, as a series.
+ *
+ * Exists so the interface can put a sparkline under the headline number that
+ * is the SAME quantity as the number. Drawing a taxon's history beneath a
+ * total would be a quiet substitution.
+ *
+ * Only measured days appear. A gap is absent from the array, never a zero —
+ * the caller draws the break.
+ */
+export function pollenTotalSeries(ds, from, to) {
+  const series = [];
+  for (const date of ds.dates) {
+    if (date < from || date > to) continue;
+    const rows = ds.byDate.get(date) ?? [];
+    let total = 0;
+    for (const r of rows) if (!isMold(r)) total += r.count_per_m3;
+    series.push({ date, total_per_m3: total, level: pollenLevel(total) });
+  }
+  return series;
 }
