@@ -13,7 +13,7 @@
    State lives in memory. Nothing is written to storage.
    ────────────────────────────────────────────────────────────────────────── */
 
-import { seasonChart, shiftToYear } from '/chart.js';
+import { seasonChart, shiftToYear, sparkline } from '/chart.js';
 import { tape } from '/tape.js';
 import { makeExplorer } from '/explorer.js';
 
@@ -273,6 +273,34 @@ function clinicalLine(t) {
   );
 }
 
+
+/* ── The screen header ─────────────────────────────────────────────────────
+   Judges walk the laptop without narration, so every screen has to answer
+   three questions on its own: what am I looking at, why does it matter to me,
+   what do I do next.
+
+   The deck answers the first two by naming the problem before the product,
+   and that ordering reads far better than opening with mechanics. So does
+   this: PROBLEM first, in the person's words, then what the screen shows.
+   "What next" is the single action each screen already ends with.
+
+   Nothing here is a figure. Where a count appears it comes from /api/meta. */
+function screenHead({ eyebrow, problem, title, lede }) {
+  return el(
+    'header',
+    { class: 'shead' },
+    el('span', { class: 'shead__eyebrow', text: eyebrow }),
+    el(
+      'p',
+      { class: 'shead__problem' },
+      el('span', { class: 'shead__ptag', text: 'Проблема' }),
+      problem
+    ),
+    el('h1', { class: 'shead__title', text: title }),
+    el('p', { class: 'shead__lede', text: lede })
+  );
+}
+
 const redraws = new Set();
 const onResize = (fn) => redraws.add(fn);
 
@@ -311,9 +339,47 @@ async function drawToday() {
       compare = el(
         'p',
         { class: 'hero__compare' },
-        el('span', { html: ICONS[dir], style: 'width:18px;height:18px;display:inline-flex;color:var(--ink-3)' }),
+        el('span', { html: ICONS[dir], style: 'width:18px;height:18px;display:inline-flex' }),
+        // The delta carries the only colour on data in this block, and only
+        // through its sign — up or down, never a mood.
+        el('span', { class: 'hero__delta tnum', 'data-dir': dir, text: d === 0 ? '±0' : `${d > 0 ? '+' : '−'}${num(Math.abs(d))}` }),
         el('span', { text: `${word} ${fmtShort(day.previous_measured_date)}` })
       );
+    }
+
+    // The sparkline under the headline is the SAME quantity as the headline —
+    // the daily pollen total, from its own endpoint. Putting one taxon's
+    // history under a total would be a quiet substitution.
+    let heroSpark = null;
+    if (!usePersonal) {
+      try {
+        const win = await api(
+          `/api/series/pollen-total?${new URLSearchParams({ from: isoAdd(date, -59), to: date })}`
+        );
+        if (win.series.length > 1) {
+          heroSpark = el(
+            'div',
+            { class: 'hero__spark' },
+            el('span', { class: 'hero__sparkline' }, sparkline({
+              series: win.series,
+              valueOf: (r) => r.total_per_m3,
+              scaleMax: win.max_per_m3,
+              width: 220,
+              height: 34
+            })),
+            el('span', {
+              class: 'hero__sparkcap',
+              text: `последние ${num(win.series.length)} ${plural(win.series.length, 'измеренный день', 'измеренных дня', 'измеренных дней')} · максимум ${num(win.max_per_m3)}${
+                win.unmeasured_days_in_window
+                  ? ` · ${num(win.unmeasured_days_in_window)} ${plural(win.unmeasured_days_in_window, 'день', 'дня', 'дней')} без измерений — линия там разорвана`
+                  : ''
+              }`
+            })
+          );
+        }
+      } catch {
+        /* the sparkline is an extra; its absence is silent, never faked */
+      }
     }
 
     add(
@@ -321,6 +387,14 @@ async function drawToday() {
       el(
         'div',
         { class: 'tile' },
+        screenHead({
+          eyebrow: 'Сегодня',
+          problem:
+            'Аллергик в Алматы не знает, на что именно он реагирует. Открытых измерений по городу не существует — значит, нет и ответа.',
+          title: 'Что в воздухе прямо сейчас',
+          lede:
+            'Это подсчёт под микроскопом за конкретный день, а не прогноз и не оценка. Ниже — сколько всего, из чего это состоит и много ли это по двум разным меркам.'
+        }),
         el('span', { class: 'hero__label', text: usePersonal ? 'Сегодня для вас' : 'Пыльцы в воздухе' }),
         el('strong', { class: 'hero__value', text: num(value) }),
         el('p', {
@@ -331,6 +405,7 @@ async function drawToday() {
         }),
         verdict(lvl),
         compare,
+        heroSpark,
         usePersonal
           ? el('p', {
               class: 'note',
@@ -657,11 +732,19 @@ function drawKnown() {
   const tile = el('div', { class: 'tile' });
   add(
     tile,
-    el('span', { class: 'eyebrow', text: 'Быстрый путь' }),
+    screenHead({
+      eyebrow: 'Мой триггер',
+      problem:
+        'Все сервисы мира показывают одно число всем. Человек годами не знает, на что реагирует именно он.',
+      title: 'На что реагируете именно вы',
+      lede:
+        'Отсюда два пути, и они не смешиваются. Быстрый — назовите аллергены, которые уже знаете. Длинный — отмечайте дни, когда было плохо, и модель найдёт связь сама.'
+    }),
+    el('span', { class: 'eyebrow', text: 'Путь первый · быстрый' }),
     el('h2', { text: 'Уже знаете свои аллергены?' }),
     el('p', {
       class: 'lede',
-      text: 'Отметьте — и увидите свой сегодняшний день и свои недели сразу, без дневника. Это ваши слова, а не расчёт модели; профиль ниже считается отдельно и с ними не смешивается.'
+      text: 'Два тапа — и вы увидите сегодняшний день, пересчитанный под ваш список, и все недели записи по вашим таксонам. Это ваши слова, а не расчёт модели.'
     })
   );
 
@@ -786,7 +869,7 @@ function drawLog() {
     el(
       'div',
       { class: 'tile' },
-      el('span', { class: 'eyebrow', text: 'Дневник' }),
+      el('span', { class: 'eyebrow', text: 'Путь второй · дневник' }),
       done ? el('h2', { text: 'Все измеренные дни отмечены' }) : el('h2', { text: `Как вы себя чувствовали ${fmt(date)}?` }),
       el('p', {
         class: 'lede',
@@ -1308,6 +1391,14 @@ async function drawSeason() {
       el(
         'div',
         { class: 'tile' },
+        screenHead({
+          eyebrow: 'Сезон',
+          problem:
+            'Профилактику начинают за одну-две недели до сезона. Но никто не знает, когда он начнётся.',
+          title: 'Где мы в сезоне полыни',
+          lede:
+            'Слева — тот же календарный отрезок в оба года, поэтому величины сопоставимы. Справа — что было дальше в прошлом сезоне и насколько рано детектор об этом предупредил.'
+        }),
         el('span', { class: 'eyebrow', text: `Где мы сейчас · ${fmtShort(paceFrom)} — ${fmtShort(paceTo)}` }),
         el('h2', { text: `${curYear} против ${prevYear} на одном отрезке` }),
         el('p', {
@@ -1457,7 +1548,7 @@ let explorer = null;
 async function drawYear() {
   explorer ??= makeExplorer({
     el, add, clear, num, label, splitName, api, pool, levelOf, LEVEL_WORD,
-    fmt, plural, statusNode, emptyNode, seasonChart, S
+    fmt, plural, statusNode, emptyNode, seasonChart, screenHead, S
   });
   const m = S.meta;
   const sec = $('#y-grid');

@@ -16,13 +16,14 @@
    ────────────────────────────────────────────────────────────────────────── */
 
 export function makeExplorer(D) {
-  const { el, add, clear, num, label, splitName, api, pool, levelOf, LEVEL_WORD, fmt, plural, statusNode, emptyNode, seasonChart, S } = D;
+  const { el, add, clear, num, label, splitName, api, pool, levelOf, LEVEL_WORD, fmt, plural, statusNode, emptyNode, seasonChart, screenHead, S } = D;
 
   const state = {
     q: '',
     group: 'все',
     open: null,
     rows: [],
+    scaleMax: 1,
     day: null,
     stages: new Map(),
     loaded: false
@@ -32,13 +33,23 @@ export function makeExplorer(D) {
      A whole season in ~120px. Gaps break the line instead of crossing it,
      which is the same rule the big chart follows — at this size a bridged
      gap would be invisible and would read as a real low. */
-  function spark(series, w = 132, h = 26) {
+  function spark(series, scaleMax, w = 132, h = 26) {
     if (!series.length) return null;
-    const max = Math.max(1, ...series.map((r) => r.count_per_m3));
+    // ONE SCALE FOR EVERY ROW. Normalising each row to its own maximum was a
+    // real defect: a taxon peaking at 5 grains drew the same silhouette as one
+    // peaking at 1662, and the list read as if all 48 behaved alike.
+    //
+    // The scale is shared and logarithmic. Shared, because comparison is the
+    // whole point of a column of sparklines. Logarithmic, because the peaks
+    // span nearly three orders of magnitude and a shared linear scale would
+    // flatten 45 of the 48 rows into a straight line — technically honest and
+    // practically unreadable. log1p is the same transform the trigger model
+    // uses on these concentrations.
+    const lmax = Math.log1p(Math.max(1, scaleMax));
     const t0 = Date.parse(series[0].date);
     const span = Math.max(1, Date.parse(series.at(-1).date) - t0);
     const x = (d) => ((Date.parse(d) - t0) / span) * (w - 2) + 1;
-    const y = (v) => h - 1 - (v / max) * (h - 3);
+    const y = (v) => h - 1 - (Math.log1p(Math.max(0, v)) / lmax) * (h - 3);
 
     // One <path> per measured run: consecutive calendar days only.
     const runs = [];
@@ -99,7 +110,7 @@ export function makeExplorer(D) {
         el('span', { class: 'tx__name', text: ru ? label(r.taxon) : latin }),
         ru ? el('span', { class: 'tx__latin', text: latin }) : null
       ),
-      el('span', { class: `tx__spark lvl-${levelOf(r.peak)}` }, spark(r.series)),
+      el('span', { class: 'tx__spark' }, spark(r.series, state.scaleMax)),
       el(
         'span',
         { class: 'tx__now' },
@@ -251,9 +262,14 @@ export function makeExplorer(D) {
     const tile = el('div', { class: 'tile' });
     add(
       tile,
-      el('span', { class: 'eyebrow', text: 'Таксоны' }),
-      el('h2', { text: `${num(state.rows.length)} ${plural(state.rows.length, 'таксон', 'таксона', 'таксонов')} в записи` }),
-      el('p', { class: 'lede', text: 'Всё, что ловушка различала под микроскопом. Выберите любой — покажем его сезон целиком.' })
+      screenHead({
+        eyebrow: 'Таксоны',
+        problem:
+          'Центральной Азии нет ни в одной открытой системе мониторинга пыльцы. Спросить «а когда пылит берёза в Алматы» негде.',
+        title: `Все ${num(state.rows.length)} ${plural(state.rows.length, 'таксон', 'таксона', 'таксонов')} в записи`,
+        lede:
+          'Найдите любой по русскому или латинскому имени — и увидите его сезон целиком: когда начался, где пик, где ловушка не работала.'
+      })
     );
 
     // One filter row above the list, as the data-vis rules ask.
@@ -309,7 +325,10 @@ export function makeExplorer(D) {
       tile,
       el('p', {
         class: 'note',
-        text: `Показано ${num(rows.length)} из ${num(state.rows.length)}. Значение «сейчас» — за ${fmt(S.meta.record.last_date)}, последний день, когда ловушка работала.`
+        text:
+          `Показано ${num(rows.length)} из ${num(state.rows.length)}. Значение «сейчас» — за ${fmt(S.meta.record.last_date)}, ` +
+          `последний день, когда ловушка работала. Все графики-строки нарисованы в одном масштабе — ` +
+          `логарифмическом, с общим максимумом ${num(state.scaleMax)} зёрен/м³, — поэтому их можно сравнивать между собой.`
       })
     );
     add(host, tile);
@@ -345,6 +364,9 @@ export function makeExplorer(D) {
         nonZeroDays: s.filter((r) => r.count_per_m3 > 0).length
       }))
       .sort((a, b) => b.peak - a.peak);
+
+    // The one number every sparkline is drawn against.
+    state.scaleMax = Math.max(1, ...state.rows.map((r) => r.peak));
 
     // The day's own counts and each taxon's season stage — both already
     // published; nothing is recomputed in the browser.

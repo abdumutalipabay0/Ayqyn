@@ -8,19 +8,15 @@
    over scrolling content. No shadows on tiles, no blur, no glass.
    ────────────────────────────────────────────────────────────────────────── */
 
-/* ── Fonts: self-hosted, subset to Latin + Cyrillic (36 KB for all three) ── */
+/* ── Fonts ───────────────────────────────────────────────────────────────
+   One variable face (wght 100–900) plus one static mono, both self-hosted and
+   subset to Latin + Cyrillic: 45 KB total. The variable axis is what lets the
+   product cap itself at 590 instead of jumping 400 → 600. */
 
 @font-face {
   font-family: 'Geist';
-  src: url('/fonts/geist-400.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Geist';
-  src: url('/fonts/geist-600.woff2') format('woff2');
-  font-weight: 600;
+  src: url('/fonts/geist-var.woff2') format('woff2-variations');
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
@@ -46,7 +42,10 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--ink);
-  font: 400 var(--fs-body) / 1.55 var(--sans);
+  font: var(--w-regular) var(--fs-body) / 1.6 var(--sans);
+  /* A touch of positive tracking: on a near-black ground the strokes close up
+     and body text loses air. Large text goes the other way — see h1/h2. */
+  letter-spacing: var(--track-body);
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
 }
@@ -68,17 +67,19 @@ h1,
 h2,
 h3 {
   margin: 0;
-  font-weight: 600;
-  line-height: 1.25;
+  font-weight: var(--w-strong);
+  line-height: 1.22;
+  letter-spacing: var(--track-h2);
   text-wrap: balance;
 }
+h1 { letter-spacing: var(--track-h1); }
 
 .skip {
   position: absolute;
   left: -9999px;
   top: 0;
-  background: var(--accent);
-  color: var(--accent-ink);
+  background: var(--action);
+  color: var(--action-ink);
   padding: var(--s3) var(--s4);
   border-radius: var(--r-control);
   z-index: 100;
@@ -126,7 +127,7 @@ section {
 }
 .freshness b {
   color: var(--ink);
-  font-weight: 600;
+  font-weight: var(--w-strong);
 }
 .freshness__dot {
   width: 7px;
@@ -147,12 +148,23 @@ section {
 
 /* ── Tile ───────────────────────────────────────────────────────────────── */
 
+/* Elevation step 1. Depth here is lightness, never shadow — a shadow on a
+   near-black ground is invisible, so raising the surface is the only cue that
+   actually reads. */
 .tile {
   container-type: inline-size;
   container-name: tile;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--r-tile);
+  padding: var(--s5);
+}
+
+/* Elevation step 2: anything nested inside a tile that needs to separate. */
+.raised {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-control);
   padding: var(--s4);
 }
 
@@ -200,9 +212,9 @@ section {
 .hero__value {
   display: block;
   font-size: var(--fs-hero);
-  font-weight: 600;
+  font-weight: var(--w-strong);
   line-height: 1;
-  letter-spacing: -0.03em;
+  letter-spacing: var(--track-hero);
   color: var(--ink);
   margin-top: var(--s2);
 }
@@ -234,12 +246,16 @@ section {
   margin-top: var(--s4);
   padding: var(--s2) var(--s4) var(--s2) var(--s3);
   border-radius: var(--r-pill);
-  background: var(--f);
-  color: var(--on-f);
-  font-weight: 600;
+  /* No saturated block fill. The level rides the stepper cells and the word;
+     the chip itself is a raised surface with a hairline. */
+  background: var(--surface-2);
+  border: 1px solid var(--border-strong);
+  color: var(--ink);
+  font-weight: var(--w-strong);
   font-size: var(--fs-sm);
-  letter-spacing: 0.02em;
+  letter-spacing: var(--track-body);
 }
+.verdict .stepper { color: var(--f); }
 
 /* Four cells, the first n filled. Position carries the value, so the level
    survives with colour removed — you count filled cells. */
@@ -253,7 +269,7 @@ section {
   height: 16px;
   border-radius: 1px;
   background: currentColor;
-  opacity: 0.28;
+  opacity: 0.22;
 }
 .stepper__cell[data-on='true'] {
   opacity: 1;
@@ -270,17 +286,22 @@ section {
   padding: 0 var(--s5);
   border: 1px solid transparent;
   border-radius: var(--r-control);
-  background: var(--accent);
-  color: var(--accent-ink);
-  font: 600 var(--fs-body) / 1 var(--sans);
+  /* Neutral, not amber. The accent stays on focus rings, links and alerts,
+     so a call to action can never be misread as a severity. */
+  background: var(--action);
+  color: var(--action-ink);
+  font: var(--w-strong) var(--fs-body) / 1 var(--sans);
+  letter-spacing: var(--track-body);
   cursor: pointer;
   text-decoration: none;
   touch-action: manipulation;
-  transition: background-color 160ms ease-out;
+  transition: background-color var(--t-fast) var(--ease-out), transform var(--t-base) var(--ease-spring);
 }
 .btn:hover {
-  background: var(--accent-hover);
+  background: var(--action-hover);
+  transform: scale(1.01);
 }
+.btn:active { transform: scale(0.99); }
 .btn--ghost {
   background: none;
   border-color: var(--border-strong);
@@ -336,7 +357,7 @@ section {
 }
 .bar__value {
   font-size: var(--fs-sm);
-  font-weight: 600;
+  font-weight: var(--w-strong);
 }
 .bar__track {
   grid-column: 1 / -1;
@@ -446,7 +467,7 @@ section {
 
 .mold__value {
   font-size: clamp(2rem, 1.6rem + 1.6vw, 2.75rem);
-  font-weight: 600;
+  font-weight: var(--w-strong);
   line-height: 1;
 }
 .meter {
@@ -488,7 +509,7 @@ section {
   border-radius: 999px;
   background: var(--ink);
   color: var(--surface);
-  font: 600 var(--fs-label) / 1 var(--sans);
+  font: var(--w-strong) var(--fs-label) / 1 var(--sans);
   display: grid;
   place-items: center;
 }
@@ -535,7 +556,7 @@ section {
 .score__n {
   display: block;
   font-size: clamp(1.75rem, 1.5rem + 1vw, 2.25rem);
-  font-weight: 600;
+  font-weight: var(--w-strong);
   line-height: 1;
 }
 .score__k {
@@ -565,7 +586,7 @@ section {
 .pace__n {
   display: block;
   font-size: clamp(1.75rem, 1.4rem + 1.5vw, 2.5rem);
-  font-weight: 600;
+  font-weight: var(--w-strong);
   line-height: 1;
 }
 .pace__k {
@@ -581,7 +602,7 @@ section {
 .pace__ratio {
   display: block;
   font-size: var(--fs-h2);
-  font-weight: 600;
+  font-weight: var(--w-strong);
 }
 
 /* ── Severity control ───────────────────────────────────────────────────── */
@@ -603,7 +624,7 @@ section {
   border-radius: var(--r-control);
   background: var(--surface);
   color: var(--ink);
-  font: 600 var(--fs-sm) / 1.2 var(--sans);
+  font: var(--w-strong) var(--fs-sm) / 1.2 var(--sans);
   cursor: pointer;
   touch-action: manipulation;
   display: grid;
@@ -643,8 +664,10 @@ section {
   border-radius: var(--r-data);
   background: var(--lvl-0);
 }
+/* Confidence is neither a severity nor an alert, so it stays neutral —
+   the accent is not spent on it. */
 .confidence__tick[data-on='true'] {
-  background: var(--accent);
+  background: var(--ink-2);
 }
 
 /* ── Trigger weights ────────────────────────────────────────────────────── */
@@ -660,12 +683,12 @@ section {
   align-items: baseline;
 }
 .trigger__name {
-  font-weight: 600;
+  font-weight: var(--w-strong);
   font-size: var(--fs-sm);
 }
 .trigger__w {
   font-size: var(--fs-sm);
-  font-weight: 600;
+  font-weight: var(--w-strong);
 }
 .trigger__track {
   height: 8px;
@@ -819,9 +842,11 @@ section {
   touch-action: manipulation;
   padding: var(--s2) var(--s1);
 }
+/* Current tab reads by ink weight and a raised pill, not by spending the
+   accent on navigation state. */
 .tabbar__item[aria-current='page'] {
-  color: var(--accent);
-  font-weight: 600;
+  color: var(--ink);
+  font-weight: var(--w-strong);
 }
 .tabbar__item svg {
   width: 22px;
@@ -1020,7 +1045,7 @@ section {
 }
 .lit__taxon {
   font-size: var(--fs-lead);
-  font-weight: 600;
+  font-weight: var(--w-strong);
 }
 .lit__latin {
   color: var(--ink-3);
@@ -1118,9 +1143,9 @@ section {
   background: transparent;
 }
 .chip--btn[aria-pressed='true'] {
-  background: var(--accent);
+  background: var(--accent-wash);
   border-color: var(--accent);
-  color: var(--accent-ink);
+  color: var(--ink);
 }
 
 .txlist { display: grid; }
@@ -1147,17 +1172,19 @@ section {
 .tx__id { display: grid; min-width: 0; }
 .tx__name {
   font-size: var(--fs-sm);
-  font-weight: 600;
+  font-weight: var(--w-strong);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 .tx__latin { font-size: var(--fs-label); color: var(--ink-3); }
-.tx__spark { display: none; color: var(--ink-3); }
-.tx__spark.lvl-3, .tx__spark.lvl-4 { color: var(--accent); }
+.tx__spark { display: none; color: var(--ink-2); }
+/* One colour for every sparkline. Colouring them by level would double-encode
+   what the number beside them already says, and the eye would read the hue as
+   the signal instead of the shape. */
 .spark { display: block; }
 .tx__now { display: grid; justify-items: end; gap: 1px; }
-.tx__val { font-size: var(--fs-sm); font-weight: 600; }
+.tx__val { font-size: var(--fs-sm); font-weight: var(--w-strong); }
 .tx__none { font-size: var(--fs-sm); color: var(--ink-3); }
 .tx__stage { font-size: var(--fs-label); color: var(--ink-3); white-space: nowrap; }
 
@@ -1177,7 +1204,7 @@ section {
   align-items: baseline;
   justify-content: space-between;
 }
-.txd__title { font-size: var(--fs-lead); font-weight: 600; }
+.txd__title { font-size: var(--fs-lead); font-weight: var(--w-strong); }
 .txd__latin { margin-left: var(--s2); color: var(--ink-3); font-weight: 400; font-size: var(--fs-sm); }
 .txd__group {
   font: 400 var(--fs-label) / 1.4 var(--mono);
@@ -1214,7 +1241,7 @@ section {
   color: var(--ink-3);
 }
 .fact dd { margin: var(--s2) 0 0; display: grid; gap: 2px; }
-.fact dd b { font-size: var(--fs-lead); font-weight: 600; font-variant-numeric: tabular-nums; }
+.fact dd b { font-size: var(--fs-lead); font-weight: var(--w-strong); font-variant-numeric: tabular-nums; }
 .fact dd span { font-size: var(--fs-label); color: var(--ink-3); }
 
 /* ── Быстрый путь: declared allergens ────────────────────────────────────── */
@@ -1231,9 +1258,9 @@ section {
 .known__val {
   display: block;
   font-size: var(--fs-hero);
-  font-weight: 600;
+  font-weight: var(--w-strong);
   line-height: 1;
-  letter-spacing: -0.03em;
+  letter-spacing: var(--track-hero);
   margin-top: var(--s2);
 }
 .known__of { font-size: var(--fs-sm); color: var(--ink-2); }
@@ -1287,3 +1314,103 @@ section {
   align-items: center;
   touch-action: manipulation;
 }
+
+/* ── Screen header ───────────────────────────────────────────────────────
+   Problem before product. The tag is a hairline outline rather than a filled
+   badge — a filled block here would compete with the number below it. */
+
+.shead {
+  display: grid;
+  gap: var(--s3);
+  margin-bottom: var(--s6);
+  padding-bottom: var(--s5);
+  border-bottom: 1px solid var(--border);
+}
+.shead__eyebrow {
+  font: var(--w-medium) var(--fs-label) / 1 var(--mono);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.shead__problem {
+  margin: 0;
+  color: var(--ink-2);
+  font-size: var(--fs-sm);
+  max-width: 60ch;
+  text-wrap: pretty;
+}
+.shead__ptag {
+  display: inline-block;
+  margin-inline-end: var(--s2);
+  padding: 1px var(--s2);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--r-data);
+  font: var(--w-medium) var(--fs-label) / 1.5 var(--mono);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--ink-3);
+  vertical-align: 1px;
+}
+.shead__title {
+  font-size: var(--fs-h1);
+  letter-spacing: var(--track-h1);
+}
+.shead__lede {
+  margin: 0;
+  color: var(--ink-2);
+  font-size: var(--fs-sm);
+  max-width: 62ch;
+  text-wrap: pretty;
+}
+
+/* ── Hero sparkline: same quantity as the number above it ────────────────── */
+
+.hero__spark {
+  display: grid;
+  gap: var(--s2);
+  margin-top: var(--s5);
+}
+.hero__sparkline { color: var(--ink-2); }
+.hero__sparkline .spark { width: 100%; max-width: 320px; height: 34px; }
+.hero__sparkcap {
+  font-size: var(--fs-label);
+  color: var(--ink-3);
+}
+
+/* ── Motion: short, spring, and only where it carries meaning ────────────── */
+
+@media (prefers-reduced-motion: no-preference) {
+  .view:not([hidden]) > section {
+    animation: rise var(--t-slow) var(--ease-out) both;
+  }
+  /* A short stagger so the eye lands on the top block first. Capped at four
+     steps — beyond that it stops reading as sequence and starts reading as
+     lag. */
+  .view:not([hidden]) > section:nth-child(1) { animation-delay: 0ms; }
+  .view:not([hidden]) > section:nth-child(2) { animation-delay: 40ms; }
+  .view:not([hidden]) > section:nth-child(3) { animation-delay: 80ms; }
+  .view:not([hidden]) > section:nth-child(n + 4) { animation-delay: 120ms; }
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .view:not([hidden]) > section { animation: none; }
+  .btn:hover, .btn:active { transform: none; }
+  * { scroll-behavior: auto !important; }
+}
+
+/* The delta is the one place a sign gets colour. Up is the accent because a
+   rise is what a person with hay fever needs to notice; down is plain ink. */
+.hero__delta {
+  font-weight: var(--w-strong);
+  font-size: var(--fs-sm);
+}
+.hero__delta[data-dir='up'] { color: var(--accent); }
+.hero__delta[data-dir='down'],
+.hero__delta[data-dir='flat'] { color: var(--ink-2); }
+.hero__compare svg { color: var(--ink-3); }
+.hero__compare { gap: var(--s2); }

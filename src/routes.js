@@ -13,7 +13,7 @@ import {
 } from './config.js';
 import { isDateString, yearOf } from './lib/util.js';
 import { loadDataset, resolveTaxonName } from './load.js';
-import { dayReport } from './domain/day.js';
+import { dayReport, pollenTotalSeries } from './domain/day.js';
 import { seasonSummary, seasonWindow } from './domain/season.js';
 import { seasonState, scanRamps, rampPerformance } from './domain/ramp.js';
 import { seasonPace } from './domain/pace.js';
@@ -383,6 +383,30 @@ export function getCrossReactivity(_params, query) {
   };
 }
 
+/** 11. GET /api/series/pollen-total?from=&to= — the headline number, as a series. */
+export function getPollenTotalSeries(_params, query) {
+  const ds = loadDataset();
+  const from = query.from ?? ds.firstDate;
+  const to = query.to ?? ds.lastDate;
+  if (!isDateString(from) || !isDateString(to)) return bad('from and to must be YYYY-MM-DD dates');
+  const series = pollenTotalSeries(ds, from, to);
+  return {
+    status: 200,
+    body: {
+      from,
+      to,
+      unit: 'grains/m3',
+      // Days the trap did not run are absent from `series`, not zero. The
+      // count is published so a client can say how many are missing instead
+      // of silently drawing a shorter line.
+      measured_days: series.length,
+      unmeasured_days_in_window: ds.gaps.absentDates.filter((d) => d >= from && d <= to).length,
+      max_per_m3: series.reduce((a, r) => Math.max(a, r.total_per_m3), 0),
+      series
+    }
+  };
+}
+
 export const ROUTES = [
   { method: 'GET', pattern: '/api/meta', handler: getMeta },
   { method: 'GET', pattern: '/api/day/:date', handler: getDay },
@@ -394,5 +418,6 @@ export const ROUTES = [
   { method: 'POST', pattern: '/api/profile/attribute', handler: postAttribute },
   { method: 'GET', pattern: '/api/personal-index', handler: getPersonalIndex },
   { method: 'GET', pattern: '/api/discriminating-days', handler: getDiscriminatingDays },
-  { method: 'GET', pattern: '/api/cross-reactivity', handler: getCrossReactivity }
+  { method: 'GET', pattern: '/api/cross-reactivity', handler: getCrossReactivity },
+  { method: 'GET', pattern: '/api/series/pollen-total', handler: getPollenTotalSeries }
 ];

@@ -23,7 +23,7 @@ import { inseparableGroups } from '../src/domain/groups.js';
 import { attribute } from '../src/domain/attribute.js';
 import { personalIndex, pollenScore } from '../src/domain/personal.js';
 import { discriminatingDays } from '../src/domain/discriminating.js';
-import { dayReport } from '../src/domain/day.js';
+import { dayReport, pollenTotalSeries } from '../src/domain/day.js';
 import {
   crossReactivityFor,
   latinOf,
@@ -805,4 +805,37 @@ test('the threshold table reaches neither the dataset nor the scale', () => {
   assert.ok(!/POLLEN_SCALE|almaty_trap|readFile|fetch\(/.test(code), 'must not read the scale or the dataset');
   assert.ok(/литератур/.test(THRESHOLD_NOTE), 'the note must state its provenance');
   assert.ok(/консенсус|расход/.test(THRESHOLD_NOTE), 'the note must state the lack of consensus');
+});
+
+test('the daily-total series carries measured days only', () => {
+  // The sparkline under the headline number must be the same quantity as the
+  // number, and a gap must be absent from the array rather than a zero — a
+  // zero would draw a plunge to the floor on a day nobody counted.
+  const ds = makeDataset({
+    start: '2025-08-01',
+    taxa: { Artemisia: [10, 20, 30, 40], 'Alternaria alternata': [5, 5, 5, 5] },
+    group: { Artemisia: 'травы', 'Alternaria alternata': 'плесень' },
+    skip: ['2025-08-03']
+  });
+  const s = pollenTotalSeries(ds, '2025-08-01', '2025-08-04');
+  assert.deepEqual(s.map((r) => r.date), ['2025-08-01', '2025-08-02', '2025-08-04']);
+  assert.ok(!s.some((r) => r.date === '2025-08-03'), 'the gap day must be absent, not zero');
+  // Mold is excluded: it is not on the pollen scale and must not inflate a
+  // pollen total.
+  assert.equal(s[0].total_per_m3, 10);
+  assert.equal(s[0].level, 'low');
+});
+
+test('a measured day names its neighbours too', () => {
+  // The delta beside the headline needs the previous MEASURED day, not
+  // yesterday: on this record yesterday is frequently a gap.
+  const ds = makeDataset({
+    start: '2025-08-01',
+    taxa: { Artemisia: [10, 20, 30, 40] },
+    skip: ['2025-08-03']
+  });
+  const d = dayReport(ds, '2025-08-04');
+  assert.equal(d.measured, true);
+  assert.equal(d.previous_measured_date, '2025-08-02', 'must skip the gap, not point at it');
+  assert.equal(d.next_measured_date, null);
 });
