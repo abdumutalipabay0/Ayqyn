@@ -119,6 +119,11 @@ export function attribute(ds, log, opts = {}) {
       ...base,
       triggers: [],
       fitted: false,
+      // A code and the numbers, alongside the English prose. The prose is for
+      // an API reader; a localised interface must not print it, and without a
+      // code it would have to parse English or restate the thresholds itself.
+      reason_code: candidateTaxa.length === 0 ? 'no_variation' : 'insufficient_data',
+      requirements: { min_days: ATTRIB_MIN_DAYS, min_per_class: ATTRIB_MIN_PER_CLASS },
       reason:
         candidateTaxa.length === 0
           ? 'No taxon varies across the logged days; nothing can be attributed.'

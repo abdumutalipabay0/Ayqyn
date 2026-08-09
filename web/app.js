@@ -163,7 +163,11 @@ const S = {
   log: [],
   logCursor: 0,
   logDates: [],
-  profile: null
+  profile: null,
+  // The worked example. Deliberately NOT merged into `log`: clearing it has to
+  // restore the visitor's true state, and the only way to guarantee that is
+  // never to have written into it.
+  example: null
 };
 
 /** Band index for a count, from the scale the API publishes. */
@@ -657,6 +661,7 @@ async function drawTrigger() {
     S.logDates = s.series.map((r) => r.date).reverse();
   }
   drawKnown();
+  drawExample();
   drawLog();
   await drawProfile();
 }
@@ -853,6 +858,138 @@ async function renderKnownOut() {
   }
 }
 
+/* ── Готовый пример ────────────────────────────────────────────────────────
+   «Мой триггер» is the only screen where the model is visible, and it was the
+   hardest one to read alone: its centre of gravity is a question about a
+   specific date that a stranger cannot answer. They tap at random, the fit is
+   noise, and the screen teaches nothing.
+
+   This is a third route in — neither the quick path nor the diary, but a
+   worked example: the diary of someone whose bad days really do track
+   mugwort. The model then runs for real on real measurements, so what the
+   visitor sees is genuinely what the product produces.
+
+   Two rules keep it from ever being mistaken for the visitor's own result:
+
+     1. The example diary lives in `S.example`, never in `S.log`. Clearing it
+        restores the true empty state because the true state was never
+        touched.
+     2. While it is active, `S.profile` stays null — so the personal index on
+        «Сегодня» is never computed from someone else's diary — and every
+        block on this screen carries a visible ПРИМЕР mark.
+
+   The diary is DERIVED FROM THE RECORD rather than hard-coded: the days come
+   from the trap, and the rule that marks them is stated in the interface. A
+   canned list of dates would be a data value written into a component, and it
+   would rot the first time the record changed.
+*/
+
+const EXAMPLE_WINDOW_DAYS = 26;
+
+async function buildExample() {
+  const taxon = S.meta.taxa.pollen.find((t) => t.startsWith('Artemisia')) ?? S.meta.taxa.pollen[0];
+  const to = S.meta.record.last_date;
+  const s = await api(
+    `/api/taxon/${encodeURIComponent(taxon)}/season?${new URLSearchParams({
+      year: to.slice(0, 4),
+      from: S.meta.record.first_date,
+      to
+    })}`
+  );
+
+  const recent = s.series.slice(-EXAMPLE_WINDOW_DAYS);
+  if (recent.length < 8) throw new Error('в записи слишком мало дней для примера');
+
+  const sorted = recent.map((r) => r.count_per_m3).slice().sort((a, b) => a - b);
+  const median = sorted[Math.floor(sorted.length / 2)];
+
+  // The construction rule, in one line, and it is shown to the reader.
+  const log = recent.map((r) => ({ date: r.date, severity: r.count_per_m3 > median ? 3 : 0 }));
+
+  return {
+    taxon,
+    median,
+    log,
+    from: recent[0].date,
+    to: recent.at(-1).date,
+    bad: log.filter((e) => e.severity === 3).length
+  };
+}
+
+/** The persistent mark. Present on every block the example produces. */
+function exampleTag() {
+  return el('span', { class: 'extag', text: 'Пример · не ваши данные' });
+}
+
+async function startExample() {
+  const host = $('#g-example');
+  add(clear(host), el('div', { class: 'tile' }, el('span', { class: 'eyebrow', text: 'Готовый пример' }), statusNode('Собираем дневник по записи…')));
+  try {
+    S.example = await buildExample();
+  } catch (e) {
+    add(clear(host), el('div', { class: 'tile' }, el('span', { class: 'eyebrow', text: 'Готовый пример' }), errorNode(e)));
+    return;
+  }
+  drawExample();
+  drawLog();
+  await drawProfile();
+  $('#g-example')?.scrollIntoView({ block: 'start', behavior: 'smooth' });
+}
+
+function clearExample() {
+  S.example = null;
+  // S.log was never touched, so this is the true empty state, not a reset one.
+  drawExample();
+  drawLog();
+  drawProfile();
+  $('#g-example')?.scrollIntoView({ block: 'start', behavior: 'smooth' });
+}
+
+function drawExample() {
+  const host = $('#g-example');
+  if (!host) return;
+
+  if (!S.example) {
+    add(
+      clear(host),
+      el(
+        'div',
+        { class: 'tile' },
+        el('span', { class: 'eyebrow', text: 'Путь третий · готовый пример' }),
+        el('h2', { text: 'Не хотите отмечать две недели?' }),
+        el('p', {
+          class: 'lede',
+          text: 'Загрузим дневник человека, чьи плохие дни совпадают с полынью, и посчитаем по нему настоящую модель на настоящих измерениях. Это чужой дневник — он помечен как пример и в ваш не попадает.'
+        }),
+        action('Посмотреть на готовом примере', null, () => startExample())
+      )
+    );
+    return;
+  }
+
+  const e = S.example;
+  add(
+    clear(host),
+    el(
+      'div',
+      { class: 'tile tile--example' },
+      exampleTag(),
+      el('h2', { text: 'Дневник человека, реагирующего на полынь' }),
+      el('p', {
+        class: 'lede',
+        text: `${num(e.log.length)} ${plural(e.log.length, 'день', 'дня', 'дней')} с ${fmtShort(e.from)} по ${fmtShort(e.to)}, из них ${num(e.bad)} отмечены как «очень плохо».`
+      }),
+      // The construction rule is stated, not hidden: this is what makes the
+      // example a demonstration rather than a magic trick.
+      el('p', {
+        class: 'note',
+        text: `Дневник не выдуман и не зашит в приложение — он собран из этой же записи по одному правилу: день помечен «очень плохо», если ${label(e.taxon).toLowerCase()} в этот день была выше своей медианы за окно (${num(e.median)} зёрен/м³), и «ничего» в остальные. Дальше работает та же модель, что и с вашим дневником.`
+      }),
+      action('Очистить пример и вести свой дневник', 'Ваши собственные отметки при этом не затрагиваются — их пока нет.', () => clearExample())
+    )
+  );
+}
+
 function drawLog() {
   const date = S.logDates[S.logCursor];
   const done = S.logCursor >= S.logDates.length;
@@ -878,6 +1015,12 @@ function drawLog() {
           : 'Один тап — один день. Дальше откроется предыдущий день, когда ловушка работала.'
       }),
       done ? null : grid,
+      S.example
+        ? el('p', {
+            class: 'note',
+            text: 'Сейчас на экране показан пример — чужой дневник. Первая же ваша отметка очистит его и начнёт ваш собственный.'
+          })
+        : null,
       el('p', {
         class: 'note',
         text: `Отмечено дней: ${S.log.length}. Записи живут только в памяти вкладки — при перезагрузке они очистятся.`
@@ -892,6 +1035,12 @@ let attrTimer = null;
 function logDay(v) {
   const date = S.logDates[S.logCursor];
   if (!date) return;
+  // The visitor's own first answer ends the demonstration. Keeping both alive
+  // would put example days and real days in one fit.
+  if (S.example) {
+    S.example = null;
+    drawExample();
+  }
   S.log = S.log.filter((e) => e.date !== date).concat({ date, severity: v });
   S.logCursor += 1;
   drawLog();
@@ -923,11 +1072,38 @@ function inseparableCopy(taxa) {
   return `${listed} — по имеющимся измерениям их нельзя разделить: они поднимаются и опадают вместе, поэтому модель считает их одним признаком.`;
 }
 
+
+/** Why the model declined, in the product's language and from its own figures. */
+function notFittedCopy(r) {
+  const req = r.requirements ?? {};
+  if (r.reason_code === 'no_variation') {
+    return 'В отмеченные дни ни один таксон не менялся, поэтому связывать не с чем. Отметьте дни, которые отличались друг от друга.';
+  }
+  if (r.reason_code === 'insufficient_data') {
+    return (
+      `Отмечено дней: ${num(r.usable_days)} (${num(r.positive_days)} плохих, ${num(r.negative_days)} спокойных). ` +
+      `Модель начинает считать с ${num(req.min_days)} дней, из которых минимум ${num(req.min_per_class)} плохих и ${num(req.min_per_class)} спокойных. ` +
+      'Пока их меньше, любой вывод был бы шумом.'
+    );
+  }
+  // An unknown code is not paraphrased: better to say nothing specific than to
+  // invent a cause.
+  return 'Данных пока недостаточно для расчёта.';
+}
+
 async function drawProfile() {
   const sec = $('#g-profile');
   const diag = $('#g-diag');
+  // One switch, read once: everything below fits the example's diary when one
+  // is loaded and the visitor's own otherwise.
+  const isExample = !!S.example;
+  const log = isExample ? S.example.log : S.log;
+  const head = () =>
+    isExample
+      ? el('div', { class: 'exhead' }, el('span', { class: 'eyebrow', text: 'Профиль триггеров' }), exampleTag())
+      : el('span', { class: 'eyebrow', text: 'Профиль триггеров' });
 
-  if (S.log.length === 0) {
+  if (log.length === 0) {
     add(
       clear(sec),
       el(
@@ -953,11 +1129,11 @@ async function drawProfile() {
 
   const seq = ++attrSeq;
   const stale = () => seq !== attrSeq;
-  add(clear(sec), el('div', { class: 'tile' }, el('span', { class: 'eyebrow', text: 'Профиль триггеров' }), statusNode('Считаем…')));
+  add(clear(sec), el('div', { class: isExample ? 'tile tile--example' : 'tile' }, head(), statusNode('Считаем…')));
 
   let r;
   try {
-    r = await api('/api/profile/attribute', { method: 'POST', body: S.log, memoise: false });
+    r = await api('/api/profile/attribute', { method: 'POST', body: log, memoise: false });
     if (stale()) return;
   } catch (e) {
     if (stale()) return;
@@ -965,8 +1141,8 @@ async function drawProfile() {
       clear(sec),
       el(
         'div',
-        { class: 'tile' },
-        el('span', { class: 'eyebrow', text: 'Профиль триггеров' }),
+        { class: isExample ? 'tile tile--example' : 'tile' },
+        head(),
         // A POST is never replayed from cache — serving a stored answer for a
         // diary the user has since changed would be a fabricated result. So
         // offline this screen says so plainly instead of showing a stale fit.
@@ -992,20 +1168,22 @@ async function drawProfile() {
     ),
     el('p', {
       class: 'note',
-      text: `Уверенность: ${CONF_WORD[r.confidence]} · дней в расчёте ${r.usable_days} (${r.positive_days} плохих, ${r.negative_days} спокойных)${
+      text: `Уверенность: ${CONF_WORD[r.confidence]} · ${plural(r.usable_days, 'день', 'дня', 'дней')} в расчёте ${r.usable_days} (${r.positive_days} ${plural(r.positive_days, 'плохой', 'плохих', 'плохих')}, ${r.negative_days} ${plural(r.negative_days, 'спокойный', 'спокойных', 'спокойных')})${
         r.dropped_unmeasured_days.length ? ` · отброшено дней без измерений: ${r.dropped_unmeasured_days.length}` : ''
       }`
     })
   );
 
-  const tile = el('div', { class: 'tile' }, el('span', { class: 'eyebrow', text: 'Профиль триггеров' }));
+  const tile = el('div', { class: isExample ? 'tile tile--example' : 'tile' }, head());
 
   if (!r.fitted) {
-    S.profile = null;
+    if (!isExample) S.profile = null;
     add(
       tile,
       el('h2', { text: 'Пока рано делать вывод' }),
-      el('p', { class: 'lede', text: r.reason }),
+      // Composed from the code and the numbers the API returns, never from its
+      // English prose — that prose is for an API reader, not for this screen.
+      el('p', { class: 'lede', text: notFittedCopy(r) }),
       conf,
       action('Отметить ещё один день', null, () => window.scrollTo({ top: 0, behavior: 'smooth' }))
     );
@@ -1016,16 +1194,22 @@ async function drawProfile() {
   }
 
   const positives = r.triggers.filter((t) => t.weight > 0);
-  S.profile = positives.length ? positives.flatMap((t) => t.taxa.map((x) => `${x}:${t.weight}`)).join(',') : null;
-  S.drawn.delete('today');
+  // An example must never become the visitor's profile: «Сегодня» would then
+  // compute a personal index from a stranger's diary and label it "для вас".
+  if (!isExample) {
+    S.profile = positives.length ? positives.flatMap((t) => t.taxa.map((x) => `${x}:${t.weight}`)).join(',') : null;
+    S.drawn.delete('today');
+  }
 
   const maxW = Math.max(...r.triggers.map((t) => Math.abs(t.weight)));
   add(
     tile,
-    el('h2', { text: 'С чем связаны ваши плохие дни' }),
+    el('h2', { text: isExample ? 'С чем связаны плохие дни в этом примере' : 'С чем связаны ваши плохие дни' }),
     el('p', {
       class: 'lede',
-      text: 'Вес — вклад признака в логистическую модель на стандартизованных признаках. Положительный значит: чем выше концентрация, тем хуже день.'
+      text: isExample
+        ? 'Это настоящий расчёт настоящей модели — только дневник чужой. Вес — вклад признака в логистическую модель на стандартизованных признаках; положительный значит: чем выше концентрация, тем хуже день.'
+        : 'Вес — вклад признака в логистическую модель на стандартизованных признаках. Положительный значит: чем выше концентрация, тем хуже день.'
     }),
     conf,
     el(
@@ -1046,9 +1230,11 @@ async function drawProfile() {
         )
       )
     ),
-    r.confidence === 'high'
-      ? action('Сохранить сводку для аллерголога', 'В файл попадут только измерения, ваши отметки и веса модели с числом дней, на которых они держатся.', () => saveExtract(r))
-      : action('Отметить ещё один день', 'Чем больше отмеченных дней, тем устойчивее веса.', () => window.scrollTo({ top: 0, behavior: 'smooth' }))
+    isExample
+      ? action('Очистить пример и вести свой дневник', 'Это чужой дневник. Ваши собственные отметки не затронуты.', () => clearExample())
+      : r.confidence === 'high'
+        ? action('Сохранить сводку для аллерголога', 'В файл попадут только измерения, ваши отметки и веса модели с числом дней, на которых они держатся.', () => saveExtract(r))
+        : action('Отметить ещё один день', 'Чем больше отмеченных дней, тем устойчивее веса.', () => window.scrollTo({ top: 0, behavior: 'smooth' }))
   );
   add(clear(sec), tile);
 
@@ -1060,7 +1246,14 @@ async function drawProfile() {
 
 async function drawDiagnostic(taxon) {
   const sec = clear($('#g-diag'));
-  const tile = el('div', { class: 'tile' }, el('span', { class: 'eyebrow', text: 'Разделяющий день' }));
+  const isExample = !!S.example;
+  const tile = el(
+    'div',
+    { class: isExample ? 'tile tile--example' : 'tile' },
+    isExample
+      ? el('div', { class: 'exhead' }, el('span', { class: 'eyebrow', text: 'Разделяющий день' }), exampleTag())
+      : el('span', { class: 'eyebrow', text: 'Разделяющий день' })
+  );
   try {
     const qs = new URLSearchParams({ limit: '1' });
     if (taxon) qs.set('taxon', taxon);
@@ -1099,7 +1292,13 @@ async function drawDiagnostic(taxon) {
         el('b', { class: 'tnum', text: num(d.low.count_per_m3) }),
         `. Обычно они движутся вместе (r = ${d.r}), поэтому день, когда они разошлись, стоит многих обычных.`
       ),
-      action('Отметить этот день', 'Ответ именно за эту дату разводит пару сильнее десятка обычных.', () => {
+      action(
+        isExample ? 'Начать свой дневник с этого дня' : 'Отметить этот день',
+        'Ответ именно за эту дату разводит пару сильнее десятка обычных.',
+        () => {
+        // Leaving the example on while the visitor answers would mix a
+        // stranger's days into their fit.
+        if (S.example) { S.example = null; drawExample(); drawProfile(); }
         const i = S.logDates.indexOf(d.date);
         if (i >= 0) {
           S.logCursor = i;
@@ -1169,10 +1368,21 @@ async function drawCrossReactivity(triggerTaxa, confidence) {
   const sec = clear($('#g-cross'));
   if (!triggerTaxa.length) return;
 
-  const tile = el('div', { class: 'tile tile--lit' });
+  // Two independent marks stack here, and both must stay legible: the block is
+  // literature rather than measurement, AND right now it follows from an
+  // example rather than from the visitor.
+  const isExample = !!S.example;
+  const tile = el('div', { class: isExample ? 'tile tile--lit tile--example' : 'tile tile--lit' });
   add(
     tile,
-    el('span', { class: 'eyebrow eyebrow--lit', text: 'Из литературы, не из измерений' })
+    isExample
+      ? el(
+          'div',
+          { class: 'exhead' },
+          el('span', { class: 'eyebrow eyebrow--lit', text: 'Из литературы, не из измерений' }),
+          exampleTag()
+        )
+      : el('span', { class: 'eyebrow eyebrow--lit', text: 'Из литературы, не из измерений' })
   );
 
   let r;

@@ -839,3 +839,31 @@ test('a measured day names its neighbours too', () => {
   assert.equal(d.previous_measured_date, '2025-08-02', 'must skip the gap, not point at it');
   assert.equal(d.next_measured_date, null);
 });
+
+test('a declined fit returns a code and its thresholds, not only English prose', () => {
+  // A localised interface must be able to say why without parsing English or
+  // restating the thresholds itself.
+  const ds = makeDataset({ start: '2025-08-01', taxa: { Artemisia: [10, 20, 30, 40] } });
+  const r = attribute(ds, [
+    { date: '2025-08-01', severity: 3 },
+    { date: '2025-08-02', severity: 0 }
+  ]);
+  assert.equal(r.fitted, false);
+  assert.equal(r.reason_code, 'insufficient_data');
+  assert.equal(r.requirements.min_days, 8);
+  assert.equal(r.requirements.min_per_class, 3);
+  assert.ok(r.reason.length > 0, 'the English prose stays for API readers');
+});
+
+test('a diary with no variation is named as such', () => {
+  const ds = makeDataset({ start: '2025-08-01', taxa: { Artemisia: new Array(12).fill(0) } });
+  const r = attribute(
+    ds,
+    Array.from({ length: 12 }, (_, i) => ({
+      date: `2025-08-${String(i + 1).padStart(2, '0')}`,
+      severity: i % 2 ? 3 : 0
+    }))
+  );
+  assert.equal(r.fitted, false);
+  assert.equal(r.reason_code, 'no_variation');
+});

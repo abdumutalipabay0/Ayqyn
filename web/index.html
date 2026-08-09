@@ -18,13 +18,21 @@
     <a class="skip" href="#main">Перейти к содержанию</a>
 
     <div class="shell">
+      <div class="stickytop">
       <div class="freshness" id="freshness" role="status" aria-live="polite">
         <span class="freshness__dot" aria-hidden="true"></span>
         <span id="freshness-text">Загружаем запись…</span>
         <span class="freshness__net" id="net" hidden>из кэша</span>
       </div>
 
-      <nav class="tabbar" id="tabbar" aria-label="Разделы"></nav>
+      <div class="topbar">
+        <a class="brand" href="#today">
+          <span class="brand__mark">Ayqyn</span>
+          <span class="brand__desc">Аэроаллергены Алматы по реальным измерениям пыльцевой ловушки</span>
+        </a>
+        <nav class="tabbar" id="tabbar" aria-label="Разделы"></nav>
+      </div>
+      </div>
 
       <main id="main">
         <!-- ── СЕГОДНЯ ────────────────────────────────────────────────── -->
@@ -40,6 +48,7 @@
         <div class="view" id="view-trigger" hidden>
           <section id="g-known"></section>
           <section id="g-log"><div class="status">Загружаем…</div></section>
+          <section id="g-example"></section>
           <section id="g-profile"></section>
           <section id="g-diag"></section>
           <section id="g-cross"></section>
