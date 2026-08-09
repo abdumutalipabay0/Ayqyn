@@ -1,0 +1,5719 @@
+{
+ "source": "Пыльцевая ловушка Буркарда (Hirst-type), Алматы",
+ "n_days": 247,
+ "period": {
+  "start": "2025-04-28",
+  "end": "2026-08-06"
+ },
+ "n_taxa": 48,
+ "thresholds_pollen_per_m3": {
+  "low": "1-10",
+  "moderate": "11-50",
+  "high": "51-200",
+  "critical": ">200"
+ },
+ "clinical_mold_thresholds": {
+  "Alternaria alternata": 100,
+  "Cladosporium herbarum": 3000
+ },
+ "gaps": [
+  "2025-06-02..2025-06-29",
+  "2025-09-01..2025-09-28",
+  "2025-11-17..2026-03-25",
+  "2026-06-01..2026-06-30",
+  "2026-07-09..2026-07-12"
+ ],
+ "caveat_meteo": "Метео из файлов ловушки имеет узкий диапазон (ветер 1.3-4.4 м/с) и вероятно является оценкой, а не приборным измерением.",
+ "days": [
+  {
+   "date": "2025-04-28",
+   "pollen_total": 34,
+   "pollen_level": "moderate",
+   "mold_total": 0,
+   "taxa": {
+    "Betulaceae (неопред.)": 14,
+    "Pinaceae (неопред.)": 14,
+    "Picea (ель)": 6
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 20.0,
+    "humidity_pct": 61.0,
+    "wind_ms": 3.9
+   }
+  },
+  {
+   "date": "2025-04-29",
+   "pollen_total": 36,
+   "pollen_level": "moderate",
+   "mold_total": 0,
+   "taxa": {
+    "Betulaceae (неопред.)": 16,
+    "Pinaceae (неопред.)": 14,
+    "Picea (ель)": 6
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 21.0,
+    "humidity_pct": 61.0,
+    "wind_ms": 3.9
+   }
+  },
+  {
+   "date": "2025-04-30",
+   "pollen_total": 34,
+   "pollen_level": "moderate",
+   "mold_total": 0,
+   "taxa": {
+    "Betulaceae (неопред.)": 14,
+    "Pinaceae (неопред.)": 14,
+    "Picea (ель)": 6
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 21.0,
+    "humidity_pct": 61.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2025-05-01",
+   "pollen_total": 35,
+   "pollen_level": "moderate",
+   "mold_total": 0,
+   "taxa": {
+    "Betulaceae (неопред.)": 16,
+    "Pinaceae (неопред.)": 12,
+    "Picea (ель)": 7
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 20.0,
+    "humidity_pct": 61.0,
+    "wind_ms": 3.9
+   }
+  },
+  {
+   "date": "2025-05-02",
+   "pollen_total": 36,
+   "pollen_level": "moderate",
+   "mold_total": 0,
+   "taxa": {
+    "Betulaceae (неопред.)": 16,
+    "Pinaceae (неопред.)": 14,
+    "Picea (ель)": 6
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 20.0,
+    "humidity_pct": 61.0,
+    "wind_ms": 3.7
+   }
+  },
+  {
+   "date": "2025-05-03",
+   "pollen_total": 34,
+   "pollen_level": "moderate",
+   "mold_total": 0,
+   "taxa": {
+    "Betulaceae (неопред.)": 14,
+    "Pinaceae (неопред.)": 14,
+    "Picea (ель)": 6
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 20.0,
+    "humidity_pct": 62.0,
+    "wind_ms": 3.8
+   }
+  },
+  {
+   "date": "2025-05-04",
+   "pollen_total": 34,
+   "pollen_level": "moderate",
+   "mold_total": 0,
+   "taxa": {
+    "Betulaceae (неопред.)": 14,
+    "Pinaceae (неопред.)": 14,
+    "Picea (ель)": 6
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 22.0,
+    "humidity_pct": 61.0,
+    "wind_ms": 3.4
+   }
+  },
+  {
+   "date": "2025-05-05",
+   "pollen_total": 79,
+   "pollen_level": "high",
+   "mold_total": 0,
+   "taxa": {
+    "Pinaceae (неопред.)": 25,
+    "Ulmus (вяз)": 16,
+    "Betula (берёза)": 14,
+    "Poaceae (злаковые)": 7,
+    "Cyperaceae (осоковые)": 4,
+    "Taraxacum (одуванчик)": 3,
+    "Cedrus (кедр)": 2,
+    "Convolvulus (вьюнок)": 2,
+    "Corylus (лещина)": 2,
+    "Onobrychis (эспарцет)": 2,
+    "Salix (ива)": 2
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 23.0,
+    "humidity_pct": 57.99999999999999,
+    "wind_ms": 3.7
+   }
+  },
+  {
+   "date": "2025-05-06",
+   "pollen_total": 74,
+   "pollen_level": "high",
+   "mold_total": 0,
+   "taxa": {
+    "Pinaceae (неопред.)": 22,
+    "Ulmus (вяз)": 17,
+    "Betula (берёза)": 12,
+    "Poaceae (злаковые)": 7,
+    "Cyperaceae (осоковые)": 3,
+    "Salix (ива)": 3,
+    "Taraxacum (одуванчик)": 3,
+    "Cedrus (кедр)": 2,
+    "Convolvulus (вьюнок)": 2,
+    "Onobrychis (эспарцет)": 2,
+    "Corylus (лещина)": 1
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 22.0,
+    "humidity_pct": 63.0,
+    "wind_ms": 4.0
+   }
+  },
+  {
+   "date": "2025-05-07",
+   "pollen_total": 77,
+   "pollen_level": "high",
+   "mold_total": 0,
+   "taxa": {
+    "Pinaceae (неопред.)": 24,
+    "Ulmus (вяз)": 16,
+    "Betula (берёза)": 12,
+    "Poaceae (злаковые)": 7,
+    "Corylus (лещина)": 3,
+    "Cyperaceae (осоковые)": 3,
+    "Salix (ива)": 3,
+    "Taraxacum (одуванчик)": 3,
+    "Cedrus (кедр)": 2,
+    "Convolvulus (вьюнок)": 2,
+    "Onobrychis (эспарцет)": 2
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 23.0,
+    "humidity_pct": 60.0,
+    "wind_ms": 3.7
+   }
+  },
+  {
+   "date": "2025-05-08",
+   "pollen_total": 81,
+   "pollen_level": "high",
+   "mold_total": 0,
+   "taxa": {
+    "Pinaceae (неопред.)": 26,
+    "Ulmus (вяз)": 17,
+    "Betula (берёза)": 13,
+    "Poaceae (злаковые)": 7,
+    "Corylus (лещина)": 3,
+    "Cyperaceae (осоковые)": 3,
+    "Salix (ива)": 3,
+    "Taraxacum (одуванчик)": 3,
+    "Cedrus (кедр)": 2,
+    "Convolvulus (вьюнок)": 2,
+    "Onobrychis (эспарцет)": 2
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 24.0,
+    "humidity_pct": 56.00000000000001,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2025-05-09",
+   "pollen_total": 79,
+   "pollen_level": "high",
+   "mold_total": 0,
+   "taxa": {
+    "Pinaceae (неопред.)": 25,
+    "Ulmus (вяз)": 17,
+    "Betula (берёза)": 11,
+    "Poaceae (злаковые)": 7,
+    "Cyperaceae (осоковые)": 4,
+    "Corylus (лещина)": 3,
+    "Salix (ива)": 3,
+    "Taraxacum (одуванчик)": 3,
+    "Cedrus (кедр)": 2,
+    "Convolvulus (вьюнок)": 2,
+    "Onobrychis (эспарцет)": 2
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 24.0,
+    "humidity_pct": 57.99999999999999,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2025-05-10",
+   "pollen_total": 84,
+   "pollen_level": "high",
+   "mold_total": 0,
+   "taxa": {
+    "Pinaceae (неопред.)": 26,
+    "Ulmus (вяз)": 17,
+    "Betula (берёза)": 12,
+    "Poaceae (злаковые)": 7,
+    "Cyperaceae (осоковые)": 4,
+    "Cedrus (кедр)": 3,
+    "Convolvulus (вьюнок)": 3,
+    "Corylus (лещина)": 3,
+    "Onobrychis (эспарцет)": 3,
+    "Salix (ива)": 3,
+    "Taraxacum (одуванчик)": 3
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 23.0,
+    "humidity_pct": 61.0,
+    "wind_ms": 3.7
+   }
+  },
+  {
+   "date": "2025-05-11",
+   "pollen_total": 77,
+   "pollen_level": "high",
+   "mold_total": 0,
+   "taxa": {
+    "Pinaceae (неопред.)": 24,
+    "Ulmus (вяз)": 17,
+    "Betula (берёза)": 12,
+    "Poaceae (злаковые)": 7,
+    "Cyperaceae (осоковые)": 3,
+    "Salix (ива)": 3,
+    "Taraxacum (одуванчик)": 3,
+    "Cedrus (кедр)": 2,
+    "Convolvulus (вьюнок)": 2,
+    "Corylus (лещина)": 2,
+    "Onobrychis (эспарцет)": 2
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 23.0,
+    "humidity_pct": 57.99999999999999,
+    "wind_ms": 3.4
+   }
+  },
+  {
+   "date": "2025-05-12",
+   "pollen_total": 171,
+   "pollen_level": "high",
+   "mold_total": 0,
+   "taxa": {
+    "Pinaceae (неопред.)": 45,
+    "Picea (ель)": 31,
+    "Poaceae (злаковые)": 30,
+    "Brassica (рапс)": 19,
+    "Cyperaceae (осоковые)": 19,
+    "Onobrychis (эспарцет)": 9,
+    "Lamiaceae (яснотковые)": 7,
+    "Acacia (акация)": 4,
+    "Taraxacum (одуванчик)": 4,
+    "Sedum (очиток)": 3
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 23.0,
+    "humidity_pct": 60.0,
+    "wind_ms": 3.4
+   }
+  },
+  {
+   "date": "2025-05-13",
+   "pollen_total": 170,
+   "pollen_level": "high",
+   "mold_total": 0,
+   "taxa": {
+    "Pinaceae (неопред.)": 45,
+    "Picea (ель)": 31,
+    "Poaceae (злаковые)": 28,
+    "Brassica (рапс)": 21,
+    "Cyperaceae (осоковые)": 19,
+    "Onobrychis (эспарцет)": 9,
+    "Lamiaceae (яснотковые)": 6,
+    "Acacia (акация)": 4,
+    "Taraxacum (одуванчик)": 4,
+    "Sedum (очиток)": 3
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 24.0,
+    "humidity_pct": 57.99999999999999,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2025-05-14",
+   "pollen_total": 168,
+   "pollen_level": "high",
+   "mold_total": 0,
+   "taxa": {
+    "Pinaceae (неопред.)": 45,
+    "Picea (ель)": 31,
+    "Poaceae (злаковые)": 30,
+    "Cyperaceae (осоковые)": 20,
+    "Brassica (рапс)": 19,
+    "Onobrychis (эспарцет)": 9,
+    "Lamiaceae (яснотковые)": 7,
+    "Taraxacum (одуванчик)": 4,
+    "Sedum (очиток)": 3
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 24.0,
+    "humidity_pct": 56.99999999999999,
+    "wind_ms": 4.0
+   }
+  },
+  {
+   "date": "2025-05-15",
+   "pollen_total": 167,
+   "pollen_level": "high",
+   "mold_total": 0,
+   "taxa": {
+    "Pinaceae (неопред.)": 45,
+    "Picea (ель)": 31,
+    "Poaceae (злаковые)": 28,
+    "Brassica (рапс)": 21,
+    "Cyperaceae (осоковые)": 19,
+    "Lamiaceae (яснотковые)": 7,
+    "Onobrychis (эспарцет)": 6,
+    "Taraxacum (одуванчик)": 4,
+    "Acacia (акация)": 3,
+    "Sedum (очиток)": 3
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 25.0,
+    "humidity_pct": 55.00000000000001,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2025-05-16",
+   "pollen_total": 182,
+   "pollen_level": "high",
+   "mold_total": 0,
+   "taxa": {
+    "Pinaceae (неопред.)": 50,
+    "Picea (ель)": 31,
+    "Poaceae (злаковые)": 29,
+    "Brassica (рапс)": 22,
+    "Cyperaceae (осоковые)": 21,
+    "Onobrychis (эспарцет)": 10,
+    "Lamiaceae (яснотковые)": 7,
+    "Acacia (акация)": 4,
+    "Sedum (очиток)": 4,
+    "Taraxacum (одуванчик)": 4
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 25.0,
+    "humidity_pct": 56.99999999999999,
+    "wind_ms": 4.0
+   }
+  },
+  {
+   "date": "2025-05-17",
+   "pollen_total": 157,
+   "pollen_level": "high",
+   "mold_total": 0,
+   "taxa": {
+    "Pinaceae (неопред.)": 43,
+    "Picea (ель)": 28,
+    "Poaceae (злаковые)": 28,
+    "Brassica (рапс)": 19,
+    "Cyperaceae (осоковые)": 19,
+    "Onobrychis (эспарцет)": 9,
+    "Lamiaceae (яснотковые)": 7,
+    "Taraxacum (одуванчик)": 4
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 24.0,
+    "humidity_pct": 57.99999999999999,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2025-05-18",
+   "pollen_total": 167,
+   "pollen_level": "high",
+   "mold_total": 0,
+   "taxa": {
+    "Pinaceae (неопред.)": 47,
+    "Picea (ель)": 34,
+    "Poaceae (злаковые)": 28,
+    "Cyperaceae (осоковые)": 20,
+    "Brassica (рапс)": 19,
+    "Onobrychis (эспарцет)": 9,
+    "Lamiaceae (яснотковые)": 6,
+    "Taraxacum (одуванчик)": 4
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 24.0,
+    "humidity_pct": 57.99999999999999,
+    "wind_ms": 4.0
+   }
+  },
+  {
+   "date": "2025-05-19",
+   "pollen_total": 132,
+   "pollen_level": "high",
+   "mold_total": 0,
+   "taxa": {
+    "Lavatera (хатьма)": 37,
+    "Apiaceae (зонтичные)": 30,
+    "Papaveraceae (маковые)": 16,
+    "Cyperaceae (осоковые)": 15,
+    "Poaceae (злаковые)": 12,
+    "Onobrychis (эспарцет)": 9,
+    "Pinaceae (неопред.)": 7,
+    "Helianthus (подсолнечник)": 6
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 23.0,
+    "humidity_pct": 57.99999999999999,
+    "wind_ms": 3.7
+   }
+  },
+  {
+   "date": "2025-05-20",
+   "pollen_total": 129,
+   "pollen_level": "high",
+   "mold_total": 0,
+   "taxa": {
+    "Lavatera (хатьма)": 37,
+    "Apiaceae (зонтичные)": 28,
+    "Papaveraceae (маковые)": 16,
+    "Cyperaceae (осоковые)": 15,
+    "Poaceae (злаковые)": 12,
+    "Onobrychis (эспарцет)": 9,
+    "Helianthus (подсолнечник)": 6,
+    "Pinaceae (неопред.)": 6
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 23.0,
+    "humidity_pct": 56.99999999999999,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2025-05-21",
+   "pollen_total": 131,
+   "pollen_level": "high",
+   "mold_total": 0,
+   "taxa": {
+    "Lavatera (хатьма)": 37,
+    "Apiaceae (зонтичные)": 30,
+    "Cyperaceae (осоковые)": 16,
+    "Papaveraceae (маковые)": 16,
+    "Poaceae (злаковые)": 12,
+    "Onobrychis (эспарцет)": 9,
+    "Pinaceae (неопред.)": 6,
+    "Helianthus (подсолнечник)": 5
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 24.0,
+    "humidity_pct": 57.99999999999999,
+    "wind_ms": 4.4
+   }
+  },
+  {
+   "date": "2025-05-22",
+   "pollen_total": 118,
+   "pollen_level": "high",
+   "mold_total": 0,
+   "taxa": {
+    "Lavatera (хатьма)": 37,
+    "Apiaceae (зонтичные)": 28,
+    "Cyperaceae (осоковые)": 13,
+    "Papaveraceae (маковые)": 12,
+    "Poaceae (злаковые)": 12,
+    "Onobrychis (эспарцет)": 9,
+    "Pinaceae (неопред.)": 7
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 24.0,
+    "humidity_pct": 56.99999999999999,
+    "wind_ms": 3.9
+   }
+  },
+  {
+   "date": "2025-05-23",
+   "pollen_total": 123,
+   "pollen_level": "high",
+   "mold_total": 0,
+   "taxa": {
+    "Lavatera (хатьма)": 34,
+    "Apiaceae (зонтичные)": 29,
+    "Papaveraceae (маковые)": 16,
+    "Cyperaceae (осоковые)": 15,
+    "Poaceae (злаковые)": 12,
+    "Onobrychis (эспарцет)": 9,
+    "Helianthus (подсолнечник)": 8
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 24.0,
+    "humidity_pct": 57.99999999999999,
+    "wind_ms": 3.7
+   }
+  },
+  {
+   "date": "2025-05-24",
+   "pollen_total": 132,
+   "pollen_level": "high",
+   "mold_total": 0,
+   "taxa": {
+    "Lavatera (хатьма)": 37,
+    "Apiaceae (зонтичные)": 30,
+    "Papaveraceae (маковые)": 16,
+    "Cyperaceae (осоковые)": 15,
+    "Poaceae (злаковые)": 12,
+    "Onobrychis (эспарцет)": 9,
+    "Pinaceae (неопред.)": 7,
+    "Helianthus (подсолнечник)": 6
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 24.0,
+    "humidity_pct": 57.99999999999999,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2025-05-25",
+   "pollen_total": 127,
+   "pollen_level": "high",
+   "mold_total": 0,
+   "taxa": {
+    "Lavatera (хатьма)": 40,
+    "Apiaceae (зонтичные)": 31,
+    "Papaveraceae (маковые)": 16,
+    "Cyperaceae (осоковые)": 12,
+    "Poaceae (злаковые)": 12,
+    "Helianthus (подсолнечник)": 6,
+    "Onobrychis (эспарцет)": 6,
+    "Pinaceae (неопред.)": 4
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 25.0,
+    "humidity_pct": 55.00000000000001,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2025-05-26",
+   "pollen_total": 128,
+   "pollen_level": "high",
+   "mold_total": 0,
+   "taxa": {
+    "Apiaceae (зонтичные)": 31,
+    "Lavatera (хатьма)": 22,
+    "Onobrychis (эспарцет)": 19,
+    "Brassica (рапс)": 16,
+    "Cyperaceae (осоковые)": 16,
+    "Papaveraceae (маковые)": 12,
+    "Pinaceae (неопред.)": 6,
+    "Poaceae (злаковые)": 6
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 25.0,
+    "humidity_pct": 55.00000000000001,
+    "wind_ms": 3.9
+   }
+  },
+  {
+   "date": "2025-05-27",
+   "pollen_total": 110,
+   "pollen_level": "high",
+   "mold_total": 0,
+   "taxa": {
+    "Lavatera (хатьма)": 24,
+    "Apiaceae (зонтичные)": 19,
+    "Onobrychis (эспарцет)": 19,
+    "Brassica (рапс)": 14,
+    "Cyperaceae (осоковые)": 12,
+    "Papaveraceae (маковые)": 12,
+    "Pinaceae (неопред.)": 6,
+    "Poaceae (злаковые)": 4
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 26.0,
+    "humidity_pct": 54.0,
+    "wind_ms": 3.9
+   }
+  },
+  {
+   "date": "2025-05-28",
+   "pollen_total": 106,
+   "pollen_level": "high",
+   "mold_total": 0,
+   "taxa": {
+    "Lavatera (хатьма)": 22,
+    "Apiaceae (зонтичные)": 19,
+    "Brassica (рапс)": 16,
+    "Cyperaceae (осоковые)": 16,
+    "Papaveraceae (маковые)": 12,
+    "Onobrychis (эспарцет)": 9,
+    "Pinaceae (неопред.)": 6,
+    "Poaceae (злаковые)": 6
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 26.0,
+    "humidity_pct": 52.0,
+    "wind_ms": 3.4
+   }
+  },
+  {
+   "date": "2025-05-29",
+   "pollen_total": 104,
+   "pollen_level": "high",
+   "mold_total": 0,
+   "taxa": {
+    "Lavatera (хатьма)": 29,
+    "Apiaceae (зонтичные)": 19,
+    "Brassica (рапс)": 16,
+    "Cyperaceae (осоковые)": 16,
+    "Papaveraceae (маковые)": 12,
+    "Onobrychis (эспарцет)": 7,
+    "Poaceae (злаковые)": 5
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 27.0,
+    "humidity_pct": 52.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2025-05-30",
+   "pollen_total": 122,
+   "pollen_level": "high",
+   "mold_total": 0,
+   "taxa": {
+    "Lavatera (хатьма)": 40,
+    "Apiaceae (зонтичные)": 32,
+    "Papaveraceae (маковые)": 16,
+    "Cyperaceae (осоковые)": 12,
+    "Poaceae (злаковые)": 12,
+    "Onobrychis (эспарцет)": 6,
+    "Helianthus (подсолнечник)": 4
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 27.0,
+    "humidity_pct": 52.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2025-05-31",
+   "pollen_total": 116,
+   "pollen_level": "high",
+   "mold_total": 0,
+   "taxa": {
+    "Lavatera (хатьма)": 22,
+    "Apiaceae (зонтичные)": 19,
+    "Onobrychis (эспарцет)": 19,
+    "Brassica (рапс)": 16,
+    "Cyperaceae (осоковые)": 16,
+    "Papaveraceae (маковые)": 12,
+    "Pinaceae (неопред.)": 6,
+    "Poaceae (злаковые)": 6
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 27.0,
+    "humidity_pct": 51.0,
+    "wind_ms": 3.4
+   }
+  },
+  {
+   "date": "2025-06-01",
+   "pollen_total": 125,
+   "pollen_level": "high",
+   "mold_total": 0,
+   "taxa": {
+    "Lavatera (хатьма)": 29,
+    "Apiaceae (зонтичные)": 22,
+    "Cyperaceae (осоковые)": 19,
+    "Brassica (рапс)": 16,
+    "Papaveraceae (маковые)": 16,
+    "Onobrychis (эспарцет)": 13,
+    "Poaceae (злаковые)": 6,
+    "Pinaceae (неопред.)": 4
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 27.0,
+    "humidity_pct": 52.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2025-06-30",
+   "pollen_total": 67,
+   "pollen_level": "high",
+   "mold_total": 0,
+   "taxa": {
+    "Poaceae (злаковые)": 29,
+    "Ranunculaceae (лютиковые)": 11,
+    "Artemisia (полынь)": 9,
+    "Chenopodiaceae (маревые)": 6,
+    "Cyperaceae (осоковые)": 6,
+    "Onobrychis (эспарцет)": 6
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 32.0,
+    "humidity_pct": 44.0,
+    "wind_ms": 3.4
+   }
+  },
+  {
+   "date": "2025-07-01",
+   "pollen_total": 59,
+   "pollen_level": "high",
+   "mold_total": 0,
+   "taxa": {
+    "Poaceae (злаковые)": 25,
+    "Artemisia (полынь)": 6,
+    "Chenopodiaceae (маревые)": 6,
+    "Cyperaceae (осоковые)": 6,
+    "Onobrychis (эспарцет)": 6,
+    "Ranunculaceae (лютиковые)": 6,
+    "Cannabaceae (коноплёвые)": 4
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 32.0,
+    "humidity_pct": 42.0,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2025-07-02",
+   "pollen_total": 58,
+   "pollen_level": "high",
+   "mold_total": 7,
+   "taxa": {
+    "Artemisia (полынь)": 24,
+    "Chenopodiaceae (маревые)": 14,
+    "Plantago (подорожник)": 7,
+    "Rumex (щавель)": 5,
+    "Cannabaceae (коноплёвые)": 4,
+    "Poaceae (злаковые)": 3,
+    "Fagus (бук)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 7
+   },
+   "weather": {
+    "temp_c": 32.0,
+    "humidity_pct": 43.0,
+    "wind_ms": 4.0
+   }
+  },
+  {
+   "date": "2025-07-03",
+   "pollen_total": 132,
+   "pollen_level": "high",
+   "mold_total": 9,
+   "taxa": {
+    "Artemisia (полынь)": 61,
+    "Chenopodiaceae (маревые)": 45,
+    "Plantago (подорожник)": 9,
+    "Cupressaceae (кипарисовые)": 7,
+    "Poaceae (злаковые)": 7,
+    "Rumex (щавель)": 2,
+    "Onobrychis (эспарцет)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 9
+   },
+   "weather": {
+    "temp_c": 34.0,
+    "humidity_pct": 42.0,
+    "wind_ms": 3.7
+   }
+  },
+  {
+   "date": "2025-07-04",
+   "pollen_total": 19,
+   "pollen_level": "moderate",
+   "mold_total": 11,
+   "taxa": {
+    "Artemisia (полынь)": 8,
+    "Chenopodiaceae (маревые)": 8,
+    "Cupressaceae (кипарисовые)": 2,
+    "Plantago (подорожник)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 11
+   },
+   "weather": {
+    "temp_c": 35.0,
+    "humidity_pct": 44.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2025-07-05",
+   "pollen_total": 92,
+   "pollen_level": "high",
+   "mold_total": 10,
+   "taxa": {
+    "Chenopodiaceae (маревые)": 37,
+    "Artemisia (полынь)": 31,
+    "Cannabaceae (коноплёвые)": 9,
+    "Cupressaceae (кипарисовые)": 6,
+    "Poaceae (злаковые)": 5,
+    "Plantago (подорожник)": 4
+   },
+   "molds": {
+    "Alternaria alternata": 10
+   },
+   "weather": {
+    "temp_c": 38.0,
+    "humidity_pct": 46.0,
+    "wind_ms": 3.7
+   }
+  },
+  {
+   "date": "2025-07-06",
+   "pollen_total": 36,
+   "pollen_level": "moderate",
+   "mold_total": 11,
+   "taxa": {
+    "Artemisia (полынь)": 15,
+    "Chenopodiaceae (маревые)": 9,
+    "Cupressaceae (кипарисовые)": 6,
+    "Plantago (подорожник)": 6
+   },
+   "molds": {
+    "Alternaria alternata": 11
+   },
+   "weather": {
+    "temp_c": 33.0,
+    "humidity_pct": 45.0,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2025-07-07",
+   "pollen_total": 49,
+   "pollen_level": "moderate",
+   "mold_total": 21,
+   "taxa": {
+    "Chenopodiaceae (маревые)": 24,
+    "Artemisia (полынь)": 21,
+    "Plantago (подорожник)": 4
+   },
+   "molds": {
+    "Alternaria alternata": 21
+   },
+   "weather": {
+    "temp_c": 32.0,
+    "humidity_pct": 42.0,
+    "wind_ms": 3.4
+   }
+  },
+  {
+   "date": "2025-07-08",
+   "pollen_total": 0,
+   "pollen_level": "none",
+   "mold_total": 0,
+   "taxa": {},
+   "molds": {},
+   "weather": {
+    "temp_c": 33.0,
+    "humidity_pct": 40.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2025-07-09",
+   "pollen_total": 62,
+   "pollen_level": "high",
+   "mold_total": 18,
+   "taxa": {
+    "Artemisia (полынь)": 26,
+    "Chenopodiaceae (маревые)": 24,
+    "Plantago (подорожник)": 6,
+    "Cupressaceae (кипарисовые)": 4,
+    "Poaceae (злаковые)": 2
+   },
+   "molds": {
+    "Alternaria alternata": 18
+   },
+   "weather": {
+    "temp_c": 31.0,
+    "humidity_pct": 40.0,
+    "wind_ms": 3.7
+   }
+  },
+  {
+   "date": "2025-07-10",
+   "pollen_total": 76,
+   "pollen_level": "high",
+   "mold_total": 16,
+   "taxa": {
+    "Artemisia (полынь)": 28,
+    "Chenopodiaceae (маревые)": 26,
+    "Cannabaceae (коноплёвые)": 6,
+    "Plantago (подорожник)": 6,
+    "Cupressaceae (кипарисовые)": 5,
+    "Campanulaceae (колокольчиковые)": 1,
+    "Fraxinus (ясень)": 1,
+    "Onobrychis (эспарцет)": 1,
+    "Platanus (платан)": 1,
+    "Tilia (липа)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 16
+   },
+   "weather": {
+    "temp_c": 26.0,
+    "humidity_pct": 40.0,
+    "wind_ms": 3.7
+   }
+  },
+  {
+   "date": "2025-07-11",
+   "pollen_total": 143,
+   "pollen_level": "high",
+   "mold_total": 13,
+   "taxa": {
+    "Chenopodiaceae (маревые)": 45,
+    "Artemisia (полынь)": 42,
+    "Cannabaceae (коноплёвые)": 13,
+    "Rumex (щавель)": 10,
+    "Cupressaceae (кипарисовые)": 8,
+    "Campanulaceae (колокольчиковые)": 6,
+    "Poaceae (злаковые)": 6,
+    "Hypericum (зверобой)": 5,
+    "Liliaceae (лилейные)": 3,
+    "Plantago (подорожник)": 3,
+    "Onobrychis (эспарцет)": 1,
+    "Tilia (липа)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 13
+   },
+   "weather": {
+    "temp_c": 27.0,
+    "humidity_pct": 42.0,
+    "wind_ms": 3.7
+   }
+  },
+  {
+   "date": "2025-07-12",
+   "pollen_total": 118,
+   "pollen_level": "high",
+   "mold_total": 14,
+   "taxa": {
+    "Artemisia (полынь)": 47,
+    "Chenopodiaceae (маревые)": 41,
+    "Rumex (щавель)": 8,
+    "Cannabaceae (коноплёвые)": 7,
+    "Cupressaceae (кипарисовые)": 6,
+    "Plantago (подорожник)": 6,
+    "Hypericum (зверобой)": 2,
+    "Poaceae (злаковые)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 14
+   },
+   "weather": {
+    "temp_c": 28.0,
+    "humidity_pct": 42.0,
+    "wind_ms": 3.7
+   }
+  },
+  {
+   "date": "2025-07-13",
+   "pollen_total": 89,
+   "pollen_level": "high",
+   "mold_total": 18,
+   "taxa": {
+    "Artemisia (полынь)": 32,
+    "Chenopodiaceae (маревые)": 27,
+    "Cannabaceae (коноплёвые)": 8,
+    "Cupressaceae (кипарисовые)": 8,
+    "Poaceae (злаковые)": 5,
+    "Rumex (щавель)": 5,
+    "Plantago (подорожник)": 3,
+    "Ambrosia (амброзия)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 18
+   },
+   "weather": {
+    "temp_c": 21.0,
+    "humidity_pct": 43.0,
+    "wind_ms": 3.7
+   }
+  },
+  {
+   "date": "2025-07-14",
+   "pollen_total": 88,
+   "pollen_level": "high",
+   "mold_total": 29,
+   "taxa": {
+    "Chenopodiaceae (маревые)": 37,
+    "Artemisia (полынь)": 33,
+    "Cannabaceae (коноплёвые)": 6,
+    "Cupressaceae (кипарисовые)": 6,
+    "Rumex (щавель)": 3,
+    "Liliaceae (лилейные)": 1,
+    "Plantago (подорожник)": 1,
+    "Poaceae (злаковые)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 29
+   },
+   "weather": {
+    "temp_c": 31.0,
+    "humidity_pct": 46.0,
+    "wind_ms": 3.7
+   }
+  },
+  {
+   "date": "2025-07-15",
+   "pollen_total": 50,
+   "pollen_level": "moderate",
+   "mold_total": 19,
+   "taxa": {
+    "Chenopodiaceae (маревые)": 24,
+    "Artemisia (полынь)": 6,
+    "Cannabaceae (коноплёвые)": 5,
+    "Cupressaceae (кипарисовые)": 5,
+    "Rumex (щавель)": 5,
+    "Plantago (подорожник)": 3,
+    "Poaceae (злаковые)": 2
+   },
+   "molds": {
+    "Alternaria alternata": 19
+   },
+   "weather": {
+    "temp_c": 33.0,
+    "humidity_pct": 45.0,
+    "wind_ms": 3.7
+   }
+  },
+  {
+   "date": "2025-07-16",
+   "pollen_total": 55,
+   "pollen_level": "high",
+   "mold_total": 13,
+   "taxa": {
+    "Artemisia (полынь)": 22,
+    "Chenopodiaceae (маревые)": 16,
+    "Cannabaceae (коноплёвые)": 6,
+    "Cupressaceae (кипарисовые)": 5,
+    "Rumex (щавель)": 4,
+    "Ambrosia (амброзия)": 1,
+    "Plantago (подорожник)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 13
+   },
+   "weather": {
+    "temp_c": 32.0,
+    "humidity_pct": 45.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2025-07-17",
+   "pollen_total": 64,
+   "pollen_level": "high",
+   "mold_total": 15,
+   "taxa": {
+    "Chenopodiaceae (маревые)": 24,
+    "Artemisia (полынь)": 19,
+    "Cannabaceae (коноплёвые)": 6,
+    "Cupressaceae (кипарисовые)": 6,
+    "Plantago (подорожник)": 3,
+    "Rumex (щавель)": 3,
+    "Liliaceae (лилейные)": 1,
+    "Onobrychis (эспарцет)": 1,
+    "Poaceae (злаковые)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 15
+   },
+   "weather": {
+    "temp_c": 34.0,
+    "humidity_pct": 44.0,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2025-07-18",
+   "pollen_total": 95,
+   "pollen_level": "high",
+   "mold_total": 17,
+   "taxa": {
+    "Artemisia (полынь)": 44,
+    "Chenopodiaceae (маревые)": 36,
+    "Cupressaceae (кипарисовые)": 5,
+    "Cannabaceae (коноплёвые)": 3,
+    "Liliaceae (лилейные)": 2,
+    "Plantago (подорожник)": 2,
+    "Ambrosia (амброзия)": 1,
+    "Onobrychis (эспарцет)": 1,
+    "Rumex (щавель)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 17
+   },
+   "weather": {
+    "temp_c": 37.0,
+    "humidity_pct": 43.0,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2025-07-19",
+   "pollen_total": 60,
+   "pollen_level": "high",
+   "mold_total": 19,
+   "taxa": {
+    "Chenopodiaceae (маревые)": 24,
+    "Artemisia (полынь)": 22,
+    "Cannabaceae (коноплёвые)": 5,
+    "Cupressaceae (кипарисовые)": 4,
+    "Plantago (подорожник)": 2,
+    "Liliaceae (лилейные)": 1,
+    "Onobrychis (эспарцет)": 1,
+    "Rumex (щавель)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 19
+   },
+   "weather": {
+    "temp_c": 38.0,
+    "humidity_pct": 42.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2025-07-20",
+   "pollen_total": 58,
+   "pollen_level": "high",
+   "mold_total": 18,
+   "taxa": {
+    "Chenopodiaceae (маревые)": 29,
+    "Artemisia (полынь)": 17,
+    "Cannabaceae (коноплёвые)": 4,
+    "Cupressaceae (кипарисовые)": 3,
+    "Plantago (подорожник)": 3,
+    "Liliaceae (лилейные)": 1,
+    "Rumex (щавель)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 18
+   },
+   "weather": {
+    "temp_c": 35.0,
+    "humidity_pct": 40.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2025-07-21",
+   "pollen_total": 54,
+   "pollen_level": "high",
+   "mold_total": 13,
+   "taxa": {
+    "Artemisia (полынь)": 25,
+    "Chenopodiaceae (маревые)": 19,
+    "Cupressaceae (кипарисовые)": 6,
+    "Plantago (подорожник)": 2,
+    "Cannabaceae (коноплёвые)": 1,
+    "Rumex (щавель)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 13
+   },
+   "weather": {
+    "temp_c": 34.0,
+    "humidity_pct": 43.0,
+    "wind_ms": null
+   }
+  },
+  {
+   "date": "2025-07-22",
+   "pollen_total": 0,
+   "pollen_level": "none",
+   "mold_total": 0,
+   "taxa": {},
+   "molds": {},
+   "weather": {
+    "temp_c": 34.0,
+    "humidity_pct": 43.0,
+    "wind_ms": 3.4
+   }
+  },
+  {
+   "date": "2025-07-23",
+   "pollen_total": 55,
+   "pollen_level": "high",
+   "mold_total": 12,
+   "taxa": {
+    "Artemisia (полынь)": 28,
+    "Chenopodiaceae (маревые)": 18,
+    "Cupressaceae (кипарисовые)": 5,
+    "Plantago (подорожник)": 3,
+    "Cannabaceae (коноплёвые)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 12
+   },
+   "weather": {
+    "temp_c": 35.0,
+    "humidity_pct": 41.0,
+    "wind_ms": 3.4
+   }
+  },
+  {
+   "date": "2025-07-24",
+   "pollen_total": 63,
+   "pollen_level": "high",
+   "mold_total": 9,
+   "taxa": {
+    "Artemisia (полынь)": 31,
+    "Chenopodiaceae (маревые)": 16,
+    "Cupressaceae (кипарисовые)": 5,
+    "Plantago (подорожник)": 5,
+    "Cannabaceae (коноплёвые)": 2,
+    "Liliaceae (лилейные)": 2,
+    "Onobrychis (эспарцет)": 1,
+    "Rumex (щавель)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 9
+   },
+   "weather": {
+    "temp_c": 36.0,
+    "humidity_pct": 43.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2025-07-25",
+   "pollen_total": 53,
+   "pollen_level": "high",
+   "mold_total": 11,
+   "taxa": {
+    "Chenopodiaceae (маревые)": 21,
+    "Artemisia (полынь)": 14,
+    "Cannabaceae (коноплёвые)": 6,
+    "Plantago (подорожник)": 6,
+    "Cupressaceae (кипарисовые)": 5,
+    "Ambrosia (амброзия)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 11
+   },
+   "weather": {
+    "temp_c": 38.0,
+    "humidity_pct": 43.0,
+    "wind_ms": 2.9
+   }
+  },
+  {
+   "date": "2025-07-26",
+   "pollen_total": 47,
+   "pollen_level": "moderate",
+   "mold_total": 18,
+   "taxa": {
+    "Chenopodiaceae (маревые)": 18,
+    "Artemisia (полынь)": 12,
+    "Plantago (подорожник)": 7,
+    "Cupressaceae (кипарисовые)": 6,
+    "Cannabaceae (коноплёвые)": 4
+   },
+   "molds": {
+    "Alternaria alternata": 18
+   },
+   "weather": {
+    "temp_c": 39.0,
+    "humidity_pct": 42.0,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2025-07-27",
+   "pollen_total": 58,
+   "pollen_level": "high",
+   "mold_total": 13,
+   "taxa": {
+    "Chenopodiaceae (маревые)": 22,
+    "Artemisia (полынь)": 16,
+    "Cannabaceae (коноплёвые)": 6,
+    "Plantago (подорожник)": 5,
+    "Cupressaceae (кипарисовые)": 4,
+    "Liliaceae (лилейные)": 3,
+    "Ambrosia (амброзия)": 1,
+    "Onobrychis (эспарцет)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 13
+   },
+   "weather": {
+    "temp_c": 37.0,
+    "humidity_pct": 41.0,
+    "wind_ms": 3.4
+   }
+  },
+  {
+   "date": "2025-07-28",
+   "pollen_total": 57,
+   "pollen_level": "high",
+   "mold_total": 12,
+   "taxa": {
+    "Chenopodiaceae (маревые)": 19,
+    "Artemisia (полынь)": 17,
+    "Plantago (подорожник)": 8,
+    "Cupressaceae (кипарисовые)": 6,
+    "Cannabaceae (коноплёвые)": 5,
+    "Ambrosia (амброзия)": 1,
+    "Liliaceae (лилейные)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 12
+   },
+   "weather": {
+    "temp_c": 31.0,
+    "humidity_pct": 46.0,
+    "wind_ms": 3.7
+   }
+  },
+  {
+   "date": "2025-07-29",
+   "pollen_total": 56,
+   "pollen_level": "high",
+   "mold_total": 12,
+   "taxa": {
+    "Chenopodiaceae (маревые)": 18,
+    "Artemisia (полынь)": 15,
+    "Plantago (подорожник)": 8,
+    "Cupressaceae (кипарисовые)": 6,
+    "Cannabaceae (коноплёвые)": 5,
+    "Ambrosia (амброзия)": 1,
+    "Liliaceae (лилейные)": 1,
+    "Poaceae (злаковые)": 1,
+    "Rumex (щавель)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 12
+   },
+   "weather": {
+    "temp_c": 33.0,
+    "humidity_pct": 45.0,
+    "wind_ms": 3.7
+   }
+  },
+  {
+   "date": "2025-07-30",
+   "pollen_total": 74,
+   "pollen_level": "high",
+   "mold_total": 10,
+   "taxa": {
+    "Chenopodiaceae (маревые)": 34,
+    "Artemisia (полынь)": 16,
+    "Plantago (подорожник)": 7,
+    "Cannabaceae (коноплёвые)": 6,
+    "Cupressaceae (кипарисовые)": 5,
+    "Liliaceae (лилейные)": 2,
+    "Onobrychis (эспарцет)": 2,
+    "Ambrosia (амброзия)": 1,
+    "Rumex (щавель)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 10
+   },
+   "weather": {
+    "temp_c": 32.0,
+    "humidity_pct": 45.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2025-07-31",
+   "pollen_total": 60,
+   "pollen_level": "high",
+   "mold_total": 9,
+   "taxa": {
+    "Chenopodiaceae (маревые)": 24,
+    "Artemisia (полынь)": 14,
+    "Plantago (подорожник)": 8,
+    "Cannabaceae (коноплёвые)": 6,
+    "Cupressaceae (кипарисовые)": 6,
+    "Liliaceae (лилейные)": 1,
+    "Onobrychis (эспарцет)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 9
+   },
+   "weather": {
+    "temp_c": 34.0,
+    "humidity_pct": 44.0,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2025-08-01",
+   "pollen_total": 100,
+   "pollen_level": "high",
+   "mold_total": 12,
+   "taxa": {
+    "Artemisia (полынь)": 43,
+    "Chenopodiaceae (маревые)": 21,
+    "Cannabaceae (коноплёвые)": 12,
+    "Plantago (подорожник)": 9,
+    "Cupressaceae (кипарисовые)": 8,
+    "Liliaceae (лилейные)": 6,
+    "Rumex (щавель)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 12
+   },
+   "weather": {
+    "temp_c": 37.0,
+    "humidity_pct": 43.0,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2025-08-02",
+   "pollen_total": 101,
+   "pollen_level": "high",
+   "mold_total": 14,
+   "taxa": {
+    "Artemisia (полынь)": 51,
+    "Chenopodiaceae (маревые)": 28,
+    "Plantago (подорожник)": 8,
+    "Cannabaceae (коноплёвые)": 5,
+    "Cupressaceae (кипарисовые)": 5,
+    "Liliaceae (лилейные)": 2,
+    "Ambrosia (амброзия)": 1,
+    "Rumex (щавель)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 14
+   },
+   "weather": {
+    "temp_c": 38.0,
+    "humidity_pct": 42.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2025-08-03",
+   "pollen_total": 59,
+   "pollen_level": "high",
+   "mold_total": 12,
+   "taxa": {
+    "Chenopodiaceae (маревые)": 24,
+    "Artemisia (полынь)": 14,
+    "Cannabaceae (коноплёвые)": 6,
+    "Cupressaceae (кипарисовые)": 6,
+    "Plantago (подорожник)": 6,
+    "Liliaceae (лилейные)": 3
+   },
+   "molds": {
+    "Alternaria alternata": 12
+   },
+   "weather": {
+    "temp_c": 35.0,
+    "humidity_pct": 40.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2025-08-04",
+   "pollen_total": 75,
+   "pollen_level": "high",
+   "mold_total": 24,
+   "taxa": {
+    "Chenopodiaceae (маревые)": 29,
+    "Artemisia (полынь)": 24,
+    "Cupressaceae (кипарисовые)": 8,
+    "Plantago (подорожник)": 7,
+    "Cannabaceae (коноплёвые)": 6,
+    "Liliaceae (лилейные)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 24
+   },
+   "weather": {
+    "temp_c": 32.0,
+    "humidity_pct": 43.0,
+    "wind_ms": 3.0
+   }
+  },
+  {
+   "date": "2025-08-05",
+   "pollen_total": 105,
+   "pollen_level": "high",
+   "mold_total": 24,
+   "taxa": {
+    "Artemisia (полынь)": 47,
+    "Chenopodiaceae (маревые)": 34,
+    "Plantago (подорожник)": 8,
+    "Cupressaceae (кипарисовые)": 7,
+    "Cannabaceae (коноплёвые)": 6,
+    "Liliaceae (лилейные)": 3
+   },
+   "molds": {
+    "Alternaria alternata": 24
+   },
+   "weather": {
+    "temp_c": 33.0,
+    "humidity_pct": 40.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2025-08-06",
+   "pollen_total": 150,
+   "pollen_level": "high",
+   "mold_total": 26,
+   "taxa": {
+    "Chenopodiaceae (маревые)": 67,
+    "Artemisia (полынь)": 49,
+    "Plantago (подорожник)": 12,
+    "Cupressaceae (кипарисовые)": 9,
+    "Cannabaceae (коноплёвые)": 6,
+    "Liliaceae (лилейные)": 6,
+    "Rumex (щавель)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 26
+   },
+   "weather": {
+    "temp_c": 34.0,
+    "humidity_pct": 39.0,
+    "wind_ms": 3.0
+   }
+  },
+  {
+   "date": "2025-08-07",
+   "pollen_total": 137,
+   "pollen_level": "high",
+   "mold_total": 20,
+   "taxa": {
+    "Chenopodiaceae (маревые)": 62,
+    "Artemisia (полынь)": 52,
+    "Plantago (подорожник)": 7,
+    "Cannabaceae (коноплёвые)": 5,
+    "Cupressaceae (кипарисовые)": 5,
+    "Liliaceae (лилейные)": 3,
+    "Rumex (щавель)": 2,
+    "Ambrosia (амброзия)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 20
+   },
+   "weather": {
+    "temp_c": 33.0,
+    "humidity_pct": 40.0,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2025-08-08",
+   "pollen_total": 62,
+   "pollen_level": "high",
+   "mold_total": 21,
+   "taxa": {
+    "Chenopodiaceae (маревые)": 29,
+    "Artemisia (полынь)": 16,
+    "Cupressaceae (кипарисовые)": 4,
+    "Plantago (подорожник)": 4,
+    "Cannabaceae (коноплёвые)": 3,
+    "Rumex (щавель)": 2,
+    "Betulaceae (неопред.)": 1,
+    "Liliaceae (лилейные)": 1,
+    "Pinaceae (неопред.)": 1,
+    "Poaceae (злаковые)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 21
+   },
+   "weather": {
+    "temp_c": 33.0,
+    "humidity_pct": 39.0,
+    "wind_ms": 3.0
+   }
+  },
+  {
+   "date": "2025-08-09",
+   "pollen_total": 175,
+   "pollen_level": "high",
+   "mold_total": 21,
+   "taxa": {
+    "Chenopodiaceae (маревые)": 86,
+    "Artemisia (полынь)": 65,
+    "Cupressaceae (кипарисовые)": 7,
+    "Cannabaceae (коноплёвые)": 6,
+    "Plantago (подорожник)": 6,
+    "Ambrosia (амброзия)": 1,
+    "Betulaceae (неопред.)": 1,
+    "Liliaceae (лилейные)": 1,
+    "Poaceae (злаковые)": 1,
+    "Rumex (щавель)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 21
+   },
+   "weather": {
+    "temp_c": 33.0,
+    "humidity_pct": 38.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2025-08-10",
+   "pollen_total": 136,
+   "pollen_level": "high",
+   "mold_total": 20,
+   "taxa": {
+    "Chenopodiaceae (маревые)": 60,
+    "Artemisia (полынь)": 52,
+    "Cupressaceae (кипарисовые)": 7,
+    "Cannabaceae (коноплёвые)": 6,
+    "Plantago (подорожник)": 6,
+    "Betulaceae (неопред.)": 2,
+    "Rumex (щавель)": 2,
+    "Liliaceae (лилейные)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 20
+   },
+   "weather": {
+    "temp_c": 33.0,
+    "humidity_pct": 38.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2025-08-11",
+   "pollen_total": 147,
+   "pollen_level": "high",
+   "mold_total": 21,
+   "taxa": {
+    "Chenopodiaceae (маревые)": 73,
+    "Artemisia (полынь)": 43,
+    "Poaceae (злаковые)": 14,
+    "Cannabaceae (коноплёвые)": 6,
+    "Cupressaceae (кипарисовые)": 5,
+    "Plantago (подорожник)": 4,
+    "Ambrosia (амброзия)": 1,
+    "Pinaceae (неопред.)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 21
+   },
+   "weather": {
+    "temp_c": 32.0,
+    "humidity_pct": 41.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2025-08-12",
+   "pollen_total": 156,
+   "pollen_level": "high",
+   "mold_total": 18,
+   "taxa": {
+    "Artemisia (полынь)": 67,
+    "Chenopodiaceae (маревые)": 51,
+    "Poaceae (злаковые)": 16,
+    "Cannabaceae (коноплёвые)": 6,
+    "Cupressaceae (кипарисовые)": 6,
+    "Plantago (подорожник)": 5,
+    "Ambrosia (амброзия)": 1,
+    "Betulaceae (неопред.)": 1,
+    "Liliaceae (лилейные)": 1,
+    "Pinaceae (неопред.)": 1,
+    "Rumex (щавель)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 18
+   },
+   "weather": {
+    "temp_c": 30.0,
+    "humidity_pct": 44.0,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2025-08-13",
+   "pollen_total": 290,
+   "pollen_level": "critical",
+   "mold_total": 23,
+   "taxa": {
+    "Chenopodiaceae (маревые)": 132,
+    "Artemisia (полынь)": 127,
+    "Poaceae (злаковые)": 14,
+    "Cupressaceae (кипарисовые)": 6,
+    "Cannabaceae (коноплёвые)": 5,
+    "Plantago (подорожник)": 5,
+    "Liliaceae (лилейные)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 23
+   },
+   "weather": {
+    "temp_c": 31.0,
+    "humidity_pct": 42.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2025-08-14",
+   "pollen_total": 161,
+   "pollen_level": "high",
+   "mold_total": 21,
+   "taxa": {
+    "Chenopodiaceae (маревые)": 72,
+    "Artemisia (полынь)": 55,
+    "Poaceae (злаковые)": 16,
+    "Cannabaceae (коноплёвые)": 8,
+    "Cupressaceae (кипарисовые)": 5,
+    "Plantago (подорожник)": 4,
+    "Liliaceae (лилейные)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 21
+   },
+   "weather": {
+    "temp_c": 30.0,
+    "humidity_pct": 43.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2025-08-15",
+   "pollen_total": 324,
+   "pollen_level": "critical",
+   "mold_total": 22,
+   "taxa": {
+    "Artemisia (полынь)": 223,
+    "Chenopodiaceae (маревые)": 59,
+    "Ambrosia (амброзия)": 16,
+    "Poaceae (злаковые)": 12,
+    "Cannabaceae (коноплёвые)": 6,
+    "Plantago (подорожник)": 3,
+    "Cupressaceae (кипарисовые)": 2,
+    "Betulaceae (неопред.)": 1,
+    "Liliaceae (лилейные)": 1,
+    "Rumex (щавель)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 22
+   },
+   "weather": {
+    "temp_c": 30.0,
+    "humidity_pct": 43.0,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2025-08-16",
+   "pollen_total": 378,
+   "pollen_level": "critical",
+   "mold_total": 24,
+   "taxa": {
+    "Artemisia (полынь)": 244,
+    "Chenopodiaceae (маревые)": 68,
+    "Ambrosia (амброзия)": 31,
+    "Poaceae (злаковые)": 21,
+    "Cannabaceae (коноплёвые)": 7,
+    "Cupressaceae (кипарисовые)": 4,
+    "Betulaceae (неопред.)": 1,
+    "Plantago (подорожник)": 1,
+    "Rumex (щавель)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 24
+   },
+   "weather": {
+    "temp_c": 30.0,
+    "humidity_pct": 41.0,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2025-08-17",
+   "pollen_total": 234,
+   "pollen_level": "critical",
+   "mold_total": 26,
+   "taxa": {
+    "Artemisia (полынь)": 98,
+    "Chenopodiaceae (маревые)": 53,
+    "Ambrosia (амброзия)": 43,
+    "Poaceae (злаковые)": 23,
+    "Cannabaceae (коноплёвые)": 9,
+    "Liliaceae (лилейные)": 3,
+    "Cupressaceae (кипарисовые)": 2,
+    "Betulaceae (неопред.)": 1,
+    "Plantago (подорожник)": 1,
+    "Rumex (щавель)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 26
+   },
+   "weather": {
+    "temp_c": 30.0,
+    "humidity_pct": 40.0,
+    "wind_ms": 3.4
+   }
+  },
+  {
+   "date": "2025-08-18",
+   "pollen_total": 427,
+   "pollen_level": "critical",
+   "mold_total": 31,
+   "taxa": {
+    "Artemisia (полынь)": 302,
+    "Chenopodiaceae (маревые)": 43,
+    "Ambrosia (амброзия)": 36,
+    "Poaceae (злаковые)": 24,
+    "Cannabaceae (коноплёвые)": 12,
+    "Liliaceae (лилейные)": 3,
+    "Plantago (подорожник)": 3,
+    "Cupressaceae (кипарисовые)": 2,
+    "Onobrychis (эспарцет)": 1,
+    "Rumex (щавель)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 31
+   },
+   "weather": {
+    "temp_c": 28.0,
+    "humidity_pct": 42.0,
+    "wind_ms": 3.4
+   }
+  },
+  {
+   "date": "2025-08-19",
+   "pollen_total": 278,
+   "pollen_level": "critical",
+   "mold_total": 32,
+   "taxa": {
+    "Artemisia (полынь)": 111,
+    "Chenopodiaceae (маревые)": 74,
+    "Ambrosia (амброзия)": 48,
+    "Poaceae (злаковые)": 26,
+    "Cannabaceae (коноплёвые)": 11,
+    "Liliaceae (лилейные)": 3,
+    "Plantago (подорожник)": 3,
+    "Cupressaceae (кипарисовые)": 1,
+    "Rumex (щавель)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 32
+   },
+   "weather": {
+    "temp_c": 31.0,
+    "humidity_pct": 39.0,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2025-08-20",
+   "pollen_total": 232,
+   "pollen_level": "critical",
+   "mold_total": 29,
+   "taxa": {
+    "Artemisia (полынь)": 93,
+    "Chenopodiaceae (маревые)": 68,
+    "Ambrosia (амброзия)": 37,
+    "Poaceae (злаковые)": 18,
+    "Cannabaceae (коноплёвые)": 8,
+    "Liliaceae (лилейные)": 3,
+    "Plantago (подорожник)": 2,
+    "Rumex (щавель)": 2,
+    "Onobrychis (эспарцет)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 29
+   },
+   "weather": {
+    "temp_c": 31.0,
+    "humidity_pct": 39.0,
+    "wind_ms": 3.4
+   }
+  },
+  {
+   "date": "2025-08-21",
+   "pollen_total": 172,
+   "pollen_level": "high",
+   "mold_total": 24,
+   "taxa": {
+    "Artemisia (полынь)": 55,
+    "Chenopodiaceae (маревые)": 49,
+    "Ambrosia (амброзия)": 40,
+    "Poaceae (злаковые)": 17,
+    "Cannabaceae (коноплёвые)": 6,
+    "Cupressaceae (кипарисовые)": 2,
+    "Liliaceae (лилейные)": 1,
+    "Plantago (подорожник)": 1,
+    "Rumex (щавель)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 24
+   },
+   "weather": {
+    "temp_c": 32.0,
+    "humidity_pct": 40.0,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2025-08-22",
+   "pollen_total": 207,
+   "pollen_level": "critical",
+   "mold_total": 21,
+   "taxa": {
+    "Artemisia (полынь)": 75,
+    "Ambrosia (амброзия)": 55,
+    "Chenopodiaceae (маревые)": 42,
+    "Poaceae (злаковые)": 24,
+    "Cannabaceae (коноплёвые)": 6,
+    "Cupressaceae (кипарисовые)": 3,
+    "Plantago (подорожник)": 1,
+    "Rumex (щавель)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 21
+   },
+   "weather": {
+    "temp_c": 33.0,
+    "humidity_pct": 39.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2025-08-23",
+   "pollen_total": 429,
+   "pollen_level": "critical",
+   "mold_total": 28,
+   "taxa": {
+    "Artemisia (полынь)": 306,
+    "Ambrosia (амброзия)": 45,
+    "Chenopodiaceae (маревые)": 37,
+    "Poaceae (злаковые)": 28,
+    "Cannabaceae (коноплёвые)": 8,
+    "Cupressaceae (кипарисовые)": 3,
+    "Betulaceae (неопред.)": 1,
+    "Plantago (подорожник)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 28
+   },
+   "weather": {
+    "temp_c": 28.0,
+    "humidity_pct": 39.0,
+    "wind_ms": 3.0
+   }
+  },
+  {
+   "date": "2025-08-24",
+   "pollen_total": 229,
+   "pollen_level": "critical",
+   "mold_total": 29,
+   "taxa": {
+    "Artemisia (полынь)": 113,
+    "Chenopodiaceae (маревые)": 39,
+    "Poaceae (злаковые)": 32,
+    "Ambrosia (амброзия)": 31,
+    "Cannabaceae (коноплёвые)": 6,
+    "Cupressaceae (кипарисовые)": 3,
+    "Liliaceae (лилейные)": 2,
+    "Plantago (подорожник)": 2,
+    "Betulaceae (неопред.)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 29
+   },
+   "weather": {
+    "temp_c": 30.0,
+    "humidity_pct": 41.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2025-08-25",
+   "pollen_total": 224,
+   "pollen_level": "critical",
+   "mold_total": 26,
+   "taxa": {
+    "Ambrosia (амброзия)": 98,
+    "Artemisia (полынь)": 53,
+    "Chenopodiaceae (маревые)": 47,
+    "Poaceae (злаковые)": 18,
+    "Cannabaceae (коноплёвые)": 3,
+    "Liliaceae (лилейные)": 2,
+    "Betulaceae (неопред.)": 1,
+    "Plantago (подорожник)": 1,
+    "Rumex (щавель)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 26
+   },
+   "weather": {
+    "temp_c": 31.0,
+    "humidity_pct": 41.0,
+    "wind_ms": 3.7
+   }
+  },
+  {
+   "date": "2025-08-26",
+   "pollen_total": 210,
+   "pollen_level": "critical",
+   "mold_total": 28,
+   "taxa": {
+    "Ambrosia (амброзия)": 66,
+    "Chenopodiaceae (маревые)": 61,
+    "Artemisia (полынь)": 45,
+    "Poaceae (злаковые)": 29,
+    "Betulaceae (неопред.)": 3,
+    "Cannabaceae (коноплёвые)": 2,
+    "Plantago (подорожник)": 2,
+    "Liliaceae (лилейные)": 1,
+    "Rumex (щавель)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 28
+   },
+   "weather": {
+    "temp_c": 30.0,
+    "humidity_pct": 44.0,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2025-08-27",
+   "pollen_total": 122,
+   "pollen_level": "high",
+   "mold_total": 29,
+   "taxa": {
+    "Artemisia (полынь)": 34,
+    "Ambrosia (амброзия)": 28,
+    "Chenopodiaceae (маревые)": 28,
+    "Poaceae (злаковые)": 24,
+    "Cannabaceae (коноплёвые)": 5,
+    "Liliaceae (лилейные)": 1,
+    "Plantago (подорожник)": 1,
+    "Rumex (щавель)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 29
+   },
+   "weather": {
+    "temp_c": 29.0,
+    "humidity_pct": 45.0,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2025-08-28",
+   "pollen_total": 163,
+   "pollen_level": "high",
+   "mold_total": 24,
+   "taxa": {
+    "Artemisia (полынь)": 46,
+    "Chenopodiaceae (маревые)": 41,
+    "Ambrosia (амброзия)": 39,
+    "Poaceae (злаковые)": 22,
+    "Cannabaceae (коноплёвые)": 5,
+    "Liliaceae (лилейные)": 4,
+    "Betulaceae (неопред.)": 3,
+    "Plantago (подорожник)": 3
+   },
+   "molds": {
+    "Alternaria alternata": 24
+   },
+   "weather": {
+    "temp_c": 30.0,
+    "humidity_pct": 43.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2025-08-29",
+   "pollen_total": 187,
+   "pollen_level": "high",
+   "mold_total": 22,
+   "taxa": {
+    "Artemisia (полынь)": 63,
+    "Ambrosia (амброзия)": 57,
+    "Chenopodiaceae (маревые)": 31,
+    "Poaceae (злаковые)": 18,
+    "Cannabaceae (коноплёвые)": 5,
+    "Plantago (подорожник)": 5,
+    "Betulaceae (неопред.)": 3,
+    "Liliaceae (лилейные)": 3,
+    "Rumex (щавель)": 2
+   },
+   "molds": {
+    "Alternaria alternata": 22
+   },
+   "weather": {
+    "temp_c": 29.0,
+    "humidity_pct": 41.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2025-08-30",
+   "pollen_total": 349,
+   "pollen_level": "critical",
+   "mold_total": 24,
+   "taxa": {
+    "Artemisia (полынь)": 195,
+    "Ambrosia (амброзия)": 95,
+    "Chenopodiaceae (маревые)": 27,
+    "Poaceae (злаковые)": 18,
+    "Plantago (подорожник)": 5,
+    "Liliaceae (лилейные)": 4,
+    "Cannabaceae (коноплёвые)": 3,
+    "Betulaceae (неопред.)": 1,
+    "Rumex (щавель)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 24
+   },
+   "weather": {
+    "temp_c": 28.0,
+    "humidity_pct": 43.0,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2025-08-31",
+   "pollen_total": 272,
+   "pollen_level": "critical",
+   "mold_total": 20,
+   "taxa": {
+    "Artemisia (полынь)": 147,
+    "Ambrosia (амброзия)": 88,
+    "Chenopodiaceae (маревые)": 21,
+    "Poaceae (злаковые)": 8,
+    "Liliaceae (лилейные)": 4,
+    "Cannabaceae (коноплёвые)": 2,
+    "Betulaceae (неопред.)": 1,
+    "Plantago (подорожник)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 20
+   },
+   "weather": {
+    "temp_c": 29.0,
+    "humidity_pct": 42.0,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2025-09-29",
+   "pollen_total": 1695,
+   "pollen_level": "critical",
+   "mold_total": 218,
+   "taxa": {
+    "Artemisia (полынь)": 1662,
+    "Ambrosia (амброзия)": 26,
+    "Chenopodiaceae (маревые)": 4,
+    "Cannabaceae (коноплёвые)": 1,
+    "Liliaceae (лилейные)": 1,
+    "Poaceae (злаковые)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 98,
+    "Bipolaris spicifera": 62,
+    "Alternaria alternata": 58
+   },
+   "weather": {
+    "temp_c": 26.0,
+    "humidity_pct": 52.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2025-09-30",
+   "pollen_total": 479,
+   "pollen_level": "critical",
+   "mold_total": 241,
+   "taxa": {
+    "Artemisia (полынь)": 456,
+    "Ambrosia (амброзия)": 19,
+    "Poaceae (злаковые)": 2,
+    "Chenopodiaceae (маревые)": 1,
+    "Liliaceae (лилейные)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 124,
+    "Alternaria alternata": 67,
+    "Bipolaris spicifera": 50
+   },
+   "weather": {
+    "temp_c": 22.0,
+    "humidity_pct": 52.0,
+    "wind_ms": 3.7
+   }
+  },
+  {
+   "date": "2025-10-01",
+   "pollen_total": 8,
+   "pollen_level": "low",
+   "mold_total": 28,
+   "taxa": {
+    "Artemisia (полынь)": 7,
+    "Ambrosia (амброзия)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 11,
+    "Alternaria alternata": 9,
+    "Bipolaris spicifera": 8
+   },
+   "weather": {
+    "temp_c": 9.0,
+    "humidity_pct": 52.0,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2025-10-02",
+   "pollen_total": 111,
+   "pollen_level": "high",
+   "mold_total": 73,
+   "taxa": {
+    "Artemisia (полынь)": 88,
+    "Ambrosia (амброзия)": 22,
+    "Chenopodiaceae (маревые)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 55,
+    "Alternaria alternata": 13,
+    "Bipolaris spicifera": 5
+   },
+   "weather": {
+    "temp_c": 12.0,
+    "humidity_pct": 52.0,
+    "wind_ms": 3.4
+   }
+  },
+  {
+   "date": "2025-10-03",
+   "pollen_total": 95,
+   "pollen_level": "high",
+   "mold_total": 70,
+   "taxa": {
+    "Artemisia (полынь)": 83,
+    "Ambrosia (амброзия)": 11,
+    "Cannabaceae (коноплёвые)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 32,
+    "Alternaria alternata": 24,
+    "Bipolaris spicifera": 14
+   },
+   "weather": {
+    "temp_c": 15.0,
+    "humidity_pct": 51.0,
+    "wind_ms": 3.0
+   }
+  },
+  {
+   "date": "2025-10-04",
+   "pollen_total": 88,
+   "pollen_level": "high",
+   "mold_total": 76,
+   "taxa": {
+    "Artemisia (полынь)": 79,
+    "Ambrosia (амброзия)": 8,
+    "Poaceae (злаковые)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 39,
+    "Alternaria alternata": 26,
+    "Bipolaris spicifera": 11
+   },
+   "weather": {
+    "temp_c": 17.0,
+    "humidity_pct": 54.0,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2025-10-05",
+   "pollen_total": 108,
+   "pollen_level": "high",
+   "mold_total": 91,
+   "taxa": {
+    "Artemisia (полынь)": 100,
+    "Ambrosia (амброзия)": 5,
+    "Cannabaceae (коноплёвые)": 1,
+    "Liliaceae (лилейные)": 1,
+    "Poaceae (злаковые)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 44,
+    "Alternaria alternata": 34,
+    "Bipolaris spicifera": 13
+   },
+   "weather": {
+    "temp_c": 14.0,
+    "humidity_pct": 55.00000000000001,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2025-10-06",
+   "pollen_total": 71,
+   "pollen_level": "high",
+   "mold_total": 92,
+   "taxa": {
+    "Artemisia (полынь)": 59,
+    "Ambrosia (амброзия)": 10,
+    "Cannabaceae (коноплёвые)": 1,
+    "Liliaceae (лилейные)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 50,
+    "Alternaria alternata": 29,
+    "Bipolaris spicifera": 13
+   },
+   "weather": {
+    "temp_c": 12.0,
+    "humidity_pct": 57.99999999999999,
+    "wind_ms": 3.4
+   }
+  },
+  {
+   "date": "2025-10-07",
+   "pollen_total": 55,
+   "pollen_level": "high",
+   "mold_total": 104,
+   "taxa": {
+    "Artemisia (полынь)": 47,
+    "Ambrosia (амброзия)": 5,
+    "Chenopodiaceae (маревые)": 1,
+    "Liliaceae (лилейные)": 1,
+    "Poaceae (злаковые)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 59,
+    "Alternaria alternata": 28,
+    "Bipolaris spicifera": 17
+   },
+   "weather": {
+    "temp_c": 16.0,
+    "humidity_pct": 60.0,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2025-10-08",
+   "pollen_total": 78,
+   "pollen_level": "high",
+   "mold_total": 75,
+   "taxa": {
+    "Artemisia (полынь)": 72,
+    "Ambrosia (амброзия)": 5,
+    "Liliaceae (лилейные)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 37,
+    "Alternaria alternata": 27,
+    "Bipolaris spicifera": 11
+   },
+   "weather": {
+    "temp_c": 16.0,
+    "humidity_pct": 56.00000000000001,
+    "wind_ms": 3.4
+   }
+  },
+  {
+   "date": "2025-10-09",
+   "pollen_total": 45,
+   "pollen_level": "moderate",
+   "mold_total": 58,
+   "taxa": {
+    "Artemisia (полынь)": 40,
+    "Chenopodiaceae (маревые)": 3,
+    "Ambrosia (амброзия)": 2
+   },
+   "molds": {
+    "Cladosporium herbarum": 28,
+    "Alternaria alternata": 19,
+    "Bipolaris spicifera": 11
+   },
+   "weather": {
+    "temp_c": 14.0,
+    "humidity_pct": 56.99999999999999,
+    "wind_ms": 3.7
+   }
+  },
+  {
+   "date": "2025-10-10",
+   "pollen_total": 57,
+   "pollen_level": "high",
+   "mold_total": 45,
+   "taxa": {
+    "Artemisia (полынь)": 47,
+    "Ambrosia (амброзия)": 8,
+    "Liliaceae (лилейные)": 1,
+    "Poaceae (злаковые)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 20,
+    "Alternaria alternata": 16,
+    "Bipolaris spicifera": 9
+   },
+   "weather": {
+    "temp_c": 15.0,
+    "humidity_pct": 56.99999999999999,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2025-10-11",
+   "pollen_total": 42,
+   "pollen_level": "moderate",
+   "mold_total": 68,
+   "taxa": {
+    "Artemisia (полынь)": 32,
+    "Ambrosia (амброзия)": 9,
+    "Chenopodiaceae (маревые)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 35,
+    "Alternaria alternata": 24,
+    "Bipolaris spicifera": 9
+   },
+   "weather": {
+    "temp_c": 16.0,
+    "humidity_pct": 56.00000000000001,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2025-10-12",
+   "pollen_total": 114,
+   "pollen_level": "high",
+   "mold_total": 57,
+   "taxa": {
+    "Artemisia (полынь)": 107,
+    "Ambrosia (амброзия)": 6,
+    "Liliaceae (лилейные)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 29,
+    "Alternaria alternata": 20,
+    "Bipolaris spicifera": 8
+   },
+   "weather": {
+    "temp_c": 20.0,
+    "humidity_pct": 56.00000000000001,
+    "wind_ms": 3.0
+   }
+  },
+  {
+   "date": "2025-10-13",
+   "pollen_total": 61,
+   "pollen_level": "high",
+   "mold_total": 46,
+   "taxa": {
+    "Artemisia (полынь)": 55,
+    "Ambrosia (амброзия)": 3,
+    "Cannabaceae (коноплёвые)": 1,
+    "Chenopodiaceae (маревые)": 1,
+    "Liliaceae (лилейные)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 24,
+    "Alternaria alternata": 16,
+    "Bipolaris spicifera": 6
+   },
+   "weather": {
+    "temp_c": 18.0,
+    "humidity_pct": 57.99999999999999,
+    "wind_ms": 4.0
+   }
+  },
+  {
+   "date": "2025-10-14",
+   "pollen_total": 40,
+   "pollen_level": "moderate",
+   "mold_total": 49,
+   "taxa": {
+    "Artemisia (полынь)": 36,
+    "Ambrosia (амброзия)": 4
+   },
+   "molds": {
+    "Cladosporium herbarum": 23,
+    "Alternaria alternata": 20,
+    "Bipolaris spicifera": 6
+   },
+   "weather": {
+    "temp_c": 15.0,
+    "humidity_pct": 60.0,
+    "wind_ms": 3.7
+   }
+  },
+  {
+   "date": "2025-10-15",
+   "pollen_total": 71,
+   "pollen_level": "high",
+   "mold_total": 41,
+   "taxa": {
+    "Artemisia (полынь)": 59,
+    "Ambrosia (амброзия)": 10,
+    "Chenopodiaceae (маревые)": 1,
+    "Liliaceae (лилейные)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 21,
+    "Alternaria alternata": 14,
+    "Bipolaris spicifera": 6
+   },
+   "weather": {
+    "temp_c": 10.0,
+    "humidity_pct": 64.0,
+    "wind_ms": 3.0
+   }
+  },
+  {
+   "date": "2025-10-16",
+   "pollen_total": 86,
+   "pollen_level": "high",
+   "mold_total": 36,
+   "taxa": {
+    "Artemisia (полынь)": 62,
+    "Ambrosia (амброзия)": 22,
+    "Cannabaceae (коноплёвые)": 1,
+    "Chenopodiaceae (маревые)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 18,
+    "Alternaria alternata": 12,
+    "Bipolaris spicifera": 6
+   },
+   "weather": {
+    "temp_c": 12.0,
+    "humidity_pct": 61.0,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2025-10-17",
+   "pollen_total": 40,
+   "pollen_level": "moderate",
+   "mold_total": 38,
+   "taxa": {
+    "Artemisia (полынь)": 32,
+    "Ambrosia (амброзия)": 6,
+    "Chenopodiaceae (маревые)": 1,
+    "Liliaceae (лилейные)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 17,
+    "Alternaria alternata": 16,
+    "Bipolaris spicifera": 5
+   },
+   "weather": {
+    "temp_c": 21.0,
+    "humidity_pct": 64.0,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2025-10-18",
+   "pollen_total": 56,
+   "pollen_level": "high",
+   "mold_total": 47,
+   "taxa": {
+    "Artemisia (полынь)": 37,
+    "Ambrosia (амброзия)": 18,
+    "Chenopodiaceae (маревые)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 24,
+    "Alternaria alternata": 17,
+    "Bipolaris spicifera": 6
+   },
+   "weather": {
+    "temp_c": 18.0,
+    "humidity_pct": 64.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2025-10-19",
+   "pollen_total": 34,
+   "pollen_level": "moderate",
+   "mold_total": 46,
+   "taxa": {
+    "Artemisia (полынь)": 29,
+    "Ambrosia (амброзия)": 4,
+    "Chenopodiaceae (маревые)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 23,
+    "Cladosporium herbarum": 18,
+    "Bipolaris spicifera": 5
+   },
+   "weather": {
+    "temp_c": 17.0,
+    "humidity_pct": 63.0,
+    "wind_ms": 3.4
+   }
+  },
+  {
+   "date": "2025-10-20",
+   "pollen_total": 24,
+   "pollen_level": "moderate",
+   "mold_total": 39,
+   "taxa": {
+    "Artemisia (полынь)": 19,
+    "Ambrosia (амброзия)": 5
+   },
+   "molds": {
+    "Cladosporium herbarum": 18,
+    "Alternaria alternata": 16,
+    "Bipolaris spicifera": 5
+   },
+   "weather": {
+    "temp_c": 16.0,
+    "humidity_pct": 62.0,
+    "wind_ms": 3.4
+   }
+  },
+  {
+   "date": "2025-10-21",
+   "pollen_total": 23,
+   "pollen_level": "moderate",
+   "mold_total": 49,
+   "taxa": {
+    "Artemisia (полынь)": 16,
+    "Ambrosia (амброзия)": 6,
+    "Cannabaceae (коноплёвые)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 23,
+    "Alternaria alternata": 21,
+    "Bipolaris spicifera": 5
+   },
+   "weather": {
+    "temp_c": 16.0,
+    "humidity_pct": 64.0,
+    "wind_ms": 3.4
+   }
+  },
+  {
+   "date": "2025-10-22",
+   "pollen_total": 31,
+   "pollen_level": "moderate",
+   "mold_total": 51,
+   "taxa": {
+    "Artemisia (полынь)": 23,
+    "Ambrosia (амброзия)": 6,
+    "Cannabaceae (коноплёвые)": 1,
+    "Poaceae (злаковые)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 24,
+    "Cladosporium herbarum": 21,
+    "Bipolaris spicifera": 6
+   },
+   "weather": {
+    "temp_c": 18.0,
+    "humidity_pct": 64.0,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2025-10-23",
+   "pollen_total": 20,
+   "pollen_level": "moderate",
+   "mold_total": 43,
+   "taxa": {
+    "Artemisia (полынь)": 14,
+    "Ambrosia (амброзия)": 6
+   },
+   "molds": {
+    "Alternaria alternata": 21,
+    "Cladosporium herbarum": 18,
+    "Bipolaris spicifera": 4
+   },
+   "weather": {
+    "temp_c": 18.0,
+    "humidity_pct": 67.0,
+    "wind_ms": 3.0
+   }
+  },
+  {
+   "date": "2025-10-24",
+   "pollen_total": 19,
+   "pollen_level": "moderate",
+   "mold_total": 42,
+   "taxa": {
+    "Artemisia (полынь)": 13,
+    "Ambrosia (амброзия)": 5,
+    "Liliaceae (лилейные)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 21,
+    "Alternaria alternata": 18,
+    "Bipolaris spicifera": 3
+   },
+   "weather": {
+    "temp_c": 19.0,
+    "humidity_pct": 69.0,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2025-10-25",
+   "pollen_total": 26,
+   "pollen_level": "moderate",
+   "mold_total": 60,
+   "taxa": {
+    "Artemisia (полынь)": 18,
+    "Ambrosia (амброзия)": 7,
+    "Liliaceae (лилейные)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 29,
+    "Alternaria alternata": 24,
+    "Bipolaris spicifera": 7
+   },
+   "weather": {
+    "temp_c": 21.0,
+    "humidity_pct": 67.0,
+    "wind_ms": 3.0
+   }
+  },
+  {
+   "date": "2025-10-26",
+   "pollen_total": 25,
+   "pollen_level": "moderate",
+   "mold_total": 61,
+   "taxa": {
+    "Artemisia (полынь)": 20,
+    "Ambrosia (амброзия)": 4,
+    "Chenopodiaceae (маревые)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 26,
+    "Cladosporium herbarum": 23,
+    "Bipolaris spicifera": 12
+   },
+   "weather": {
+    "temp_c": 20.0,
+    "humidity_pct": 65.0,
+    "wind_ms": 3.4
+   }
+  },
+  {
+   "date": "2025-10-27",
+   "pollen_total": 26,
+   "pollen_level": "moderate",
+   "mold_total": 57,
+   "taxa": {
+    "Artemisia (полынь)": 13,
+    "Ambrosia (амброзия)": 11,
+    "Cannabaceae (коноплёвые)": 1,
+    "Chenopodiaceae (маревые)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 24,
+    "Alternaria alternata": 18,
+    "Bipolaris spicifera": 15
+   },
+   "weather": {
+    "temp_c": 17.0,
+    "humidity_pct": 67.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2025-10-28",
+   "pollen_total": 42,
+   "pollen_level": "moderate",
+   "mold_total": 52,
+   "taxa": {
+    "Artemisia (полынь)": 32,
+    "Ambrosia (амброзия)": 7,
+    "Cannabaceae (коноплёвые)": 1,
+    "Chenopodiaceae (маревые)": 1,
+    "Poaceae (злаковые)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 24,
+    "Alternaria alternata": 21,
+    "Bipolaris spicifera": 7
+   },
+   "weather": {
+    "temp_c": 16.0,
+    "humidity_pct": 68.0,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2025-10-29",
+   "pollen_total": 26,
+   "pollen_level": "moderate",
+   "mold_total": 77,
+   "taxa": {
+    "Artemisia (полынь)": 21,
+    "Ambrosia (амброзия)": 3,
+    "Chenopodiaceae (маревые)": 1,
+    "Liliaceae (лилейные)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 34,
+    "Alternaria alternata": 31,
+    "Bipolaris spicifera": 12
+   },
+   "weather": {
+    "temp_c": 13.0,
+    "humidity_pct": 69.0,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2025-10-30",
+   "pollen_total": 21,
+   "pollen_level": "moderate",
+   "mold_total": 53,
+   "taxa": {
+    "Artemisia (полынь)": 14,
+    "Ambrosia (амброзия)": 6,
+    "Chenopodiaceae (маревые)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 24,
+    "Alternaria alternata": 20,
+    "Bipolaris spicifera": 9
+   },
+   "weather": {
+    "temp_c": 15.0,
+    "humidity_pct": 66.0,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2025-10-31",
+   "pollen_total": 35,
+   "pollen_level": "moderate",
+   "mold_total": 67,
+   "taxa": {
+    "Artemisia (полынь)": 31,
+    "Ambrosia (амброзия)": 3,
+    "Cannabaceae (коноплёвые)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 34,
+    "Alternaria alternata": 21,
+    "Bipolaris spicifera": 12
+   },
+   "weather": {
+    "temp_c": 19.0,
+    "humidity_pct": 67.0,
+    "wind_ms": 3.4
+   }
+  },
+  {
+   "date": "2025-11-01",
+   "pollen_total": 3,
+   "pollen_level": "low",
+   "mold_total": 40,
+   "taxa": {
+    "Artemisia (полынь)": 3
+   },
+   "molds": {
+    "Cladosporium herbarum": 18,
+    "Alternaria alternata": 16,
+    "Bipolaris spicifera": 6
+   },
+   "weather": {
+    "temp_c": 10.0,
+    "humidity_pct": 67.0,
+    "wind_ms": 3.0
+   }
+  },
+  {
+   "date": "2025-11-02",
+   "pollen_total": 9,
+   "pollen_level": "low",
+   "mold_total": 40,
+   "taxa": {
+    "Artemisia (полынь)": 5,
+    "Ambrosia (амброзия)": 3,
+    "Cannabaceae (коноплёвые)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 24,
+    "Alternaria alternata": 13,
+    "Bipolaris spicifera": 3
+   },
+   "weather": {
+    "temp_c": 11.0,
+    "humidity_pct": 68.0,
+    "wind_ms": 3.0
+   }
+  },
+  {
+   "date": "2025-11-03",
+   "pollen_total": 15,
+   "pollen_level": "moderate",
+   "mold_total": 22,
+   "taxa": {
+    "Artemisia (полынь)": 13,
+    "Chenopodiaceae (маревые)": 1,
+    "Liliaceae (лилейные)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 10,
+    "Alternaria alternata": 9,
+    "Bipolaris spicifera": 3
+   },
+   "weather": {
+    "temp_c": 15.0,
+    "humidity_pct": 70.0,
+    "wind_ms": 3.0
+   }
+  },
+  {
+   "date": "2025-11-04",
+   "pollen_total": 0,
+   "pollen_level": "none",
+   "mold_total": 7,
+   "taxa": {},
+   "molds": {
+    "Bipolaris spicifera": 4,
+    "Alternaria alternata": 3
+   },
+   "weather": {
+    "temp_c": 6.0,
+    "humidity_pct": 73.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2025-11-05",
+   "pollen_total": 0,
+   "pollen_level": "none",
+   "mold_total": 0,
+   "taxa": {},
+   "molds": {},
+   "weather": {
+    "temp_c": 1.0,
+    "humidity_pct": 73.0,
+    "wind_ms": 3.4
+   }
+  },
+  {
+   "date": "2025-11-06",
+   "pollen_total": 0,
+   "pollen_level": "none",
+   "mold_total": 0,
+   "taxa": {},
+   "molds": {},
+   "weather": {
+    "temp_c": 0.0,
+    "humidity_pct": 73.0,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2025-11-07",
+   "pollen_total": 0,
+   "pollen_level": "none",
+   "mold_total": 0,
+   "taxa": {},
+   "molds": {},
+   "weather": {
+    "temp_c": 4.0,
+    "humidity_pct": 72.0,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2025-11-08",
+   "pollen_total": 0,
+   "pollen_level": "none",
+   "mold_total": 0,
+   "taxa": {},
+   "molds": {},
+   "weather": {
+    "temp_c": 8.0,
+    "humidity_pct": 74.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2025-11-09",
+   "pollen_total": 0,
+   "pollen_level": "none",
+   "mold_total": 0,
+   "taxa": {},
+   "molds": {},
+   "weather": {
+    "temp_c": 8.0,
+    "humidity_pct": 75.0,
+    "wind_ms": 3.0
+   }
+  },
+  {
+   "date": "2025-11-10",
+   "pollen_total": 7,
+   "pollen_level": "low",
+   "mold_total": 25,
+   "taxa": {
+    "Artemisia (полынь)": 6,
+    "Chenopodiaceae (маревые)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 11,
+    "Alternaria alternata": 9,
+    "Bipolaris spicifera": 5
+   },
+   "weather": {
+    "temp_c": 7.0,
+    "humidity_pct": 74.0,
+    "wind_ms": 1.3
+   }
+  },
+  {
+   "date": "2025-11-11",
+   "pollen_total": 10,
+   "pollen_level": "low",
+   "mold_total": 23,
+   "taxa": {
+    "Artemisia (полынь)": 6,
+    "Ambrosia (амброзия)": 3,
+    "Liliaceae (лилейные)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 13,
+    "Alternaria alternata": 7,
+    "Bipolaris spicifera": 3
+   },
+   "weather": {
+    "temp_c": 7.0,
+    "humidity_pct": 73.0,
+    "wind_ms": 1.5
+   }
+  },
+  {
+   "date": "2025-11-12",
+   "pollen_total": 4,
+   "pollen_level": "low",
+   "mold_total": 19,
+   "taxa": {
+    "Artemisia (полынь)": 4
+   },
+   "molds": {
+    "Cladosporium herbarum": 10,
+    "Alternaria alternata": 7,
+    "Bipolaris spicifera": 2
+   },
+   "weather": {
+    "temp_c": 9.0,
+    "humidity_pct": 76.0,
+    "wind_ms": 1.5
+   }
+  },
+  {
+   "date": "2025-11-13",
+   "pollen_total": 4,
+   "pollen_level": "low",
+   "mold_total": 18,
+   "taxa": {
+    "Artemisia (полынь)": 2,
+    "Ambrosia (амброзия)": 1,
+    "Cannabaceae (коноплёвые)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 9,
+    "Alternaria alternata": 6,
+    "Bipolaris spicifera": 3
+   },
+   "weather": {
+    "temp_c": 10.0,
+    "humidity_pct": 76.0,
+    "wind_ms": 1.3
+   }
+  },
+  {
+   "date": "2025-11-14",
+   "pollen_total": 2,
+   "pollen_level": "low",
+   "mold_total": 17,
+   "taxa": {
+    "Artemisia (полынь)": 2
+   },
+   "molds": {
+    "Cladosporium herbarum": 7,
+    "Alternaria alternata": 6,
+    "Bipolaris spicifera": 4
+   },
+   "weather": {
+    "temp_c": 8.0,
+    "humidity_pct": 74.0,
+    "wind_ms": 1.5
+   }
+  },
+  {
+   "date": "2025-11-15",
+   "pollen_total": 3,
+   "pollen_level": "low",
+   "mold_total": 16,
+   "taxa": {
+    "Ambrosia (амброзия)": 1,
+    "Artemisia (полынь)": 1,
+    "Cannabaceae (коноплёвые)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 8,
+    "Alternaria alternata": 5,
+    "Bipolaris spicifera": 3
+   },
+   "weather": {
+    "temp_c": 6.0,
+    "humidity_pct": 75.0,
+    "wind_ms": 1.7
+   }
+  },
+  {
+   "date": "2025-11-16",
+   "pollen_total": 5,
+   "pollen_level": "low",
+   "mold_total": 15,
+   "taxa": {
+    "Artemisia (полынь)": 3,
+    "Ambrosia (амброзия)": 1,
+    "Cannabaceae (коноплёвые)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 8,
+    "Alternaria alternata": 4,
+    "Bipolaris spicifera": 3
+   },
+   "weather": {
+    "temp_c": 9.0,
+    "humidity_pct": 74.0,
+    "wind_ms": 1.6
+   }
+  },
+  {
+   "date": "2026-03-26",
+   "pollen_total": 362,
+   "pollen_level": "critical",
+   "mold_total": 0,
+   "taxa": {
+    "Ulmus (вяз)": 186,
+    "Cupressaceae (кипарисовые)": 133,
+    "Poaceae (злаковые)": 31,
+    "Alnus (ольха)": 6,
+    "Salix (ива)": 6
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": null,
+    "humidity_pct": 65.0,
+    "wind_ms": 4.0
+   }
+  },
+  {
+   "date": "2026-03-27",
+   "pollen_total": 195,
+   "pollen_level": "high",
+   "mold_total": 0,
+   "taxa": {
+    "Cupressaceae (кипарисовые)": 99,
+    "Ulmus (вяз)": 74,
+    "Poaceae (злаковые)": 12,
+    "Salix (ива)": 7,
+    "Alnus (ольха)": 3
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": null,
+    "humidity_pct": 69.0,
+    "wind_ms": 4.1
+   }
+  },
+  {
+   "date": "2026-03-28",
+   "pollen_total": 104,
+   "pollen_level": "high",
+   "mold_total": 0,
+   "taxa": {
+    "Cupressaceae (кипарисовые)": 43,
+    "Ulmus (вяз)": 37,
+    "Poaceae (злаковые)": 12,
+    "Salix (ива)": 6,
+    "Alnus (ольха)": 3,
+    "Corylus (лещина)": 3
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": null,
+    "humidity_pct": 70.0,
+    "wind_ms": 3.9
+   }
+  },
+  {
+   "date": "2026-03-29",
+   "pollen_total": 167,
+   "pollen_level": "high",
+   "mold_total": 0,
+   "taxa": {
+    "Ulmus (вяз)": 93,
+    "Cupressaceae (кипарисовые)": 50,
+    "Poaceae (злаковые)": 9,
+    "Alnus (ольха)": 6,
+    "Salix (ива)": 6,
+    "Corylus (лещина)": 3
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": null,
+    "humidity_pct": 69.0,
+    "wind_ms": 4.0
+   }
+  },
+  {
+   "date": "2026-03-30",
+   "pollen_total": 383,
+   "pollen_level": "critical",
+   "mold_total": 0,
+   "taxa": {
+    "Ulmus (вяз)": 164,
+    "Cupressaceae (кипарисовые)": 105,
+    "Cyperaceae (осоковые)": 50,
+    "Salix (ива)": 25,
+    "Poaceae (злаковые)": 22,
+    "Corylus (лещина)": 7,
+    "Alnus (ольха)": 6,
+    "Picea (ель)": 3,
+    "Taraxacum (одуванчик)": 1
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 22.0,
+    "humidity_pct": 67.0,
+    "wind_ms": 4.0
+   }
+  },
+  {
+   "date": "2026-03-31",
+   "pollen_total": 418,
+   "pollen_level": "critical",
+   "mold_total": 0,
+   "taxa": {
+    "Ulmus (вяз)": 204,
+    "Cupressaceae (кипарисовые)": 77,
+    "Cyperaceae (осоковые)": 60,
+    "Poaceae (злаковые)": 31,
+    "Salix (ива)": 15,
+    "Corylus (лещина)": 12,
+    "Alnus (ольха)": 9,
+    "Populus (тополь)": 6,
+    "Fagus (бук)": 2,
+    "Picea (ель)": 2
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 23.0,
+    "humidity_pct": 64.0,
+    "wind_ms": 4.0
+   }
+  },
+  {
+   "date": "2026-04-01",
+   "pollen_total": 327,
+   "pollen_level": "critical",
+   "mold_total": 0,
+   "taxa": {
+    "Ulmus (вяз)": 173,
+    "Corylus (лещина)": 43,
+    "Cupressaceae (кипарисовые)": 37,
+    "Cyperaceae (осоковые)": 31,
+    "Alnus (ольха)": 16,
+    "Poaceae (злаковые)": 15,
+    "Salix (ива)": 12
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 24.0,
+    "humidity_pct": 68.0,
+    "wind_ms": 4.0
+   }
+  },
+  {
+   "date": "2026-04-02",
+   "pollen_total": 322,
+   "pollen_level": "critical",
+   "mold_total": 0,
+   "taxa": {
+    "Ulmus (вяз)": 180,
+    "Corylus (лещина)": 44,
+    "Cyperaceae (осоковые)": 37,
+    "Cupressaceae (кипарисовые)": 34,
+    "Salix (ива)": 12,
+    "Poaceae (злаковые)": 9,
+    "Alnus (ольха)": 6
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": 24.0,
+    "humidity_pct": 67.0,
+    "wind_ms": 3.4
+   }
+  },
+  {
+   "date": "2026-04-03",
+   "pollen_total": 335,
+   "pollen_level": "critical",
+   "mold_total": 23,
+   "taxa": {
+    "Ulmus (вяз)": 124,
+    "Corylus (лещина)": 90,
+    "Cupressaceae (кипарисовые)": 34,
+    "Platanus (платан)": 23,
+    "Cyperaceae (осоковые)": 18,
+    "Salix (ива)": 17,
+    "Betula (берёза)": 15,
+    "Poaceae (злаковые)": 7,
+    "Alnus (ольха)": 5,
+    "Plantago (подорожник)": 2
+   },
+   "molds": {
+    "Alternaria alternata": 15,
+    "Cladosporium herbarum": 5,
+    "Curvularia lunata": 3
+   },
+   "weather": {
+    "temp_c": 25.0,
+    "humidity_pct": 65.0,
+    "wind_ms": 3.7
+   }
+  },
+  {
+   "date": "2026-04-04",
+   "pollen_total": 432,
+   "pollen_level": "critical",
+   "mold_total": 23,
+   "taxa": {
+    "Ulmus (вяз)": 142,
+    "Corylus (лещина)": 96,
+    "Cupressaceae (кипарисовые)": 55,
+    "Cyperaceae (осоковые)": 46,
+    "Platanus (платан)": 31,
+    "Poaceae (злаковые)": 22,
+    "Betula (берёза)": 17,
+    "Salix (ива)": 13,
+    "Alnus (ольха)": 10
+   },
+   "molds": {
+    "Alternaria alternata": 18,
+    "Cladosporium herbarum": 3,
+    "Curvularia lunata": 2
+   },
+   "weather": {
+    "temp_c": 24.0,
+    "humidity_pct": 63.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2026-04-05",
+   "pollen_total": 465,
+   "pollen_level": "critical",
+   "mold_total": 22,
+   "taxa": {
+    "Ulmus (вяз)": 167,
+    "Corylus (лещина)": 115,
+    "Cyperaceae (осоковые)": 48,
+    "Cupressaceae (кипарисовые)": 46,
+    "Poaceae (злаковые)": 31,
+    "Betula (берёза)": 21,
+    "Platanus (платан)": 15,
+    "Alnus (ольха)": 13,
+    "Salix (ива)": 9
+   },
+   "molds": {
+    "Alternaria alternata": 14,
+    "Cladosporium herbarum": 6,
+    "Curvularia lunata": 2
+   },
+   "weather": {
+    "temp_c": 21.0,
+    "humidity_pct": 63.0,
+    "wind_ms": 3.7
+   }
+  },
+  {
+   "date": "2026-04-06",
+   "pollen_total": 607,
+   "pollen_level": "critical",
+   "mold_total": 26,
+   "taxa": {
+    "Betula (берёза)": 210,
+    "Ulmus (вяз)": 114,
+    "Cyperaceae (осоковые)": 45,
+    "Cupressaceae (кипарисовые)": 43,
+    "Corylus (лещина)": 42,
+    "Populus (тополь)": 41,
+    "Quercus (дуб)": 37,
+    "Salix (ива)": 34,
+    "Platanus (платан)": 18,
+    "Poaceae (злаковые)": 18,
+    "Alnus (ольха)": 5
+   },
+   "molds": {
+    "Curvularia lunata": 11,
+    "Alternaria alternata": 9,
+    "Cladosporium herbarum": 6
+   },
+   "weather": {
+    "temp_c": 17.0,
+    "humidity_pct": 66.0,
+    "wind_ms": 4.1
+   }
+  },
+  {
+   "date": "2026-04-07",
+   "pollen_total": 634,
+   "pollen_level": "critical",
+   "mold_total": 25,
+   "taxa": {
+    "Ulmus (вяз)": 173,
+    "Betula (берёза)": 124,
+    "Cyperaceae (осоковые)": 74,
+    "Quercus (дуб)": 71,
+    "Populus (тополь)": 43,
+    "Cupressaceae (кипарисовые)": 37,
+    "Corylus (лещина)": 31,
+    "Poaceae (злаковые)": 31,
+    "Salix (ива)": 25,
+    "Platanus (платан)": 22,
+    "Alnus (ольха)": 3
+   },
+   "molds": {
+    "Alternaria alternata": 12,
+    "Curvularia lunata": 9,
+    "Cladosporium herbarum": 4
+   },
+   "weather": {
+    "temp_c": 15.0,
+    "humidity_pct": 70.0,
+    "wind_ms": 4.0
+   }
+  },
+  {
+   "date": "2026-04-08",
+   "pollen_total": 292,
+   "pollen_level": "critical",
+   "mold_total": 36,
+   "taxa": {
+    "Ulmus (вяз)": 88,
+    "Betula (берёза)": 70,
+    "Quercus (дуб)": 31,
+    "Cyperaceae (осоковые)": 27,
+    "Cupressaceae (кипарисовые)": 22,
+    "Salix (ива)": 12,
+    "Platanus (платан)": 9,
+    "Poaceae (злаковые)": 9,
+    "Corylus (лещина)": 8,
+    "Plantago (подорожник)": 8,
+    "Populus (тополь)": 7,
+    "Alnus (ольха)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 14,
+    "Curvularia lunata": 12,
+    "Cladosporium herbarum": 10
+   },
+   "weather": {
+    "temp_c": 16.0,
+    "humidity_pct": 66.0,
+    "wind_ms": 3.4
+   }
+  },
+  {
+   "date": "2026-04-09",
+   "pollen_total": 39,
+   "pollen_level": "moderate",
+   "mold_total": 88,
+   "taxa": {
+    "Quercus (дуб)": 12,
+    "Ulmus (вяз)": 12,
+    "Cyperaceae (осоковые)": 7,
+    "Betula (берёза)": 5,
+    "Platanus (платан)": 2,
+    "Cupressaceae (кипарисовые)": 1
+   },
+   "molds": {
+    "Curvularia lunata": 37,
+    "Cladosporium herbarum": 31,
+    "Alternaria alternata": 20
+   },
+   "weather": {
+    "temp_c": 16.0,
+    "humidity_pct": 63.0,
+    "wind_ms": 3.7
+   }
+  },
+  {
+   "date": "2026-04-10",
+   "pollen_total": 448,
+   "pollen_level": "critical",
+   "mold_total": 51,
+   "taxa": {
+    "Populus (тополь)": 105,
+    "Ulmus (вяз)": 77,
+    "Platanus (платан)": 74,
+    "Quercus (дуб)": 62,
+    "Betula (берёза)": 47,
+    "Poaceae (злаковые)": 25,
+    "Cupressaceae (кипарисовые)": 24,
+    "Cyperaceae (осоковые)": 22,
+    "Salix (ива)": 9,
+    "Plantago (подорожник)": 3
+   },
+   "molds": {
+    "Cladosporium herbarum": 20,
+    "Alternaria alternata": 17,
+    "Curvularia lunata": 14
+   },
+   "weather": {
+    "temp_c": 18.0,
+    "humidity_pct": 61.0,
+    "wind_ms": 3.7
+   }
+  },
+  {
+   "date": "2026-04-11",
+   "pollen_total": 374,
+   "pollen_level": "critical",
+   "mold_total": 80,
+   "taxa": {
+    "Betula (берёза)": 80,
+    "Ulmus (вяз)": 69,
+    "Populus (тополь)": 49,
+    "Quercus (дуб)": 46,
+    "Platanus (платан)": 40,
+    "Cyperaceae (осоковые)": 31,
+    "Poaceae (злаковые)": 15,
+    "Salix (ива)": 13,
+    "Corylus (лещина)": 12,
+    "Alnus (ольха)": 10,
+    "Cupressaceae (кипарисовые)": 9
+   },
+   "molds": {
+    "Cladosporium herbarum": 34,
+    "Curvularia lunata": 26,
+    "Alternaria alternata": 20
+   },
+   "weather": {
+    "temp_c": 18.0,
+    "humidity_pct": 62.0,
+    "wind_ms": 4.0
+   }
+  },
+  {
+   "date": "2026-04-12",
+   "pollen_total": 279,
+   "pollen_level": "critical",
+   "mold_total": 94,
+   "taxa": {
+    "Populus (тополь)": 105,
+    "Ulmus (вяз)": 56,
+    "Betula (берёза)": 53,
+    "Quercus (дуб)": 25,
+    "Platanus (платан)": 22,
+    "Poaceae (злаковые)": 8,
+    "Cupressaceae (кипарисовые)": 5,
+    "Salix (ива)": 5
+   },
+   "molds": {
+    "Cladosporium herbarum": 37,
+    "Curvularia lunata": 29,
+    "Alternaria alternata": 28
+   },
+   "weather": {
+    "temp_c": 19.0,
+    "humidity_pct": 63.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2026-04-13",
+   "pollen_total": 807,
+   "pollen_level": "critical",
+   "mold_total": 80,
+   "taxa": {
+    "Betula (берёза)": 248,
+    "Populus (тополь)": 149,
+    "Ulmus (вяз)": 90,
+    "Quercus (дуб)": 71,
+    "Cyperaceae (осоковые)": 65,
+    "Cupressaceae (кипарисовые)": 40,
+    "Salix (ива)": 40,
+    "Platanus (платан)": 33,
+    "Corylus (лещина)": 23,
+    "Urticaceae (крапивные)": 18,
+    "Poaceae (злаковые)": 17,
+    "Plantago (подорожник)": 4,
+    "Picea (ель)": 3,
+    "Pinus (сосна)": 3,
+    "Tilia (липа)": 2,
+    "Juglans (грецкий орех)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 35,
+    "Alternaria alternata": 30,
+    "Curvularia lunata": 15
+   },
+   "weather": {
+    "temp_c": 20.0,
+    "humidity_pct": 62.0,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2026-04-14",
+   "pollen_total": 392,
+   "pollen_level": "critical",
+   "mold_total": 79,
+   "taxa": {
+    "Betula (берёза)": 121,
+    "Populus (тополь)": 74,
+    "Quercus (дуб)": 46,
+    "Platanus (платан)": 29,
+    "Cyperaceae (осоковые)": 28,
+    "Ulmus (вяз)": 28,
+    "Salix (ива)": 18,
+    "Corylus (лещина)": 12,
+    "Urticaceae (крапивные)": 9,
+    "Poaceae (злаковые)": 7,
+    "Cupressaceae (кипарисовые)": 6,
+    "Fagus (бук)": 5,
+    "Pinus (сосна)": 4,
+    "Picea (ель)": 3,
+    "Juglans (грецкий орех)": 1,
+    "Plantago (подорожник)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 34,
+    "Cladosporium herbarum": 28,
+    "Curvularia lunata": 17
+   },
+   "weather": {
+    "temp_c": 20.0,
+    "humidity_pct": 65.0,
+    "wind_ms": 3.7
+   }
+  },
+  {
+   "date": "2026-04-15",
+   "pollen_total": 419,
+   "pollen_level": "critical",
+   "mold_total": 94,
+   "taxa": {
+    "Betula (берёза)": 96,
+    "Populus (тополь)": 46,
+    "Plantago (подорожник)": 41,
+    "Ulmus (вяз)": 37,
+    "Poaceae (злаковые)": 34,
+    "Quercus (дуб)": 33,
+    "Platanus (платан)": 28,
+    "Cupressaceae (кипарисовые)": 22,
+    "Salix (ива)": 18,
+    "Cyperaceae (осоковые)": 15,
+    "Fagus (бук)": 15,
+    "Urticaceae (крапивные)": 10,
+    "Pinus (сосна)": 8,
+    "Corylus (лещина)": 6,
+    "Juglans (грецкий орех)": 5,
+    "Picea (ель)": 5
+   },
+   "molds": {
+    "Alternaria alternata": 40,
+    "Cladosporium herbarum": 33,
+    "Curvularia lunata": 21
+   },
+   "weather": {
+    "temp_c": 19.0,
+    "humidity_pct": 66.0,
+    "wind_ms": 4.0
+   }
+  },
+  {
+   "date": "2026-04-16",
+   "pollen_total": 32,
+   "pollen_level": "moderate",
+   "mold_total": 62,
+   "taxa": {
+    "Betula (берёза)": 10,
+    "Plantago (подорожник)": 7,
+    "Quercus (дуб)": 6,
+    "Platanus (платан)": 4,
+    "Ulmus (вяз)": 3,
+    "Populus (тополь)": 2
+   },
+   "molds": {
+    "Alternaria alternata": 27,
+    "Cladosporium herbarum": 24,
+    "Curvularia lunata": 11
+   },
+   "weather": {
+    "temp_c": 13.0,
+    "humidity_pct": 66.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2026-04-17",
+   "pollen_total": 47,
+   "pollen_level": "moderate",
+   "mold_total": 52,
+   "taxa": {
+    "Betula (берёза)": 16,
+    "Populus (тополь)": 12,
+    "Cyperaceae (осоковые)": 6,
+    "Quercus (дуб)": 5,
+    "Ulmus (вяз)": 4,
+    "Pinus (сосна)": 2,
+    "Picea (ель)": 1,
+    "Poaceae (злаковые)": 1
+   },
+   "molds": {
+    "Curvularia lunata": 20,
+    "Alternaria alternata": 18,
+    "Cladosporium herbarum": 14
+   },
+   "weather": {
+    "temp_c": 9.0,
+    "humidity_pct": 67.0,
+    "wind_ms": 3.7
+   }
+  },
+  {
+   "date": "2026-04-18",
+   "pollen_total": 47,
+   "pollen_level": "moderate",
+   "mold_total": 69,
+   "taxa": {
+    "Betula (берёза)": 18,
+    "Populus (тополь)": 9,
+    "Ulmus (вяз)": 7,
+    "Corylus (лещина)": 6,
+    "Salix (ива)": 4,
+    "Cupressaceae (кипарисовые)": 1,
+    "Platanus (платан)": 1,
+    "Quercus (дуб)": 1
+   },
+   "molds": {
+    "Curvularia lunata": 26,
+    "Alternaria alternata": 24,
+    "Cladosporium herbarum": 19
+   },
+   "weather": {
+    "temp_c": 12.0,
+    "humidity_pct": 63.0,
+    "wind_ms": 3.9
+   }
+  },
+  {
+   "date": "2026-04-19",
+   "pollen_total": 171,
+   "pollen_level": "high",
+   "mold_total": 86,
+   "taxa": {
+    "Betula (берёза)": 59,
+    "Cyperaceae (осоковые)": 35,
+    "Populus (тополь)": 34,
+    "Pinus (сосна)": 10,
+    "Quercus (дуб)": 8,
+    "Ulmus (вяз)": 8,
+    "Platanus (платан)": 5,
+    "Salix (ива)": 5,
+    "Corylus (лещина)": 4,
+    "Picea (ель)": 3
+   },
+   "molds": {
+    "Curvularia lunata": 30,
+    "Cladosporium herbarum": 29,
+    "Alternaria alternata": 27
+   },
+   "weather": {
+    "temp_c": 16.0,
+    "humidity_pct": 61.0,
+    "wind_ms": 3.7
+   }
+  },
+  {
+   "date": "2026-04-20",
+   "pollen_total": 148,
+   "pollen_level": "high",
+   "mold_total": 55,
+   "taxa": {
+    "Betula (берёза)": 53,
+    "Poaceae (злаковые)": 49,
+    "Ulmus (вяз)": 15,
+    "Cyperaceae (осоковые)": 12,
+    "Pinus (сосна)": 6,
+    "Picea (ель)": 5,
+    "Quercus (дуб)": 4,
+    "Populus (тополь)": 3,
+    "Platanus (платан)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 33,
+    "Curvularia lunata": 12,
+    "Alternaria alternata": 10
+   },
+   "weather": {
+    "temp_c": 19.0,
+    "humidity_pct": 62.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2026-04-21",
+   "pollen_total": 294,
+   "pollen_level": "critical",
+   "mold_total": 59,
+   "taxa": {
+    "Betula (берёза)": 182,
+    "Poaceae (злаковые)": 95,
+    "Cyperaceae (осоковые)": 10,
+    "Picea (ель)": 4,
+    "Pinus (сосна)": 3
+   },
+   "molds": {
+    "Cladosporium herbarum": 37,
+    "Alternaria alternata": 12,
+    "Curvularia lunata": 10
+   },
+   "weather": {
+    "temp_c": 20.0,
+    "humidity_pct": 63.0,
+    "wind_ms": 4.0
+   }
+  },
+  {
+   "date": "2026-04-22",
+   "pollen_total": 279,
+   "pollen_level": "critical",
+   "mold_total": 52,
+   "taxa": {
+    "Betula (берёза)": 136,
+    "Poaceae (злаковые)": 56,
+    "Cyperaceae (осоковые)": 18,
+    "Ulmus (вяз)": 16,
+    "Onobrychis (эспарцет)": 15,
+    "Populus (тополь)": 14,
+    "Picea (ель)": 10,
+    "Quercus (дуб)": 8,
+    "Pinus (сосна)": 6
+   },
+   "molds": {
+    "Cladosporium herbarum": 30,
+    "Curvularia lunata": 13,
+    "Alternaria alternata": 9
+   },
+   "weather": {
+    "temp_c": 19.0,
+    "humidity_pct": 61.0,
+    "wind_ms": 3.7
+   }
+  },
+  {
+   "date": "2026-04-23",
+   "pollen_total": 139,
+   "pollen_level": "high",
+   "mold_total": 109,
+   "taxa": {
+    "Betula (берёза)": 87,
+    "Poaceae (злаковые)": 40,
+    "Picea (ель)": 4,
+    "Pinus (сосна)": 3,
+    "Ulmus (вяз)": 3,
+    "Cupressaceae (кипарисовые)": 2
+   },
+   "molds": {
+    "Curvularia lunata": 60,
+    "Cladosporium herbarum": 37,
+    "Alternaria alternata": 12
+   },
+   "weather": {
+    "temp_c": 20.0,
+    "humidity_pct": 62.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2026-04-24",
+   "pollen_total": 219,
+   "pollen_level": "critical",
+   "mold_total": 133,
+   "taxa": {
+    "Poaceae (злаковые)": 90,
+    "Betula (берёза)": 65,
+    "Pinus (сосна)": 43,
+    "Picea (ель)": 12,
+    "Cyperaceae (осоковые)": 6,
+    "Platanus (платан)": 3
+   },
+   "molds": {
+    "Cladosporium herbarum": 72,
+    "Curvularia lunata": 41,
+    "Alternaria alternata": 20
+   },
+   "weather": {
+    "temp_c": 19.0,
+    "humidity_pct": 64.0,
+    "wind_ms": 4.0
+   }
+  },
+  {
+   "date": "2026-04-25",
+   "pollen_total": 417,
+   "pollen_level": "critical",
+   "mold_total": 83,
+   "taxa": {
+    "Betula (берёза)": 183,
+    "Pinus (сосна)": 167,
+    "Poaceae (злаковые)": 28,
+    "Cyperaceae (осоковые)": 9,
+    "Picea (ель)": 9,
+    "Cupressaceae (кипарисовые)": 8,
+    "Quercus (дуб)": 7,
+    "Platanus (платан)": 5,
+    "Juglans (грецкий орех)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 40,
+    "Curvularia lunata": 27,
+    "Alternaria alternata": 16
+   },
+   "weather": {
+    "temp_c": 21.0,
+    "humidity_pct": 64.0,
+    "wind_ms": 3.7
+   }
+  },
+  {
+   "date": "2026-04-26",
+   "pollen_total": 432,
+   "pollen_level": "critical",
+   "mold_total": 72,
+   "taxa": {
+    "Pinus (сосна)": 180,
+    "Betula (берёза)": 136,
+    "Cupressaceae (кипарисовые)": 37,
+    "Poaceae (злаковые)": 28,
+    "Picea (ель)": 18,
+    "Populus (тополь)": 12,
+    "Cyperaceae (осоковые)": 6,
+    "Plantago (подорожник)": 6,
+    "Ulmus (вяз)": 6,
+    "Juglans (грецкий орех)": 3
+   },
+   "molds": {
+    "Cladosporium herbarum": 33,
+    "Curvularia lunata": 21,
+    "Alternaria alternata": 18
+   },
+   "weather": {
+    "temp_c": 26.0,
+    "humidity_pct": 63.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2026-04-27",
+   "pollen_total": 42,
+   "pollen_level": "moderate",
+   "mold_total": 0,
+   "taxa": {
+    "Pinus (сосна)": 29,
+    "Onobrychis (эспарцет)": 6,
+    "Picea (ель)": 4,
+    "Liliaceae (лилейные)": 3
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": null,
+    "humidity_pct": null,
+    "wind_ms": null
+   }
+  },
+  {
+   "date": "2026-04-28",
+   "pollen_total": 139,
+   "pollen_level": "high",
+   "mold_total": 0,
+   "taxa": {
+    "Pinus (сосна)": 124,
+    "Picea (ель)": 15
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": null,
+    "humidity_pct": null,
+    "wind_ms": null
+   }
+  },
+  {
+   "date": "2026-04-29",
+   "pollen_total": 171,
+   "pollen_level": "high",
+   "mold_total": 0,
+   "taxa": {
+    "Pinus (сосна)": 142,
+    "Picea (ель)": 18,
+    "Onobrychis (эспарцет)": 6,
+    "Liliaceae (лилейные)": 5
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": null,
+    "humidity_pct": null,
+    "wind_ms": null
+   }
+  },
+  {
+   "date": "2026-04-30",
+   "pollen_total": 172,
+   "pollen_level": "high",
+   "mold_total": 0,
+   "taxa": {
+    "Pinus (сосна)": 136,
+    "Picea (ель)": 34,
+    "Juglans (грецкий орех)": 2
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": null,
+    "humidity_pct": null,
+    "wind_ms": null
+   }
+  },
+  {
+   "date": "2026-05-01",
+   "pollen_total": 198,
+   "pollen_level": "high",
+   "mold_total": 0,
+   "taxa": {
+    "Pinus (сосна)": 161,
+    "Picea (ель)": 37
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": null,
+    "humidity_pct": null,
+    "wind_ms": null
+   }
+  },
+  {
+   "date": "2026-05-02",
+   "pollen_total": 127,
+   "pollen_level": "high",
+   "mold_total": 0,
+   "taxa": {
+    "Pinus (сосна)": 99,
+    "Picea (ель)": 25,
+    "Onobrychis (эспарцет)": 3
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": null,
+    "humidity_pct": null,
+    "wind_ms": null
+   }
+  },
+  {
+   "date": "2026-05-03",
+   "pollen_total": 40,
+   "pollen_level": "moderate",
+   "mold_total": 0,
+   "taxa": {
+    "Pinus (сосна)": 31,
+    "Picea (ель)": 9
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": null,
+    "humidity_pct": null,
+    "wind_ms": null
+   }
+  },
+  {
+   "date": "2026-05-04",
+   "pollen_total": 57,
+   "pollen_level": "high",
+   "mold_total": 58,
+   "taxa": {
+    "Pinus (сосна)": 18,
+    "Betula (берёза)": 9,
+    "Picea (ель)": 8,
+    "Cyperaceae (осоковые)": 7,
+    "Poaceae (злаковые)": 6,
+    "Plantago (подорожник)": 3,
+    "Quercus (дуб)": 3,
+    "Alnus (ольха)": 2,
+    "Platanus (платан)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 30,
+    "Alternaria alternata": 15,
+    "Curvularia lunata": 13
+   },
+   "weather": {
+    "temp_c": 18.0,
+    "humidity_pct": 61.0,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2026-05-05",
+   "pollen_total": 169,
+   "pollen_level": "high",
+   "mold_total": 70,
+   "taxa": {
+    "Poaceae (злаковые)": 53,
+    "Betula (берёза)": 37,
+    "Pinus (сосна)": 37,
+    "Picea (ель)": 18,
+    "Brassica (рапс)": 12,
+    "Cyperaceae (осоковые)": 6,
+    "Liliaceae (лилейные)": 3,
+    "Cupressaceae (кипарисовые)": 2,
+    "Ulmus (вяз)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 32,
+    "Cladosporium herbarum": 28,
+    "Curvularia lunata": 10
+   },
+   "weather": {
+    "temp_c": 23.0,
+    "humidity_pct": 57.99999999999999,
+    "wind_ms": 3.7
+   }
+  },
+  {
+   "date": "2026-05-06",
+   "pollen_total": 131,
+   "pollen_level": "high",
+   "mold_total": 58,
+   "taxa": {
+    "Betula (берёза)": 46,
+    "Pinus (сосна)": 31,
+    "Poaceae (злаковые)": 22,
+    "Populus (тополь)": 18,
+    "Picea (ель)": 12,
+    "Cupressaceae (кипарисовые)": 1,
+    "Fagus (бук)": 1
+   },
+   "molds": {
+    "Alternaria alternata": 25,
+    "Cladosporium herbarum": 18,
+    "Curvularia lunata": 15
+   },
+   "weather": {
+    "temp_c": 22.0,
+    "humidity_pct": 63.0,
+    "wind_ms": 4.1
+   }
+  },
+  {
+   "date": "2026-05-07",
+   "pollen_total": 188,
+   "pollen_level": "high",
+   "mold_total": 50,
+   "taxa": {
+    "Populus (тополь)": 56,
+    "Betula (берёза)": 43,
+    "Pinus (сосна)": 34,
+    "Poaceae (злаковые)": 31,
+    "Picea (ель)": 13,
+    "Salix (ива)": 9,
+    "Cupressaceae (кипарисовые)": 2
+   },
+   "molds": {
+    "Cladosporium herbarum": 22,
+    "Alternaria alternata": 16,
+    "Curvularia lunata": 12
+   },
+   "weather": {
+    "temp_c": 23.0,
+    "humidity_pct": 60.0,
+    "wind_ms": 3.7
+   }
+  },
+  {
+   "date": "2026-05-08",
+   "pollen_total": 151,
+   "pollen_level": "high",
+   "mold_total": 53,
+   "taxa": {
+    "Populus (тополь)": 30,
+    "Pinus (сосна)": 28,
+    "Betula (берёза)": 25,
+    "Poaceae (злаковые)": 24,
+    "Cyperaceae (осоковые)": 15,
+    "Picea (ель)": 9,
+    "Salix (ива)": 8,
+    "Brassica (рапс)": 6,
+    "Cupressaceae (кипарисовые)": 6
+   },
+   "molds": {
+    "Cladosporium herbarum": 25,
+    "Alternaria alternata": 18,
+    "Curvularia lunata": 10
+   },
+   "weather": {
+    "temp_c": 30.0,
+    "humidity_pct": 56.00000000000001,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2026-05-09",
+   "pollen_total": 119,
+   "pollen_level": "high",
+   "mold_total": 48,
+   "taxa": {
+    "Poaceae (злаковые)": 30,
+    "Pinus (сосна)": 24,
+    "Cyperaceae (осоковые)": 18,
+    "Plantago (подорожник)": 14,
+    "Cupressaceae (кипарисовые)": 12,
+    "Betula (берёза)": 9,
+    "Picea (ель)": 7,
+    "Salix (ива)": 5
+   },
+   "molds": {
+    "Cladosporium herbarum": 23,
+    "Curvularia lunata": 13,
+    "Alternaria alternata": 12
+   },
+   "weather": {
+    "temp_c": 28.0,
+    "humidity_pct": 57.99999999999999,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2026-05-10",
+   "pollen_total": 18,
+   "pollen_level": "moderate",
+   "mold_total": 69,
+   "taxa": {
+    "Pinus (сосна)": 7,
+    "Cyperaceae (осоковые)": 5,
+    "Betula (берёза)": 3,
+    "Cupressaceae (кипарисовые)": 1,
+    "Picea (ель)": 1,
+    "Salix (ива)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 34,
+    "Curvularia lunata": 25,
+    "Alternaria alternata": 10
+   },
+   "weather": {
+    "temp_c": 20.0,
+    "humidity_pct": 60.0,
+    "wind_ms": 3.7
+   }
+  },
+  {
+   "date": "2026-05-11",
+   "pollen_total": 14,
+   "pollen_level": "moderate",
+   "mold_total": 70,
+   "taxa": {
+    "Pinus (сосна)": 5,
+    "Cyperaceae (осоковые)": 4,
+    "Betula (берёза)": 1,
+    "Cupressaceae (кипарисовые)": 1,
+    "Juglans (грецкий орех)": 1,
+    "Picea (ель)": 1,
+    "Poaceae (злаковые)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 36,
+    "Curvularia lunata": 22,
+    "Alternaria alternata": 12
+   },
+   "weather": {
+    "temp_c": 17.0,
+    "humidity_pct": 57.99999999999999,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2026-05-12",
+   "pollen_total": 30,
+   "pollen_level": "moderate",
+   "mold_total": 76,
+   "taxa": {
+    "Cyperaceae (осоковые)": 9,
+    "Betula (берёза)": 7,
+    "Poaceae (злаковые)": 7,
+    "Pinus (сосна)": 6,
+    "Picea (ель)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 33,
+    "Curvularia lunata": 28,
+    "Alternaria alternata": 15
+   },
+   "weather": {
+    "temp_c": 14.0,
+    "humidity_pct": 60.0,
+    "wind_ms": 3.4
+   }
+  },
+  {
+   "date": "2026-05-13",
+   "pollen_total": 32,
+   "pollen_level": "moderate",
+   "mold_total": 78,
+   "taxa": {
+    "Poaceae (злаковые)": 12,
+    "Betula (берёза)": 9,
+    "Pinus (сосна)": 5,
+    "Cyperaceae (осоковые)": 3,
+    "Liliaceae (лилейные)": 1,
+    "Picea (ель)": 1,
+    "Taraxacum (одуванчик)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 30,
+    "Curvularia lunata": 25,
+    "Alternaria alternata": 23
+   },
+   "weather": {
+    "temp_c": 18.0,
+    "humidity_pct": 57.99999999999999,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2026-05-14",
+   "pollen_total": 14,
+   "pollen_level": "moderate",
+   "mold_total": 0,
+   "taxa": {
+    "Apiaceae (зонтичные)": 8,
+    "Urticaceae (крапивные)": 4,
+    "Onobrychis (эспарцет)": 2
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": null,
+    "humidity_pct": null,
+    "wind_ms": null
+   }
+  },
+  {
+   "date": "2026-05-15",
+   "pollen_total": 0,
+   "pollen_level": "none",
+   "mold_total": 0,
+   "taxa": {},
+   "molds": {},
+   "weather": {
+    "temp_c": null,
+    "humidity_pct": null,
+    "wind_ms": null
+   }
+  },
+  {
+   "date": "2026-05-16",
+   "pollen_total": 0,
+   "pollen_level": "none",
+   "mold_total": 0,
+   "taxa": {},
+   "molds": {},
+   "weather": {
+    "temp_c": null,
+    "humidity_pct": null,
+    "wind_ms": null
+   }
+  },
+  {
+   "date": "2026-05-17",
+   "pollen_total": 4,
+   "pollen_level": "low",
+   "mold_total": 0,
+   "taxa": {
+    "Urticaceae (крапивные)": 3,
+    "Apiaceae (зонтичные)": 1
+   },
+   "molds": {},
+   "weather": {
+    "temp_c": null,
+    "humidity_pct": null,
+    "wind_ms": null
+   }
+  },
+  {
+   "date": "2026-05-18",
+   "pollen_total": 77,
+   "pollen_level": "high",
+   "mold_total": 70,
+   "taxa": {
+    "Poaceae (злаковые)": 38,
+    "Cyperaceae (осоковые)": 22,
+    "Urticaceae (крапивные)": 5,
+    "Apiaceae (зонтичные)": 4,
+    "Pinus (сосна)": 3,
+    "Plantago (подорожник)": 2,
+    "Cupressaceae (кипарисовые)": 1,
+    "Liliaceae (лилейные)": 1,
+    "Taraxacum (одуванчик)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 30,
+    "Curvularia lunata": 24,
+    "Alternaria alternata": 16
+   },
+   "weather": {
+    "temp_c": 24.0,
+    "humidity_pct": 57.99999999999999,
+    "wind_ms": 4.0
+   }
+  },
+  {
+   "date": "2026-05-19",
+   "pollen_total": 34,
+   "pollen_level": "moderate",
+   "mold_total": 64,
+   "taxa": {
+    "Poaceae (злаковые)": 17,
+    "Cyperaceae (осоковые)": 12,
+    "Apiaceae (зонтичные)": 4,
+    "Liliaceae (лилейные)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 27,
+    "Curvularia lunata": 22,
+    "Alternaria alternata": 15
+   },
+   "weather": {
+    "temp_c": 23.0,
+    "humidity_pct": 57.99999999999999,
+    "wind_ms": 3.7
+   }
+  },
+  {
+   "date": "2026-05-20",
+   "pollen_total": 75,
+   "pollen_level": "high",
+   "mold_total": 63,
+   "taxa": {
+    "Poaceae (злаковые)": 36,
+    "Cyperaceae (осоковые)": 15,
+    "Urticaceae (крапивные)": 10,
+    "Apiaceae (зонтичные)": 5,
+    "Pinus (сосна)": 4,
+    "Plantago (подорожник)": 3,
+    "Cupressaceae (кипарисовые)": 1,
+    "Liliaceae (лилейные)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 25,
+    "Curvularia lunata": 21,
+    "Alternaria alternata": 17
+   },
+   "weather": {
+    "temp_c": 22.0,
+    "humidity_pct": 57.99999999999999,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2026-05-21",
+   "pollen_total": 28,
+   "pollen_level": "moderate",
+   "mold_total": 52,
+   "taxa": {
+    "Poaceae (злаковые)": 15,
+    "Cyperaceae (осоковые)": 5,
+    "Urticaceae (крапивные)": 3,
+    "Apiaceae (зонтичные)": 1,
+    "Betula (берёза)": 1,
+    "Cupressaceae (кипарисовые)": 1,
+    "Liliaceae (лилейные)": 1,
+    "Picea (ель)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 24,
+    "Curvularia lunata": 16,
+    "Alternaria alternata": 12
+   },
+   "weather": {
+    "temp_c": 24.0,
+    "humidity_pct": 57.99999999999999,
+    "wind_ms": 4.1
+   }
+  },
+  {
+   "date": "2026-05-22",
+   "pollen_total": 5,
+   "pollen_level": "low",
+   "mold_total": 56,
+   "taxa": {
+    "Poaceae (злаковые)": 4,
+    "Quercus (дуб)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 28,
+    "Curvularia lunata": 19,
+    "Alternaria alternata": 9
+   },
+   "weather": {
+    "temp_c": 20.0,
+    "humidity_pct": 56.99999999999999,
+    "wind_ms": 4.0
+   }
+  },
+  {
+   "date": "2026-05-23",
+   "pollen_total": 15,
+   "pollen_level": "moderate",
+   "mold_total": 61,
+   "taxa": {
+    "Poaceae (злаковые)": 5,
+    "Cyperaceae (осоковые)": 4,
+    "Urticaceae (крапивные)": 3,
+    "Betula (берёза)": 2,
+    "Picea (ель)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 31,
+    "Curvularia lunata": 17,
+    "Alternaria alternata": 13
+   },
+   "weather": {
+    "temp_c": 17.0,
+    "humidity_pct": 57.99999999999999,
+    "wind_ms": 3.7
+   }
+  },
+  {
+   "date": "2026-05-24",
+   "pollen_total": 40,
+   "pollen_level": "moderate",
+   "mold_total": 59,
+   "taxa": {
+    "Urticaceae (крапивные)": 18,
+    "Poaceae (злаковые)": 12,
+    "Cyperaceae (осоковые)": 6,
+    "Pinus (сосна)": 2,
+    "Apiaceae (зонтичные)": 1,
+    "Plantago (подорожник)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 30,
+    "Alternaria alternata": 15,
+    "Curvularia lunata": 14
+   },
+   "weather": {
+    "temp_c": 22.0,
+    "humidity_pct": 57.99999999999999,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2026-05-25",
+   "pollen_total": 62,
+   "pollen_level": "high",
+   "mold_total": 49,
+   "taxa": {
+    "Poaceae (злаковые)": 31,
+    "Cyperaceae (осоковые)": 12,
+    "Urticaceae (крапивные)": 11,
+    "Pinus (сосна)": 3,
+    "Betula (берёза)": 2,
+    "Apiaceae (зонтичные)": 1,
+    "Artemisia (полынь)": 1,
+    "Picea (ель)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 27,
+    "Alternaria alternata": 12,
+    "Curvularia lunata": 10
+   },
+   "weather": {
+    "temp_c": 25.0,
+    "humidity_pct": 55.00000000000001,
+    "wind_ms": 3.7
+   }
+  },
+  {
+   "date": "2026-05-26",
+   "pollen_total": 38,
+   "pollen_level": "moderate",
+   "mold_total": 67,
+   "taxa": {
+    "Poaceae (злаковые)": 13,
+    "Urticaceae (крапивные)": 8,
+    "Cyperaceae (осоковые)": 6,
+    "Pinus (сосна)": 3,
+    "Rumex (щавель)": 3,
+    "Apiaceae (зонтичные)": 2,
+    "Picea (ель)": 1,
+    "Plantago (подорожник)": 1,
+    "Tilia (липа)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 30,
+    "Alternaria alternata": 15,
+    "Curvularia lunata": 12,
+    "Bipolaris spicifera": 10
+   },
+   "weather": {
+    "temp_c": 25.0,
+    "humidity_pct": 55.00000000000001,
+    "wind_ms": 3.9
+   }
+  },
+  {
+   "date": "2026-05-27",
+   "pollen_total": 50,
+   "pollen_level": "moderate",
+   "mold_total": 64,
+   "taxa": {
+    "Poaceae (злаковые)": 26,
+    "Cyperaceae (осоковые)": 9,
+    "Urticaceae (крапивные)": 6,
+    "Apiaceae (зонтичные)": 4,
+    "Rumex (щавель)": 2,
+    "Artemisia (полынь)": 1,
+    "Plantago (подорожник)": 1,
+    "Tilia (липа)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 35,
+    "Alternaria alternata": 13,
+    "Curvularia lunata": 9,
+    "Bipolaris spicifera": 7
+   },
+   "weather": {
+    "temp_c": 26.0,
+    "humidity_pct": 52.0,
+    "wind_ms": 3.7
+   }
+  },
+  {
+   "date": "2026-05-28",
+   "pollen_total": 37,
+   "pollen_level": "moderate",
+   "mold_total": 57,
+   "taxa": {
+    "Poaceae (злаковые)": 16,
+    "Urticaceae (крапивные)": 7,
+    "Cyperaceae (осоковые)": 6,
+    "Apiaceae (зонтичные)": 2,
+    "Plantago (подорожник)": 2,
+    "Tilia (липа)": 2,
+    "Chenopodiaceae (маревые)": 1,
+    "Rumex (щавель)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 33,
+    "Alternaria alternata": 14,
+    "Curvularia lunata": 7,
+    "Bipolaris spicifera": 3
+   },
+   "weather": {
+    "temp_c": 24.0,
+    "humidity_pct": 52.0,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2026-05-29",
+   "pollen_total": 46,
+   "pollen_level": "moderate",
+   "mold_total": 117,
+   "taxa": {
+    "Poaceae (злаковые)": 16,
+    "Urticaceae (крапивные)": 12,
+    "Cyperaceae (осоковые)": 7,
+    "Rumex (щавель)": 7,
+    "Tilia (липа)": 3,
+    "Artemisia (полынь)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 63,
+    "Alternaria alternata": 40,
+    "Curvularia lunata": 12,
+    "Bipolaris spicifera": 2
+   },
+   "weather": {
+    "temp_c": 27.0,
+    "humidity_pct": 51.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2026-05-30",
+   "pollen_total": 39,
+   "pollen_level": "moderate",
+   "mold_total": 90,
+   "taxa": {
+    "Poaceae (злаковые)": 13,
+    "Urticaceae (крапивные)": 8,
+    "Rumex (щавель)": 6,
+    "Cyperaceae (осоковые)": 5,
+    "Pinus (сосна)": 4,
+    "Artemisia (полынь)": 1,
+    "Liliaceae (лилейные)": 1,
+    "Picea (ель)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 47,
+    "Alternaria alternata": 33,
+    "Curvularia lunata": 10
+   },
+   "weather": {
+    "temp_c": 29.0,
+    "humidity_pct": 52.0,
+    "wind_ms": 3.7
+   }
+  },
+  {
+   "date": "2026-05-31",
+   "pollen_total": 46,
+   "pollen_level": "moderate",
+   "mold_total": 76,
+   "taxa": {
+    "Poaceae (злаковые)": 15,
+    "Urticaceae (крапивные)": 10,
+    "Rumex (щавель)": 8,
+    "Cyperaceae (осоковые)": 7,
+    "Pinus (сосна)": 2,
+    "Apiaceae (зонтичные)": 1,
+    "Picea (ель)": 1,
+    "Quercus (дуб)": 1,
+    "Tilia (липа)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 41,
+    "Alternaria alternata": 28,
+    "Curvularia lunata": 7
+   },
+   "weather": {
+    "temp_c": 31.0,
+    "humidity_pct": 51.0,
+    "wind_ms": 3.4
+   }
+  },
+  {
+   "date": "2026-07-01",
+   "pollen_total": 35,
+   "pollen_level": "moderate",
+   "mold_total": 73,
+   "taxa": {
+    "Artemisia (полынь)": 12,
+    "Urticaceae (крапивные)": 9,
+    "Poaceae (злаковые)": 8,
+    "Cyperaceae (осоковые)": 3,
+    "Tilia (липа)": 2,
+    "Ambrosia (амброзия)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 35,
+    "Bipolaris spicifera": 20,
+    "Alternaria alternata": 10,
+    "Uredospores": 5,
+    "Curvularia lunata": 3
+   },
+   "weather": {
+    "temp_c": 25.0,
+    "humidity_pct": 41.0,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2026-07-02",
+   "pollen_total": 17,
+   "pollen_level": "moderate",
+   "mold_total": 57,
+   "taxa": {
+    "Artemisia (полынь)": 7,
+    "Cyperaceae (осоковые)": 3,
+    "Poaceae (злаковые)": 3,
+    "Plantago (подорожник)": 2,
+    "Urticaceae (крапивные)": 2
+   },
+   "molds": {
+    "Bipolaris spicifera": 27,
+    "Cladosporium herbarum": 22,
+    "Alternaria alternata": 8
+   },
+   "weather": {
+    "temp_c": 28.0,
+    "humidity_pct": 43.0,
+    "wind_ms": 3.9
+   }
+  },
+  {
+   "date": "2026-07-03",
+   "pollen_total": 1,
+   "pollen_level": "low",
+   "mold_total": 52,
+   "taxa": {
+    "Artemisia (полынь)": 1
+   },
+   "molds": {
+    "Bipolaris spicifera": 31,
+    "Cladosporium herbarum": 17,
+    "Alternaria alternata": 4
+   },
+   "weather": {
+    "temp_c": 18.0,
+    "humidity_pct": 42.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2026-07-04",
+   "pollen_total": 22,
+   "pollen_level": "moderate",
+   "mold_total": 144,
+   "taxa": {
+    "Poaceae (злаковые)": 10,
+    "Artemisia (полынь)": 7,
+    "Urticaceae (крапивные)": 5
+   },
+   "molds": {
+    "Cladosporium herbarum": 93,
+    "Alternaria alternata": 31,
+    "Bipolaris spicifera": 20
+   },
+   "weather": {
+    "temp_c": 20.0,
+    "humidity_pct": 43.0,
+    "wind_ms": 3.4
+   }
+  },
+  {
+   "date": "2026-07-05",
+   "pollen_total": 37,
+   "pollen_level": "moderate",
+   "mold_total": 84,
+   "taxa": {
+    "Artemisia (полынь)": 13,
+    "Poaceae (злаковые)": 11,
+    "Urticaceae (крапивные)": 9,
+    "Cyperaceae (осоковые)": 4
+   },
+   "molds": {
+    "Cladosporium herbarum": 44,
+    "Alternaria alternata": 24,
+    "Bipolaris spicifera": 16
+   },
+   "weather": {
+    "temp_c": 27.0,
+    "humidity_pct": 45.0,
+    "wind_ms": 4.0
+   }
+  },
+  {
+   "date": "2026-07-06",
+   "pollen_total": 23,
+   "pollen_level": "moderate",
+   "mold_total": 41,
+   "taxa": {
+    "Artemisia (полынь)": 9,
+    "Poaceae (злаковые)": 7,
+    "Urticaceae (крапивные)": 5,
+    "Ambrosia (амброзия)": 1,
+    "Plantago (подорожник)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 23,
+    "Alternaria alternata": 14,
+    "Bipolaris spicifera": 4
+   },
+   "weather": {
+    "temp_c": 28.0,
+    "humidity_pct": 45.0,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2026-07-07",
+   "pollen_total": 50,
+   "pollen_level": "moderate",
+   "mold_total": 81,
+   "taxa": {
+    "Artemisia (полынь)": 16,
+    "Poaceae (злаковые)": 13,
+    "Urticaceae (крапивные)": 11,
+    "Cyperaceae (осоковые)": 6,
+    "Plantago (подорожник)": 3,
+    "Rumex (щавель)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 38,
+    "Alternaria alternata": 30,
+    "Bipolaris spicifera": 7,
+    "Curvularia lunata": 3,
+    "Uredospores": 3
+   },
+   "weather": {
+    "temp_c": 29.0,
+    "humidity_pct": 42.0,
+    "wind_ms": 3.4
+   }
+  },
+  {
+   "date": "2026-07-08",
+   "pollen_total": 40,
+   "pollen_level": "moderate",
+   "mold_total": 72,
+   "taxa": {
+    "Poaceae (злаковые)": 15,
+    "Urticaceae (крапивные)": 12,
+    "Artemisia (полынь)": 4,
+    "Chenopodiaceae (маревые)": 3,
+    "Plantago (подорожник)": 3,
+    "Rumex (щавель)": 2,
+    "Liliaceae (лилейные)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 33,
+    "Alternaria alternata": 27,
+    "Uredospores": 7,
+    "Bipolaris spicifera": 5
+   },
+   "weather": {
+    "temp_c": 31.0,
+    "humidity_pct": 39.0,
+    "wind_ms": 3.4
+   }
+  },
+  {
+   "date": "2026-07-13",
+   "pollen_total": 50,
+   "pollen_level": "moderate",
+   "mold_total": 58,
+   "taxa": {
+    "Artemisia (полынь)": 16,
+    "Poaceae (злаковые)": 12,
+    "Urticaceae (крапивные)": 8,
+    "Chenopodiaceae (маревые)": 6,
+    "Cyperaceae (осоковые)": 5,
+    "Plantago (подорожник)": 3
+   },
+   "molds": {
+    "Cladosporium herbarum": 29,
+    "Alternaria alternata": 25,
+    "Curvularia lunata": 4
+   },
+   "weather": {
+    "temp_c": 29.0,
+    "humidity_pct": 43.0,
+    "wind_ms": 3.9
+   }
+  },
+  {
+   "date": "2026-07-14",
+   "pollen_total": 60,
+   "pollen_level": "high",
+   "mold_total": 45,
+   "taxa": {
+    "Artemisia (полынь)": 18,
+    "Poaceae (злаковые)": 16,
+    "Chenopodiaceae (маревые)": 7,
+    "Plantago (подорожник)": 7,
+    "Cyperaceae (осоковые)": 6,
+    "Urticaceae (крапивные)": 6
+   },
+   "molds": {
+    "Cladosporium herbarum": 24,
+    "Alternaria alternata": 21
+   },
+   "weather": {
+    "temp_c": 31.0,
+    "humidity_pct": 46.0,
+    "wind_ms": 3.7
+   }
+  },
+  {
+   "date": "2026-07-15",
+   "pollen_total": 68,
+   "pollen_level": "high",
+   "mold_total": 42,
+   "taxa": {
+    "Artemisia (полынь)": 26,
+    "Poaceae (злаковые)": 15,
+    "Chenopodiaceae (маревые)": 9,
+    "Urticaceae (крапивные)": 9,
+    "Plantago (подорожник)": 6,
+    "Cyperaceae (осоковые)": 3
+   },
+   "molds": {
+    "Alternaria alternata": 21,
+    "Cladosporium herbarum": 19,
+    "Curvularia lunata": 2
+   },
+   "weather": {
+    "temp_c": 34.0,
+    "humidity_pct": 45.0,
+    "wind_ms": 3.7
+   }
+  },
+  {
+   "date": "2026-07-16",
+   "pollen_total": 91,
+   "pollen_level": "high",
+   "mold_total": 42,
+   "taxa": {
+    "Artemisia (полынь)": 29,
+    "Poaceae (злаковые)": 20,
+    "Urticaceae (крапивные)": 12,
+    "Plantago (подорожник)": 10,
+    "Chenopodiaceae (маревые)": 8,
+    "Cyperaceae (осоковые)": 8,
+    "Liliaceae (лилейные)": 2,
+    "Ambrosia (амброзия)": 1,
+    "Rumex (щавель)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 23,
+    "Alternaria alternata": 17,
+    "Uredospores": 2
+   },
+   "weather": {
+    "temp_c": 36.0,
+    "humidity_pct": 45.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2026-07-17",
+   "pollen_total": 95,
+   "pollen_level": "high",
+   "mold_total": 48,
+   "taxa": {
+    "Artemisia (полынь)": 26,
+    "Poaceae (злаковые)": 25,
+    "Urticaceae (крапивные)": 15,
+    "Moraceae (тутовые)": 9,
+    "Cyperaceae (осоковые)": 7,
+    "Chenopodiaceae (маревые)": 5,
+    "Plantago (подорожник)": 3,
+    "Apiaceae (зонтичные)": 2,
+    "Ambrosia (амброзия)": 1,
+    "Liliaceae (лилейные)": 1,
+    "Rumex (щавель)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 27,
+    "Alternaria alternata": 19,
+    "Uredospores": 2
+   },
+   "weather": {
+    "temp_c": 38.0,
+    "humidity_pct": 44.0,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2026-07-18",
+   "pollen_total": 69,
+   "pollen_level": "high",
+   "mold_total": 44,
+   "taxa": {
+    "Poaceae (злаковые)": 19,
+    "Urticaceae (крапивные)": 12,
+    "Artemisia (полынь)": 10,
+    "Moraceae (тутовые)": 9,
+    "Cyperaceae (осоковые)": 7,
+    "Chenopodiaceae (маревые)": 5,
+    "Plantago (подорожник)": 5,
+    "Ambrosia (амброзия)": 1,
+    "Liliaceae (лилейные)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 26,
+    "Alternaria alternata": 15,
+    "Bipolaris spicifera": 2,
+    "Uredospores": 1
+   },
+   "weather": {
+    "temp_c": 39.0,
+    "humidity_pct": 43.0,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2026-07-19",
+   "pollen_total": 68,
+   "pollen_level": "high",
+   "mold_total": 46,
+   "taxa": {
+    "Poaceae (злаковые)": 16,
+    "Artemisia (полынь)": 11,
+    "Moraceae (тутовые)": 10,
+    "Urticaceae (крапивные)": 10,
+    "Cyperaceae (осоковые)": 8,
+    "Plantago (подорожник)": 7,
+    "Chenopodiaceae (маревые)": 4,
+    "Ambrosia (амброзия)": 2
+   },
+   "molds": {
+    "Cladosporium herbarum": 30,
+    "Alternaria alternata": 13,
+    "Bipolaris spicifera": 3
+   },
+   "weather": {
+    "temp_c": 40.0,
+    "humidity_pct": 42.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2026-07-20",
+   "pollen_total": 66,
+   "pollen_level": "high",
+   "mold_total": 38,
+   "taxa": {
+    "Poaceae (злаковые)": 16,
+    "Artemisia (полынь)": 11,
+    "Cyperaceae (осоковые)": 9,
+    "Chenopodiaceae (маревые)": 8,
+    "Urticaceae (крапивные)": 7,
+    "Moraceae (тутовые)": 6,
+    "Plantago (подорожник)": 5,
+    "Ambrosia (амброзия)": 2,
+    "Rumex (щавель)": 2
+   },
+   "molds": {
+    "Cladosporium herbarum": 24,
+    "Alternaria alternata": 10,
+    "Curvularia lunata": 2,
+    "Uredospores": 2
+   },
+   "weather": {
+    "temp_c": 39.0,
+    "humidity_pct": 40.0,
+    "wind_ms": 3.4
+   }
+  },
+  {
+   "date": "2026-07-21",
+   "pollen_total": 56,
+   "pollen_level": "high",
+   "mold_total": 33,
+   "taxa": {
+    "Poaceae (злаковые)": 13,
+    "Artemisia (полынь)": 12,
+    "Urticaceae (крапивные)": 11,
+    "Cyperaceae (осоковые)": 7,
+    "Chenopodiaceae (маревые)": 6,
+    "Moraceae (тутовые)": 4,
+    "Plantago (подорожник)": 3
+   },
+   "molds": {
+    "Cladosporium herbarum": 16,
+    "Alternaria alternata": 7,
+    "Bipolaris spicifera": 5,
+    "Curvularia lunata": 3,
+    "Uredospores": 2
+   },
+   "weather": {
+    "temp_c": 30.0,
+    "humidity_pct": 43.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2026-07-22",
+   "pollen_total": 55,
+   "pollen_level": "high",
+   "mold_total": 61,
+   "taxa": {
+    "Urticaceae (крапивные)": 13,
+    "Cyperaceae (осоковые)": 11,
+    "Poaceae (злаковые)": 11,
+    "Artemisia (полынь)": 10,
+    "Chenopodiaceae (маревые)": 4,
+    "Moraceae (тутовые)": 3,
+    "Plantago (подорожник)": 2,
+    "Ambrosia (амброзия)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 38,
+    "Alternaria alternata": 19,
+    "Curvularia lunata": 2,
+    "Uredospores": 2
+   },
+   "weather": {
+    "temp_c": 25.0,
+    "humidity_pct": 43.0,
+    "wind_ms": 3.4
+   }
+  },
+  {
+   "date": "2026-07-23",
+   "pollen_total": 64,
+   "pollen_level": "high",
+   "mold_total": 56,
+   "taxa": {
+    "Cyperaceae (осоковые)": 14,
+    "Urticaceae (крапивные)": 12,
+    "Artemisia (полынь)": 11,
+    "Poaceae (злаковые)": 10,
+    "Chenopodiaceae (маревые)": 6,
+    "Moraceae (тутовые)": 4,
+    "Plantago (подорожник)": 4,
+    "Ambrosia (амброзия)": 3
+   },
+   "molds": {
+    "Cladosporium herbarum": 34,
+    "Alternaria alternata": 22
+   },
+   "weather": {
+    "temp_c": 26.0,
+    "humidity_pct": 40.0,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2026-07-24",
+   "pollen_total": 50,
+   "pollen_level": "moderate",
+   "mold_total": 52,
+   "taxa": {
+    "Urticaceae (крапивные)": 13,
+    "Artemisia (полынь)": 10,
+    "Poaceae (злаковые)": 8,
+    "Chenopodiaceae (маревые)": 7,
+    "Plantago (подорожник)": 5,
+    "Cyperaceae (осоковые)": 4,
+    "Rumex (щавель)": 2,
+    "Ambrosia (амброзия)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 31,
+    "Alternaria alternata": 15,
+    "Bipolaris spicifera": 4,
+    "Uredospores": 2
+   },
+   "weather": {
+    "temp_c": 28.0,
+    "humidity_pct": 41.0,
+    "wind_ms": 3.4
+   }
+  },
+  {
+   "date": "2026-07-25",
+   "pollen_total": 83,
+   "pollen_level": "high",
+   "mold_total": 89,
+   "taxa": {
+    "Artemisia (полынь)": 21,
+    "Urticaceae (крапивные)": 15,
+    "Poaceae (злаковые)": 12,
+    "Chenopodiaceae (маревые)": 9,
+    "Ambrosia (амброзия)": 7,
+    "Plantago (подорожник)": 7,
+    "Cyperaceae (осоковые)": 6,
+    "Cannabaceae (коноплёвые)": 3,
+    "Moraceae (тутовые)": 2,
+    "Liliaceae (лилейные)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 40,
+    "Alternaria alternata": 34,
+    "Bipolaris spicifera": 12,
+    "Curvularia lunata": 3
+   },
+   "weather": {
+    "temp_c": 30.0,
+    "humidity_pct": 42.0,
+    "wind_ms": 2.7
+   }
+  },
+  {
+   "date": "2026-07-26",
+   "pollen_total": 57,
+   "pollen_level": "high",
+   "mold_total": 83,
+   "taxa": {
+    "Chenopodiaceae (маревые)": 11,
+    "Urticaceae (крапивные)": 11,
+    "Poaceae (злаковые)": 10,
+    "Artemisia (полынь)": 9,
+    "Plantago (подорожник)": 6,
+    "Ambrosia (амброзия)": 5,
+    "Moraceae (тутовые)": 3,
+    "Cannabaceae (коноплёвые)": 2
+   },
+   "molds": {
+    "Cladosporium herbarum": 43,
+    "Alternaria alternata": 28,
+    "Bipolaris spicifera": 8,
+    "Uredospores": 4
+   },
+   "weather": {
+    "temp_c": 29.0,
+    "humidity_pct": 41.0,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2026-07-27",
+   "pollen_total": 77,
+   "pollen_level": "high",
+   "mold_total": 69,
+   "taxa": {
+    "Artemisia (полынь)": 19,
+    "Poaceae (злаковые)": 13,
+    "Chenopodiaceae (маревые)": 12,
+    "Urticaceae (крапивные)": 10,
+    "Plantago (подорожник)": 8,
+    "Cannabaceae (коноплёвые)": 7,
+    "Moraceae (тутовые)": 6,
+    "Ambrosia (амброзия)": 2
+   },
+   "molds": {
+    "Cladosporium herbarum": 35,
+    "Alternaria alternata": 24,
+    "Curvularia lunata": 6,
+    "Bipolaris spicifera": 4
+   },
+   "weather": {
+    "temp_c": 29.0,
+    "humidity_pct": 40.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2026-07-28",
+   "pollen_total": 99,
+   "pollen_level": "high",
+   "mold_total": 64,
+   "taxa": {
+    "Artemisia (полынь)": 26,
+    "Poaceae (злаковые)": 15,
+    "Urticaceae (крапивные)": 12,
+    "Chenopodiaceae (маревые)": 11,
+    "Plantago (подорожник)": 10,
+    "Cannabaceae (коноплёвые)": 9,
+    "Moraceae (тутовые)": 8,
+    "Ambrosia (амброзия)": 6,
+    "Liliaceae (лилейные)": 1,
+    "Rumex (щавель)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 31,
+    "Alternaria alternata": 26,
+    "Curvularia lunata": 4,
+    "Bipolaris spicifera": 3
+   },
+   "weather": {
+    "temp_c": 28.0,
+    "humidity_pct": 42.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2026-07-29",
+   "pollen_total": 94,
+   "pollen_level": "high",
+   "mold_total": 81,
+   "taxa": {
+    "Artemisia (полынь)": 23,
+    "Poaceae (злаковые)": 14,
+    "Cannabaceae (коноплёвые)": 12,
+    "Urticaceae (крапивные)": 11,
+    "Plantago (подорожник)": 9,
+    "Ambrosia (амброзия)": 8,
+    "Chenopodiaceae (маревые)": 7,
+    "Cyperaceae (осоковые)": 5,
+    "Moraceae (тутовые)": 5
+   },
+   "molds": {
+    "Cladosporium herbarum": 36,
+    "Alternaria alternata": 33,
+    "Curvularia lunata": 8,
+    "Uredospores": 4
+   },
+   "weather": {
+    "temp_c": 29.0,
+    "humidity_pct": 41.0,
+    "wind_ms": 3.0
+   }
+  },
+  {
+   "date": "2026-07-30",
+   "pollen_total": 91,
+   "pollen_level": "high",
+   "mold_total": 86,
+   "taxa": {
+    "Artemisia (полынь)": 17,
+    "Poaceae (злаковые)": 16,
+    "Cannabaceae (коноплёвые)": 13,
+    "Ambrosia (амброзия)": 10,
+    "Chenopodiaceae (маревые)": 10,
+    "Urticaceae (крапивные)": 8,
+    "Plantago (подорожник)": 7,
+    "Moraceae (тутовые)": 6,
+    "Cyperaceae (осоковые)": 3,
+    "Liliaceae (лилейные)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 43,
+    "Alternaria alternata": 31,
+    "Curvularia lunata": 12
+   },
+   "weather": {
+    "temp_c": 30.0,
+    "humidity_pct": 41.0,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2026-07-31",
+   "pollen_total": 103,
+   "pollen_level": "high",
+   "mold_total": 111,
+   "taxa": {
+    "Artemisia (полынь)": 31,
+    "Cannabaceae (коноплёвые)": 16,
+    "Poaceae (злаковые)": 13,
+    "Urticaceae (крапивные)": 12,
+    "Moraceae (тутовые)": 8,
+    "Chenopodiaceae (маревые)": 7,
+    "Plantago (подорожник)": 6,
+    "Ambrosia (амброзия)": 5,
+    "Cyperaceae (осоковые)": 5
+   },
+   "molds": {
+    "Cladosporium herbarum": 50,
+    "Alternaria alternata": 36,
+    "Curvularia lunata": 16,
+    "Bipolaris spicifera": 9
+   },
+   "weather": {
+    "temp_c": 32.0,
+    "humidity_pct": 41.0,
+    "wind_ms": 3.4
+   }
+  },
+  {
+   "date": "2026-08-01",
+   "pollen_total": 37,
+   "pollen_level": "moderate",
+   "mold_total": 39,
+   "taxa": {
+    "Artemisia (полынь)": 11,
+    "Urticaceae (крапивные)": 7,
+    "Cannabaceae (коноплёвые)": 6,
+    "Poaceae (злаковые)": 5,
+    "Moraceae (тутовые)": 3,
+    "Ambrosia (амброзия)": 2,
+    "Plantago (подорожник)": 2,
+    "Chenopodiaceae (маревые)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 21,
+    "Alternaria alternata": 13,
+    "Curvularia lunata": 5
+   },
+   "weather": {
+    "temp_c": 32.0,
+    "humidity_pct": 41.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2026-08-02",
+   "pollen_total": 0,
+   "pollen_level": "none",
+   "mold_total": 0,
+   "taxa": {},
+   "molds": {},
+   "weather": {
+    "temp_c": 34.0,
+    "humidity_pct": 42.0,
+    "wind_ms": 3.4
+   }
+  },
+  {
+   "date": "2026-08-03",
+   "pollen_total": 80,
+   "pollen_level": "high",
+   "mold_total": 78,
+   "taxa": {
+    "Urticaceae (крапивные)": 15,
+    "Artemisia (полынь)": 13,
+    "Cannabaceae (коноплёвые)": 12,
+    "Poaceae (злаковые)": 10,
+    "Chenopodiaceae (маревые)": 8,
+    "Ambrosia (амброзия)": 7,
+    "Cyperaceae (осоковые)": 6,
+    "Plantago (подорожник)": 5,
+    "Moraceae (тутовые)": 4
+   },
+   "molds": {
+    "Cladosporium herbarum": 43,
+    "Alternaria alternata": 31,
+    "Uredospores": 4
+   },
+   "weather": {
+    "temp_c": 35.0,
+    "humidity_pct": 43.0,
+    "wind_ms": 3.2
+   }
+  },
+  {
+   "date": "2026-08-04",
+   "pollen_total": 63,
+   "pollen_level": "high",
+   "mold_total": 72,
+   "taxa": {
+    "Artemisia (полынь)": 23,
+    "Urticaceae (крапивные)": 9,
+    "Poaceae (злаковые)": 8,
+    "Cannabaceae (коноплёвые)": 7,
+    "Cyperaceae (осоковые)": 4,
+    "Chenopodiaceae (маревые)": 3,
+    "Plantago (подорожник)": 3,
+    "Ambrosia (амброзия)": 2,
+    "Apiaceae (зонтичные)": 2,
+    "Moraceae (тутовые)": 2
+   },
+   "molds": {
+    "Cladosporium herbarum": 35,
+    "Alternaria alternata": 24,
+    "Curvularia lunata": 8,
+    "Bipolaris spicifera": 5
+   },
+   "weather": {
+    "temp_c": 23.0,
+    "humidity_pct": 44.0,
+    "wind_ms": 2.9
+   }
+  },
+  {
+   "date": "2026-08-05",
+   "pollen_total": 76,
+   "pollen_level": "high",
+   "mold_total": 73,
+   "taxa": {
+    "Artemisia (полынь)": 18,
+    "Urticaceae (крапивные)": 11,
+    "Cyperaceae (осоковые)": 10,
+    "Cannabaceae (коноплёвые)": 8,
+    "Poaceae (злаковые)": 7,
+    "Ambrosia (амброзия)": 6,
+    "Chenopodiaceae (маревые)": 5,
+    "Moraceae (тутовые)": 3,
+    "Plantago (подорожник)": 3,
+    "Apiaceae (зонтичные)": 2,
+    "Rumex (щавель)": 2,
+    "Liliaceae (лилейные)": 1
+   },
+   "molds": {
+    "Cladosporium herbarum": 38,
+    "Alternaria alternata": 30,
+    "Curvularia lunata": 3,
+    "Uredospores": 2
+   },
+   "weather": {
+    "temp_c": 24.0,
+    "humidity_pct": 39.0,
+    "wind_ms": 3.5
+   }
+  },
+  {
+   "date": "2026-08-06",
+   "pollen_total": 107,
+   "pollen_level": "high",
+   "mold_total": 85,
+   "taxa": {
+    "Artemisia (полынь)": 41,
+    "Urticaceae (крапивные)": 12,
+    "Ambrosia (амброзия)": 10,
+    "Cannabaceae (коноплёвые)": 10,
+    "Poaceae (злаковые)": 10,
+    "Cyperaceae (осоковые)": 8,
+    "Chenopodiaceae (маревые)": 7,
+    "Plantago (подорожник)": 5,
+    "Apiaceae (зонтичные)": 2,
+    "Rumex (щавель)": 2
+   },
+   "molds": {
+    "Cladosporium herbarum": 49,
+    "Alternaria alternata": 36
+   },
+   "weather": {
+    "temp_c": 29.0,
+    "humidity_pct": 38.0,
+    "wind_ms": 3.0
+   }
+  }
+ ]
+}

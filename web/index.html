@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Пыльца Алматы — ежедневные измерения</title>
+    <meta
+      name="description"
+      content="Ежедневные подсчёты пыльцы и спор для Алматы. Ловушка Буркарда, подсчёт под микроскопом в лаборатории."
+    />
+    <meta name="theme-color" content="#f9f7f1" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#17150f" media="(prefers-color-scheme: dark)" />
+
+    <link rel="preload" href="/fonts/geist-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/geist-600.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/app.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Перейти к содержанию</a>
+
+    <div class="shell">
+      <div class="freshness" id="freshness" role="status" aria-live="polite">
+        <span class="freshness__dot" aria-hidden="true"></span>
+        <span id="freshness-text">Загружаем запись…</span>
+        <span class="freshness__net" id="net" hidden>из кэша</span>
+      </div>
+
+      <nav class="tabbar" id="tabbar" aria-label="Разделы"></nav>
+
+      <main id="main">
+        <!-- ── СЕГОДНЯ ────────────────────────────────────────────────── -->
+        <div class="view" id="view-today">
+          <section id="t-hero"><div class="status">Загружаем…</div></section>
+          <section id="t-air"></section>
+          <section id="t-state"></section>
+          <section id="t-mold"></section>
+          <section id="t-tape"></section>
+        </div>
+
+        <!-- ── МОЙ ТРИГГЕР ────────────────────────────────────────────── -->
+        <div class="view" id="view-trigger" hidden>
+          <section id="g-known"></section>
+          <section id="g-log"><div class="status">Загружаем…</div></section>
+          <section id="g-profile"></section>
+          <section id="g-diag"></section>
+          <section id="g-cross"></section>
+        </div>
+
+        <!-- ── СЕЗОН ──────────────────────────────────────────────────── -->
+        <div class="view" id="view-season" hidden>
+          <section id="s-chart"><div class="status">Загружаем…</div></section>
+          <section id="s-detector"></section>
+          <section id="s-pace"></section>
+        </div>
+
+        <!-- ── ГОД ────────────────────────────────────────────────────── -->
+        <div class="view" id="view-year" hidden>
+          <section id="y-explorer"><div class="status">Загружаем…</div></section>
+          <section id="y-grid"></section>
+        </div>
+      </main>
+    </div>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

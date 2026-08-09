@@ -1,0 +1,1289 @@
+@import url('/tokens.css');
+
+/* ──────────────────────────────────────────────────────────────────────────
+   Almaty Aerobiology — components
+
+   Separation is hairlines and surface steps. There is exactly one shadow in
+   the system and it is on the bottom bar, because that bar genuinely floats
+   over scrolling content. No shadows on tiles, no blur, no glass.
+   ────────────────────────────────────────────────────────────────────────── */
+
+/* ── Fonts: self-hosted, subset to Latin + Cyrillic (36 KB for all three) ── */
+
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/geist-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/geist-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('/fonts/geist-mono-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 var(--fs-body) / 1.55 var(--sans);
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Tabular figures for COLUMNS only. The hero value keeps proportional figures
+   on purpose — tabular gives every digit the width of a 0, which makes a
+   standalone 80px number look gappy. */
+.tnum {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum' 1;
+}
+
+:where(button, a, input, select, textarea):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+.skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--accent);
+  color: var(--accent-ink);
+  padding: var(--s3) var(--s4);
+  border-radius: var(--r-control);
+  z-index: 100;
+}
+.skip:focus {
+  left: var(--s3);
+  top: var(--s3);
+}
+
+/* ── Shell ──────────────────────────────────────────────────────────────── */
+
+.shell {
+  min-height: 100dvh;
+  padding-bottom: calc(var(--bar-h) + env(safe-area-inset-bottom) + var(--s4));
+}
+
+main {
+  padding: 0 var(--s4) var(--s8);
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.view[hidden] {
+  display: none !important;
+}
+
+section {
+  margin-top: var(--s6);
+}
+
+/* ── Freshness strip — the disclosure that must always be visible ───────── */
+
+.freshness {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  padding: var(--s3) var(--s4);
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  font: 400 var(--fs-sm) / 1.3 var(--sans);
+  color: var(--ink-2);
+}
+.freshness b {
+  color: var(--ink);
+  font-weight: 600;
+}
+.freshness__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--ink-3);
+  flex: none;
+}
+.freshness[data-stale='true'] .freshness__dot {
+  background: var(--lvl-3);
+}
+.freshness__net {
+  margin-inline-start: auto;
+  font: 400 var(--fs-label) / 1 var(--mono);
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+
+/* ── Tile ───────────────────────────────────────────────────────────────── */
+
+.tile {
+  container-type: inline-size;
+  container-name: tile;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-tile);
+  padding: var(--s4);
+}
+
+.eyebrow {
+  display: block;
+  font: 400 var(--fs-label) / 1 var(--mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: var(--s3);
+}
+
+.tile h2 {
+  font-size: var(--fs-h2);
+}
+
+.lede {
+  margin: var(--s2) 0 0;
+  color: var(--ink-2);
+  font-size: var(--fs-sm);
+  max-width: 62ch;
+  text-wrap: pretty;
+}
+
+.note {
+  margin: var(--s3) 0 0;
+  color: var(--ink-3);
+  font-size: var(--fs-sm);
+  max-width: 62ch;
+  text-wrap: pretty;
+}
+
+/* ── Hero: label → value → verdict → comparison → action ─────────────────
+   The value is ALWAYS ink. Colour lives on the verdict chip, never on the
+   digits. This is the specific correction to the previous build. */
+
+.hero__label {
+  display: block;
+  font: 400 var(--fs-label) / 1 var(--mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.hero__value {
+  display: block;
+  font-size: var(--fs-hero);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin-top: var(--s2);
+}
+
+.hero__unit {
+  margin: var(--s2) 0 0;
+  color: var(--ink-2);
+  font-size: var(--fs-lead);
+}
+
+.hero__compare {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  margin-top: var(--s4);
+  color: var(--ink-2);
+  font-size: var(--fs-sm);
+}
+.hero__compare svg {
+  flex: none;
+}
+
+/* ── The verdict chip: stepper + word. Colour rides here. ────────────────── */
+
+.verdict {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s3);
+  margin-top: var(--s4);
+  padding: var(--s2) var(--s4) var(--s2) var(--s3);
+  border-radius: var(--r-pill);
+  background: var(--f);
+  color: var(--on-f);
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  letter-spacing: 0.02em;
+}
+
+/* Four cells, the first n filled. Position carries the value, so the level
+   survives with colour removed — you count filled cells. */
+.stepper {
+  display: inline-flex;
+  gap: 3px;
+  align-items: center;
+}
+.stepper__cell {
+  width: 7px;
+  height: 16px;
+  border-radius: 1px;
+  background: currentColor;
+  opacity: 0.28;
+}
+.stepper__cell[data-on='true'] {
+  opacity: 1;
+}
+
+/* ── Buttons ────────────────────────────────────────────────────────────── */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s2);
+  min-height: var(--tap);
+  padding: 0 var(--s5);
+  border: 1px solid transparent;
+  border-radius: var(--r-control);
+  background: var(--accent);
+  color: var(--accent-ink);
+  font: 600 var(--fs-body) / 1 var(--sans);
+  cursor: pointer;
+  text-decoration: none;
+  touch-action: manipulation;
+  transition: background-color 160ms ease-out;
+}
+.btn:hover {
+  background: var(--accent-hover);
+}
+.btn--ghost {
+  background: none;
+  border-color: var(--border-strong);
+  color: var(--ink);
+}
+.btn--ghost:hover {
+  background: var(--surface-sunk);
+}
+.btn--block {
+  width: 100%;
+}
+.btn[disabled] {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* The action row that closes every screen. */
+.action {
+  margin-top: var(--s5);
+  padding-top: var(--s5);
+  border-top: 1px solid var(--border);
+}
+.action__hint {
+  margin: 0 0 var(--s3);
+  color: var(--ink-3);
+  font-size: var(--fs-sm);
+}
+
+/* ── Composition bars ───────────────────────────────────────────────────── */
+
+.bars {
+  display: grid;
+  gap: var(--s1);
+  margin-top: var(--s3);
+}
+
+.bar {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: var(--s3);
+  padding: var(--s2) 0;
+}
+.bar__name {
+  font-size: var(--fs-sm);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.bar__latin {
+  color: var(--ink-3);
+}
+.bar__value {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+}
+.bar__track {
+  grid-column: 1 / -1;
+  height: 10px;
+  background: var(--lvl-0);
+  border-radius: 0 var(--r-data) var(--r-data) 0;
+}
+.bar__fill {
+  display: block;
+  height: 100%;
+  background: var(--f);
+  border-radius: 0 var(--r-data) var(--r-data) 0;
+}
+
+/* At tile widths that can carry it, the bar becomes a proper chart row.
+   Driven by the TILE's width, not the viewport — this is what broke before. */
+@container tile (min-width: 430px) {
+  .bar {
+    grid-template-columns: minmax(0, 190px) minmax(0, 1fr) 52px;
+    align-items: center;
+  }
+  .bar__track {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .bar__value {
+    text-align: right;
+  }
+  .bar__clinical {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+}
+
+/* The two readings for one taxon. The measured one is set in the body face and
+   sits flush; the literature one is indented behind a dashed rule, so which
+   claim came from the trap and which from a paper is settled by position
+   before either sentence is read. */
+.bar__clinical {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: 2px;
+  margin-top: var(--s2);
+}
+.bar__lab {
+  font-size: var(--fs-label);
+  color: var(--ink-2);
+}
+.bar__lit {
+  padding-left: var(--s3);
+  border-left: 1px dashed var(--border-strong);
+  font-size: var(--fs-label);
+  line-height: 1.5;
+  color: var(--ink-3);
+}
+.bar__litmark {
+  display: block;
+  font: 400 var(--fs-label) / 1.4 var(--mono);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.bar__litnote {
+  display: block;
+  color: var(--ink-3);
+}
+.note--lit {
+  padding-left: var(--s3);
+  border-left: 1px dashed var(--border-strong);
+}
+
+/* ── Row lists ──────────────────────────────────────────────────────────── */
+
+.rows {
+  display: grid;
+  margin-top: var(--s3);
+}
+.row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--s3);
+  align-items: center;
+  padding: var(--s3) 0;
+  border-top: 1px solid var(--border);
+}
+.row:first-child {
+  border-top: 0;
+}
+.row__name {
+  font-size: var(--fs-sm);
+}
+.row__sub {
+  display: block;
+  color: var(--ink-3);
+  font-size: var(--fs-label);
+}
+.row__right {
+  display: flex;
+  align-items: center;
+  gap: var(--s3);
+  color: var(--ink-2);
+  font-size: var(--fs-sm);
+  white-space: nowrap;
+}
+
+/* ── Mold: deliberately not on the pollen scale ──────────────────────────── */
+
+.mold__value {
+  font-size: clamp(2rem, 1.6rem + 1.6vw, 2.75rem);
+  font-weight: 600;
+  line-height: 1;
+}
+.meter {
+  height: 6px;
+  background: var(--lvl-0);
+  border-radius: var(--r-data);
+  margin-top: var(--s2);
+  overflow: hidden;
+}
+.meter span {
+  display: block;
+  height: 100%;
+  background: var(--ink-3);
+}
+
+/* ── Annotations ────────────────────────────────────────────────────────── */
+
+.annos {
+  list-style: none;
+  margin: var(--s4) 0 0;
+  padding: 0;
+}
+.anno {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: var(--s3);
+  align-items: start;
+  padding: var(--s3) 0;
+  border-top: 1px solid var(--border);
+  font-size: var(--fs-sm);
+  color: var(--ink-2);
+}
+.anno b {
+  color: var(--ink);
+}
+.anno__key {
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--surface);
+  font: 600 var(--fs-label) / 1 var(--sans);
+  display: grid;
+  place-items: center;
+}
+.anno--miss .anno__key {
+  background: var(--lvl-4);
+}
+.anno--miss b {
+  color: var(--lvl-4);
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s4);
+  margin-top: var(--s3);
+  font-size: var(--fs-sm);
+  color: var(--ink-2);
+}
+.legend i {
+  display: inline-block;
+  width: 20px;
+  border-top: 2px solid var(--lvl-3);
+  margin-inline-end: var(--s2);
+  vertical-align: middle;
+}
+.legend i[data-k='cur'] {
+  border-top-style: dashed;
+  border-top-color: var(--ink-2);
+}
+
+/* ── Detector scoreboard ────────────────────────────────────────────────── */
+
+.score {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s3);
+  margin-top: var(--s3);
+}
+.score__cell {
+  border: 1px solid var(--border);
+  border-radius: var(--r-control);
+  padding: var(--s3);
+}
+.score__n {
+  display: block;
+  font-size: clamp(1.75rem, 1.5rem + 1vw, 2.25rem);
+  font-weight: 600;
+  line-height: 1;
+}
+.score__k {
+  display: block;
+  margin-top: var(--s1);
+  font: 400 var(--fs-label) / 1.2 var(--mono);
+  color: var(--ink-3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.score__cell--miss {
+  border-color: var(--lvl-4);
+}
+.score__cell--miss .score__n {
+  color: var(--lvl-4);
+}
+
+/* ── Pace ───────────────────────────────────────────────────────────────── */
+
+.pace {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: end;
+  gap: var(--s3);
+  margin-top: var(--s3);
+}
+.pace__n {
+  display: block;
+  font-size: clamp(1.75rem, 1.4rem + 1.5vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1;
+}
+.pace__k {
+  display: block;
+  margin-top: var(--s1);
+  font: 400 var(--fs-label) / 1 var(--mono);
+  color: var(--ink-3);
+}
+.pace__mid {
+  text-align: center;
+  padding-bottom: var(--s1);
+}
+.pace__ratio {
+  display: block;
+  font-size: var(--fs-h2);
+  font-weight: 600;
+}
+
+/* ── Severity control ───────────────────────────────────────────────────── */
+
+.severity {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--s2);
+  margin-top: var(--s3);
+}
+@media (min-width: 480px) {
+  .severity {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.severity__btn {
+  min-height: 64px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--r-control);
+  background: var(--surface);
+  color: var(--ink);
+  font: 600 var(--fs-sm) / 1.2 var(--sans);
+  cursor: pointer;
+  touch-action: manipulation;
+  display: grid;
+  place-items: center;
+  gap: var(--s1);
+  transition: background-color 160ms ease-out, border-color 160ms ease-out;
+}
+.severity__btn:hover {
+  background: var(--surface-sunk);
+  border-color: var(--ink-3);
+}
+.severity__dots {
+  display: flex;
+  gap: 3px;
+}
+.severity__dots i {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--ink);
+  opacity: 0.25;
+}
+.severity__dots i[data-on='true'] {
+  opacity: 1;
+}
+
+/* ── Confidence ─────────────────────────────────────────────────────────── */
+
+.confidence {
+  display: flex;
+  gap: 4px;
+  margin-top: var(--s3);
+}
+.confidence__tick {
+  height: 8px;
+  flex: 1;
+  border-radius: var(--r-data);
+  background: var(--lvl-0);
+}
+.confidence__tick[data-on='true'] {
+  background: var(--accent);
+}
+
+/* ── Trigger weights ────────────────────────────────────────────────────── */
+
+.trigger {
+  padding: var(--s3) 0;
+  border-top: 1px solid var(--border);
+}
+.trigger__head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--s3);
+  align-items: baseline;
+}
+.trigger__name {
+  font-weight: 600;
+  font-size: var(--fs-sm);
+}
+.trigger__w {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+}
+.trigger__track {
+  height: 8px;
+  background: var(--lvl-0);
+  border-radius: 0 var(--r-data) var(--r-data) 0;
+  margin-top: var(--s2);
+}
+.trigger__bar {
+  display: block;
+  height: 100%;
+  background: var(--ink);
+  border-radius: 0 var(--r-data) var(--r-data) 0;
+}
+.trigger__bar[data-dir='protective'] {
+  background: var(--border-strong);
+}
+.trigger__note {
+  margin: var(--s2) 0 0;
+  font-size: var(--fs-sm);
+  color: var(--ink-2);
+}
+
+/* ── Year grid ──────────────────────────────────────────────────────────── */
+
+.gridwrap {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  margin-top: var(--s3);
+  border: 1px solid var(--border);
+  border-radius: var(--r-control);
+}
+.ygrid {
+  border-collapse: separate;
+  border-spacing: 2px;
+  width: 100%;
+  min-width: 520px;
+}
+.ygrid th,
+.ygrid td {
+  padding: 0;
+}
+.ygrid thead th {
+  font: 400 var(--fs-label) / 1 var(--mono);
+  color: var(--ink-3);
+  padding: var(--s2) 0;
+  text-align: center;
+}
+.ygrid thead th:first-child,
+.ygrid tbody th {
+  text-align: start;
+  padding-inline: var(--s3);
+  position: sticky;
+  inset-inline-start: 0;
+  background: var(--surface);
+  z-index: 1;
+}
+.ygrid tbody th {
+  font: 400 var(--fs-sm) / 1.2 var(--sans);
+  white-space: nowrap;
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ygrid td {
+  height: 18px;
+  background: var(--f, var(--lvl-0));
+  border-radius: 1px;
+}
+.ygrid td[data-gap='true'] {
+  background: repeating-linear-gradient(45deg, transparent 0 3px, var(--hatch) 3px 4.5px);
+  box-shadow: inset 0 0 0 1px var(--border);
+}
+
+/* ── Level key ──────────────────────────────────────────────────────────── */
+
+.key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s3);
+  margin-top: var(--s3);
+  font: 400 var(--fs-label) / 1 var(--mono);
+  color: var(--ink-3);
+}
+.key span {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+}
+.key i {
+  width: 14px;
+  height: 10px;
+  border-radius: 1px;
+  background: var(--f);
+}
+.key i[data-gap='true'] {
+  background: repeating-linear-gradient(45deg, transparent 0 3px, var(--hatch) 3px 4.5px);
+  box-shadow: inset 0 0 0 1px var(--border);
+}
+
+/* ── States ─────────────────────────────────────────────────────────────── */
+
+.status {
+  padding: var(--s4) 0;
+  color: var(--ink-3);
+  font-size: var(--fs-sm);
+}
+.empty {
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--r-control);
+  padding: var(--s5);
+  color: var(--ink-2);
+  font-size: var(--fs-sm);
+}
+.empty strong {
+  display: block;
+  margin-bottom: var(--s2);
+  color: var(--ink);
+  font-size: var(--fs-body);
+}
+
+.tip {
+  min-height: 20px;
+  margin-top: var(--s2);
+  font: 400 var(--fs-label) / 1.4 var(--mono);
+  color: var(--ink-2);
+}
+
+/* ── Bottom tab bar — primary navigation in the thumb zone ───────────────── */
+
+.tabbar {
+  position: fixed;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 30;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: var(--surface);
+  box-shadow: var(--shadow-bar);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.tabbar__item {
+  min-height: var(--bar-h);
+  border: 0;
+  background: none;
+  color: var(--ink-3);
+  font: 400 var(--fs-label) / 1 var(--sans);
+  display: grid;
+  place-items: center;
+  gap: 3px;
+  cursor: pointer;
+  touch-action: manipulation;
+  padding: var(--s2) var(--s1);
+}
+.tabbar__item[aria-current='page'] {
+  color: var(--accent);
+  font-weight: 600;
+}
+.tabbar__item svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* ── Wide: bento. One dominant tile, smaller supporting tiles. ───────────── */
+
+@media (min-width: 900px) {
+  .shell {
+    padding-bottom: var(--s8);
+  }
+  main {
+    padding-inline: var(--s8);
+  }
+  .freshness {
+    padding-inline: var(--s8);
+  }
+
+  /* Navigation moves up beside the record line — a projector has no thumb. */
+  .tabbar {
+    position: sticky;
+    top: 0;
+    z-index: 19;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--s1);
+    box-shadow: none;
+    background: none;
+    padding: var(--s2) var(--s8);
+    background: var(--bg);
+  }
+  .tabbar__item {
+    min-height: 40px;
+    grid-auto-flow: column;
+    gap: var(--s2);
+    padding-inline: var(--s4);
+    border-radius: var(--r-control);
+  }
+  .tabbar__item[aria-current='page'] {
+    background: var(--accent-wash);
+  }
+  .tabbar__item svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  section {
+    margin-top: var(--s7);
+  }
+  .tile {
+    padding: var(--s5);
+  }
+
+  /* Tracks are deliberately unequal — this can never read as three identical
+     columns, and no row holds four identical cards. */
+  #view-today:not([hidden]) {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr) minmax(0, 0.95fr);
+    gap: var(--s5);
+    align-items: start;
+  }
+  #t-hero {
+    grid-column: 1 / 3;
+    grid-row: 1;
+  }
+  #t-state {
+    grid-column: 3;
+    grid-row: 1 / 3;
+  }
+  #t-air {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  #t-mold {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  #t-tape {
+    grid-column: 1 / -1;
+    grid-row: 3;
+  }
+  #view-today > section {
+    margin-top: 0;
+  }
+
+  #view-season:not([hidden]) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    gap: var(--s5);
+    align-items: start;
+  }
+  /* Two panels side by side. Neither is the "main" chart — the left one makes
+     the comparable claim, the right one supplies what came after it. */
+  #s-chart {
+    grid-column: 1;
+  }
+  #s-detector {
+    grid-column: 2;
+  }
+  #s-pace {
+    display: none;
+  }
+  #view-season > section {
+    margin-top: 0;
+  }
+
+  #view-trigger:not([hidden]) {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: var(--s5);
+    align-items: start;
+  }
+  #g-log {
+    grid-column: 1 / -1;
+  }
+  #g-profile {
+    grid-column: 1;
+  }
+  #g-diag {
+    grid-column: 2;
+  }
+  #g-cross {
+    grid-column: 1 / -1;
+  }
+  #view-trigger > section {
+    margin-top: 0;
+  }
+}
+
+/* ── Motion. One orchestrated moment, everything else 160ms ease-out. ────── */
+
+@media (prefers-reduced-motion: no-preference) {
+  .tape__strip .tape__day {
+    animation: tape-in 460ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    animation-delay: calc(var(--i, 0) * 9ms);
+  }
+  @keyframes tape-in {
+    from {
+      opacity: 0;
+      transform: scaleY(0.35);
+    }
+    to {
+      opacity: 1;
+      transform: scaleY(1);
+    }
+  }
+  .hero__value {
+    animation: rise 320ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(5px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+@media print {
+  .tabbar {
+    display: none;
+  }
+}
+
+/* ── Knowledge block ─────────────────────────────────────────────────────
+   The one place the product speaks from literature rather than from its own
+   measurements. It is marked differently on purpose: a dashed edge and a
+   labelled eyebrow, so it can never be read as a measured figure. */
+
+.tile--lit {
+  border-style: dashed;
+  background: var(--surface-sunk);
+}
+.eyebrow--lit {
+  color: var(--ink-2);
+}
+.eyebrow--lit::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-inline-end: var(--s2);
+  border: 1px dashed var(--ink-3);
+  vertical-align: 1px;
+}
+
+.lit {
+  padding-top: var(--s4);
+  margin-top: var(--s4);
+  border-top: 1px solid var(--border);
+}
+.lit__taxon {
+  font-size: var(--fs-lead);
+  font-weight: 600;
+}
+.lit__latin {
+  color: var(--ink-3);
+  font-weight: 400;
+  font-size: var(--fs-sm);
+}
+/* Reads as a qualifier on the taxon, not as a status badge: no fill, no colour
+   coding — the block is already one uniform kind of claim. */
+.lit__grade {
+  margin-left: var(--s2);
+  padding: 2px var(--s2);
+  border: 1px dashed var(--border-strong);
+  border-radius: 2px;
+  font: 400 var(--fs-label) / 1.4 var(--mono);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  white-space: nowrap;
+  vertical-align: 2px;
+}
+.lit__k {
+  margin: var(--s4) 0 var(--s2);
+  font: 400 var(--fs-label) / 1 var(--mono);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.lit__list {
+  margin: 0;
+  padding-inline-start: var(--s5);
+  font-size: var(--fs-sm);
+  color: var(--ink-2);
+}
+.lit__list li {
+  margin-bottom: var(--s1);
+}
+.lit__src {
+  margin: var(--s4) 0 0;
+  font: 400 var(--fs-label) / 1.5 var(--mono);
+  color: var(--ink-3);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.chip {
+  padding: var(--s1) var(--s3);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--r-pill);
+  font-size: var(--fs-sm);
+  color: var(--ink);
+  background: var(--surface);
+}
+
+.note--warn {
+  color: var(--ink-2);
+  border-inline-start: 2px solid var(--lvl-3);
+  padding-inline-start: var(--s3);
+}
+
+/* ── Таксоны: filters, list, detail ──────────────────────────────────────── */
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s3);
+  align-items: center;
+  margin: var(--s5) 0 var(--s4);
+}
+.search {
+  flex: 1 1 220px;
+  min-width: 0;
+  padding: var(--s3) var(--s4);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--r-ui);
+  background: var(--surface-2);
+  color: var(--ink-1);
+  font: 400 var(--fs-sm) / 1.4 var(--sans);
+}
+.search::placeholder { color: var(--ink-3); }
+.search:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+.chipset { display: flex; flex-wrap: wrap; gap: var(--s2); }
+.chip--btn {
+  cursor: pointer;
+  font: inherit;
+  color: var(--ink-2);
+  background: transparent;
+}
+.chip--btn[aria-pressed='true'] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+.txlist { display: grid; }
+
+/* A row is a button: the whole line is the hit target, not a chevron. */
+.tx {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--s3);
+  align-items: center;
+  width: 100%;
+  padding: var(--s3) 0;
+  border: 0;
+  border-top: 1px solid var(--border);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.tx:first-child { border-top: 0; }
+.tx:hover .tx__name { text-decoration: underline; text-underline-offset: 3px; }
+.tx:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.tx__id { display: grid; min-width: 0; }
+.tx__name {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tx__latin { font-size: var(--fs-label); color: var(--ink-3); }
+.tx__spark { display: none; color: var(--ink-3); }
+.tx__spark.lvl-3, .tx__spark.lvl-4 { color: var(--accent); }
+.spark { display: block; }
+.tx__now { display: grid; justify-items: end; gap: 1px; }
+.tx__val { font-size: var(--fs-sm); font-weight: 600; }
+.tx__none { font-size: var(--fs-sm); color: var(--ink-3); }
+.tx__stage { font-size: var(--fs-label); color: var(--ink-3); white-space: nowrap; }
+
+@container tile (min-width: 430px) {
+  .tx { grid-template-columns: minmax(0, 1fr) 132px 92px; }
+  .tx__spark { display: block; }
+}
+
+.txd {
+  padding: var(--s4) 0 var(--s5);
+  border-top: 1px solid var(--border-strong);
+}
+.txd__head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s3);
+  align-items: baseline;
+  justify-content: space-between;
+}
+.txd__title { font-size: var(--fs-lead); font-weight: 600; }
+.txd__latin { margin-left: var(--s2); color: var(--ink-3); font-weight: 400; font-size: var(--fs-sm); }
+.txd__group {
+  font: 400 var(--fs-label) / 1.4 var(--mono);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.txd__chart { margin: var(--s4) 0; }
+.txd__k {
+  margin: var(--s4) 0 var(--s2);
+  font: 400 var(--fs-label) / 1 var(--mono);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.txd__thr { font-size: var(--fs-sm); color: var(--ink-2); }
+.txd__lit {
+  margin-top: var(--s4);
+  padding-left: var(--s3);
+  border-left: 1px dashed var(--border-strong);
+}
+.eyebrow--lit { display: block; margin-bottom: var(--s2); }
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--s4);
+  margin: 0;
+}
+.fact dt {
+  font: 400 var(--fs-label) / 1 var(--mono);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.fact dd { margin: var(--s2) 0 0; display: grid; gap: 2px; }
+.fact dd b { font-size: var(--fs-lead); font-weight: 600; font-variant-numeric: tabular-nums; }
+.fact dd span { font-size: var(--fs-label); color: var(--ink-3); }
+
+/* ── Быстрый путь: declared allergens ────────────────────────────────────── */
+
+.chipset--wrap { margin-top: var(--s4); }
+
+.known__out { margin-top: var(--s4); }
+.known__idx {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s4);
+}
+.known__val {
+  display: block;
+  font-size: var(--fs-hero);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-top: var(--s2);
+}
+.known__of { font-size: var(--fs-sm); color: var(--ink-2); }
+
+/* One cell per measured week. Weeks the trap missed are simply absent, so the
+   strip is shorter than the calendar rather than padded with a false zero. */
+.weeks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin-top: var(--s2);
+}
+.weeks__w {
+  width: 14px;
+  height: 20px;
+  border-radius: 2px;
+  background: var(--f);
+}
+.weeks__w[data-now='true'] {
+  outline: 2px solid var(--ink);
+  outline-offset: 1px;
+}
+
+/* Group heading inside the composition list. A label, not a tile — the bars
+   below it are still one continuous ranking. */
+.bars__group {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s3);
+  margin: var(--s4) 0 var(--s1);
+  padding-bottom: var(--s2);
+  border-bottom: 1px solid var(--border);
+}
+.bars__group:first-child { margin-top: 0; }
+.bars__gname {
+  font: 400 var(--fs-label) / 1 var(--mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+.bars__gsum { font-size: var(--fs-label); color: var(--ink-3); white-space: nowrap; }
+.bars__group[data-empty='true'] .bars__gname,
+.bars__group[data-empty='true'] .bars__gsum { color: var(--ink-3); }
+
+/* A chip that is a button must still be a touch target: the display-only chip
+   it inherits from was never tapped. */
+.chip--btn {
+  min-height: var(--tap);
+  display: inline-flex;
+  align-items: center;
+  touch-action: manipulation;
+}

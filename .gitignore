@@ -1,0 +1,43 @@
+# Dependencies — there are none at runtime, but keep the door shut anyway.
+node_modules/
+.pnp
+.pnp.js
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+id_rsa*
+
+# Local caches and build scratch
+.cache/
+.tmp/
+tmp/
+dist/
+build/
+coverage/
+*.tsbuildinfo
+.fontsrc/
+
+# Screenshots and scratch captures
+screenshots/
+*.png
+*.jpg
+*.jpeg
+*.gif
+!web/**/*.svg
+
+# Editor and OS
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
