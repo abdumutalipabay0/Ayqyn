@@ -334,7 +334,10 @@ export function seasonChart(o) {
  * Gaps break the path. At this size a bridged gap is invisible and would read
  * as a genuine low.
  */
-export function sparkline({ series, valueOf = (r) => r.count_per_m3, scaleMax, width = 132, height = 26, log = false }) {
+// NB: the accessor is called `value`, not `valueOf`. Destructuring a default
+// for `valueOf` never fires — every object inherits Object.prototype.valueOf,
+// so the lookup succeeds and the default is skipped.
+export function sparkline({ series, value = (r) => r.count_per_m3, scaleMax, width = 132, height = 26, log = false }) {
   if (!series || !series.length) return null;
   const w = width;
   const h = height;
@@ -368,7 +371,7 @@ export function sparkline({ series, valueOf = (r) => r.count_per_m3, scaleMax, w
   svg.setAttribute('focusable', 'false');
 
   for (const run of runs) {
-    const d = run.map((r, i) => `${i ? 'L' : 'M'}${x(r.date).toFixed(1)} ${y(valueOf(r)).toFixed(1)}`).join(' ');
+    const d = run.map((r, i) => `${i ? 'L' : 'M'}${x(r.date).toFixed(1)} ${y(value(r)).toFixed(1)}`).join(' ');
     const path = document.createElementNS(ns, 'path');
     path.setAttribute('d', d);
     path.setAttribute('fill', 'none');

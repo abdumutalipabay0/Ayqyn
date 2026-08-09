@@ -13,7 +13,7 @@
    screen says so.
    ────────────────────────────────────────────────────────────────────────── */
 
-const VERSION = 'v50';
+const VERSION = 'v54';
 const SHELL = `shell-${VERSION}`;
 const DATA = `data-${VERSION}`;
 

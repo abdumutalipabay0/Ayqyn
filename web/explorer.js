@@ -16,7 +16,7 @@
    ────────────────────────────────────────────────────────────────────────── */
 
 export function makeExplorer(D) {
-  const { el, add, clear, num, label, splitName, api, pool, levelOf, LEVEL_WORD, fmt, plural, statusNode, emptyNode, seasonChart, screenHead, S } = D;
+  const { el, add, clear, num, label, splitName, api, pool, levelOf, LEVEL_WORD, fmt, plural, statusNode, emptyNode, seasonChart, sparkline, screenHead, S } = D;
 
   const state = {
     q: '',
@@ -29,62 +29,11 @@ export function makeExplorer(D) {
     loaded: false
   };
 
-  /* ── sparkline ─────────────────────────────────────────────────────────
-     A whole season in ~120px. Gaps break the line instead of crossing it,
-     which is the same rule the big chart follows — at this size a bridged
-     gap would be invisible and would read as a real low. */
-  function spark(series, scaleMax, w = 132, h = 26) {
-    if (!series.length) return null;
-    // ONE SCALE FOR EVERY ROW. Normalising each row to its own maximum was a
-    // real defect: a taxon peaking at 5 grains drew the same silhouette as one
-    // peaking at 1662, and the list read as if all 48 behaved alike.
-    //
-    // The scale is shared and logarithmic. Shared, because comparison is the
-    // whole point of a column of sparklines. Logarithmic, because the peaks
-    // span nearly three orders of magnitude and a shared linear scale would
-    // flatten 45 of the 48 rows into a straight line — technically honest and
-    // practically unreadable. log1p is the same transform the trigger model
-    // uses on these concentrations.
-    const lmax = Math.log1p(Math.max(1, scaleMax));
-    const t0 = Date.parse(series[0].date);
-    const span = Math.max(1, Date.parse(series.at(-1).date) - t0);
-    const x = (d) => ((Date.parse(d) - t0) / span) * (w - 2) + 1;
-    const y = (v) => h - 1 - (Math.log1p(Math.max(0, v)) / lmax) * (h - 3);
-
-    // One <path> per measured run: consecutive calendar days only.
-    const runs = [];
-    let cur = [];
-    for (let i = 0; i < series.length; i++) {
-      const r = series[i];
-      if (i > 0) {
-        const gapDays = Math.round((Date.parse(r.date) - Date.parse(series[i - 1].date)) / 86400000);
-        if (gapDays > 1) {
-          if (cur.length) runs.push(cur);
-          cur = [];
-        }
-      }
-      cur.push(r);
-    }
-    if (cur.length) runs.push(cur);
-
-    const svg = el('svg', {
-      class: 'spark',
-      viewBox: `0 0 ${w} ${h}`,
-      width: w,
-      height: h,
-      'aria-hidden': 'true',
-      focusable: 'false',
-      preserveAspectRatio: 'none'
-    });
-    for (const run of runs) {
-      const d = run.map((r, i) => `${i ? 'L' : 'M'}${x(r.date).toFixed(1)} ${y(r.count_per_m3).toFixed(1)}`).join(' ');
-      svg.insertAdjacentHTML(
-        'beforeend',
-        `<path d="${d}" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>`
-      );
-    }
-    return svg;
-  }
+  /* The sparkline comes from chart.js, which builds it with createElementNS.
+     The version that used to live here built <svg> with document.createElement,
+     which in an HTML document produces an unknown HTML element rather than a
+     real SVG one: the nodes were in the DOM and measured 132px wide, and drew
+     nothing at all. */
 
   /* ── one row in the list ───────────────────────────────────────────────── */
   function row(r) {
@@ -110,7 +59,7 @@ export function makeExplorer(D) {
         el('span', { class: 'tx__name', text: ru ? label(r.taxon) : latin }),
         ru ? el('span', { class: 'tx__latin', text: latin }) : null
       ),
-      el('span', { class: 'tx__spark' }, spark(r.series, state.scaleMax)),
+      el('span', { class: 'tx__spark' }, sparkline({ series: r.series, scaleMax: state.scaleMax, log: true })),
       el(
         'span',
         { class: 'tx__now' },
@@ -313,6 +262,22 @@ export function makeExplorer(D) {
     if (!rows.length) {
       add(tile, emptyNode('Ничего не нашлось', 'Попробуйте латинское имя — например, Betula.'));
     } else {
+      // The legend sits ABOVE the rows it explains. Below them it was arriving
+      // after the reader had already decided what the shapes meant.
+      add(
+        tile,
+        el('p', {
+          class: 'txscale',
+          text: `Все графики-строки — в одном логарифмическом масштабе, общий максимум ${num(state.scaleMax)} зёрен/м³, поэтому их высоту можно сравнивать между строками.`
+        }),
+        el(
+          'div',
+          { class: 'txlegend' },
+          el('span', { class: 'txlegend__k', text: 'таксон' }),
+          el('span', { class: 'txlegend__k txlegend__k--mid', text: 'весь сезон' }),
+          el('span', { class: 'txlegend__k txlegend__k--end', text: 'сейчас' })
+        )
+      );
       const list = el('div', { class: 'txlist' });
       for (const r of rows) {
         add(list, row(r));
@@ -325,10 +290,7 @@ export function makeExplorer(D) {
       tile,
       el('p', {
         class: 'note',
-        text:
-          `Показано ${num(rows.length)} из ${num(state.rows.length)}. Значение «сейчас» — за ${fmt(S.meta.record.last_date)}, ` +
-          `последний день, когда ловушка работала. Все графики-строки нарисованы в одном масштабе — ` +
-          `логарифмическом, с общим максимумом ${num(state.scaleMax)} зёрен/м³, — поэтому их можно сравнивать между собой.`
+        text: `Показано ${num(rows.length)} из ${num(state.rows.length)}.`
       })
     );
     add(host, tile);

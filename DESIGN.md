@@ -49,27 +49,31 @@ Not Inter (banned, and the reason it is banned is real). Not a serif (banned;
 also the previous build's mistake — dataviz is explicit that a hero figure in a
 display or serif face "reads as off-brand decoration").
 
-### Loading strategy
+### Loading strategy — as built
 
 ```
 web/fonts/
-  geist-sans-latin-cyrillic.woff2      variable [wght 400..700], subset
-  geist-mono-latin-cyrillic.woff2      variable [wght 400..600], subset
+  geist-var.woff2        variable [wght 100..900], Latin + Cyrillic   34 KB
+  geist-mono-400.woff2   static 400, Latin + Cyrillic                 10 KB
 ```
 
-1. **Vendor the variable woff2** from the `geist` npm package at build time; the
-   files live in the repo. No package is added to the runtime.
-2. **Subset with `pyftsubset`** to Latin + Cyrillic + digits + punctuation +
-   the few symbols used (`³ · × — ≥ →`). Full Geist variable is ~73 KB each;
-   subsetting to the two scripts we actually set should land near 25–35 KB each.
-   Both files are precached by the Service Worker.
-3. `@font-face` with `font-display: swap` and an explicit `unicode-range` per
-   file, so a Latin-only screen never blocks on the Cyrillic range.
-4. `<link rel="preload" as="font" type="font/woff2" crossorigin>` for **the two
-   files only** — not one per weight; the variable axis covers weight.
-5. Fallback stack `system-ui, -apple-system, "Segoe UI", Roboto, sans-serif` and
-   `ui-monospace, "Cascadia Mono", "SF Mono", monospace`, with
-   `size-adjust` tuned so the swap does not reflow.
+1. **Vendored variable woff2**, subset with `pyftsubset` from the upstream
+   `Geist[wght].ttf` to Latin + Cyrillic + the punctuation and symbols this
+   interface actually sets (`³ · × — ≥ → « » №`). 313 glyphs, 98 of them
+   Cyrillic. The full licence and author list ship beside it as `OFL.txt` and
+   `AUTHORS.txt`, because OFL requires it.
+2. The variable axis is the point: the earlier build shipped two static cuts,
+   400 and 600, so a `font-weight: 590` would have snapped to 600. With the
+   axis, 590 is 590 — and 590 is the cap.
+3. `@font-face` with `font-display: swap`. Both files are precached by the
+   Service Worker, so the interface is fully typeset offline.
+4. `<link rel="preload">` for the sans only. The mono carries labels and can
+   swap a frame later without moving the layout.
+5. Fallback stack `system-ui, -apple-system, "Segoe UI", Roboto, sans-serif`.
+
+**Cost of the change.** Two static cuts were 26.5 KB; the variable file is
+34 KB. That is 7.8 KB more for the whole weight axis and the ability to stop
+using weight as the hierarchy signal.
 
 ---
 
@@ -89,9 +93,26 @@ and fails).
 --fs-label: 0.75rem;                                   /* eyebrows/units only, uppercase, tracked */
 ```
 
-Line heights: 1.15 hero · 1.25 headings · 1.55 body · 1.4 dense rows.
-Weights used: 400 body · 500 labels and nav · 600 headings and the hero value.
-Nothing heavier — Geist's 700+ is too dense for Cyrillic at small sizes.
+Line heights: 1.15 hero · 1.22 headings · 1.6 body · 1.4 dense rows.
+Weights used: **400** body · **500** labels and nav · **590** headings and the
+hero value. Nothing heavier, ever. Weight is not how hierarchy is signalled
+here — size, colour and space are; 700+ is also too dense for Cyrillic at small
+sizes.
+
+**Tracking.** Negative as text grows, slightly positive as it shrinks:
+
+```css
+--track-hero:  -0.022em;   /* 52–80px */
+--track-h1:    -0.014em;   /* 24–34px */
+--track-h2:    -0.012em;   /* 18–22px */
+--track-body:   0.004em;   /* body — see below */
+--track-label:  0.06em;    /* uppercase mono eyebrows */
+```
+
+The positive value on body text is not an oversight. On a near-black ground the
+strokes of light text bloom slightly and close up the counters; a fraction of a
+point of extra tracking gives them air. Large text has the opposite problem and
+gets pulled tight.
 
 **Numerals.** `font-variant-numeric: tabular-nums` + `font-feature-settings:
 "tnum" 1` on **columns** — table rows, axis ticks, the composition values, the
@@ -104,69 +125,90 @@ tabular everywhere.
 
 ## 3. Colour
 
-Warm neutrals, one accent, and a four-step **ordinal** ramp. No pure `#ffffff`
-anywhere.
+Cool near-black, one desaturated accent, and a four-step **ordinal** ramp. No
+pure `#ffffff` and no pure `#000000` anywhere.
 
-### Neutrals and accent (light)
+Three rules hold the dark mode together, and they are enforced in
+`web/tokens.css` rather than remembered:
 
-| Token | OKLCH | hex | Contrast on `--bg` |
+1. **Never pure black.** The ground is `#0a0c0e` — near-black with a cool
+   undertone. `#000` halates around light text and flattens every depth cue.
+2. **Depth is lighter layers, not shadow.** A shadow on a near-black ground is
+   invisible. Each elevation step raises lightness about four points instead:
+   `--bg` → `--surface` → `--surface-2`. There is exactly one shadow token in
+   the system and it is on the bottom bar, which genuinely floats.
+3. **One accent, and it never fills a block.** Amber appears on focus rings,
+   links, the sign of a delta and the "now" marker. Nothing else.
+
+### Neutrals and accent (dark — the primary mode)
+
+| Token | OKLCH | hex | Contrast on `--surface` |
 |---|---|---|---|
-| `--bg` | `oklch(0.975 0.008 92)` | `#f9f7f1` | — |
-| `--surface` | `oklch(0.992 0.004 92)` | `#fdfcf9` | — |
-| `--surface-sunk` | `oklch(0.958 0.010 92)` | — | — |
-| `--ink` | `oklch(0.255 0.012 70)` | `#27221d` | **14.71:1** |
-| `--ink-2` | `oklch(0.505 0.011 70)` | `#69645e` | **5.47:1** |
-| `--ink-3` | `oklch(0.635 0.009 70)` | `#8e8a85` | **3.20:1** |
-| `--border` | `oklch(0.905 0.008 90)` | `#e2dfda` | 1.24:1 (hairline) |
-| `--accent` | `oklch(0.53 0.105 205)` | `#007c89` | **4.62:1** |
+| `--bg` | `oklch(0.152 0.005 255)` | `#0a0c0e` | — |
+| `--surface` | `oklch(0.192 0.005 255)` | `#131416` | — |
+| `--surface-2` | `oklch(0.232 0.006 255)` | `#1b1c1f` | — |
+| `--ink` | `oklch(0.915 0.004 255)` | `#e1e3e5` | **14.33:1** |
+| `--ink-2` | `oklch(0.735 0.006 255)` | `#a7a9ad` | **7.83:1** |
+| `--ink-3` | `oklch(0.615 0.008 255)` | `#818589` | **4.96:1** |
+| `--border` | `oklch(1 0 0 / 0.09)` | white 9% | hairline |
+| `--border-strong` | `oklch(1 0 0 / 0.16)` | white 16% | hairline |
+| `--accent` | `oklch(0.765 0.072 66)` | `#d3aa82` | **8.64:1** |
 
-The accent is a deep teal — one colour, used for links, the primary button,
-focus rings and the current-tab indicator. It is far from the ramp in hue, so an
-action can never be mistaken for a severity. My first pick was
-`oklch(0.545 …)`; it measured 4.33:1 and I darkened it until it cleared 4.5:1.
+Text is `#e1e3e5`, not white. Pure white on near-black halates, which costs
+most in long reading and for anyone with astigmatism.
+
+`--ink-3` carries the explanatory copy, so it was raised until it cleared
+4.5:1 on **both** `--surface` and `--surface-2` (4.96 and 4.51). Its previous
+value measured 4.44 and was a real failure, not a rounding argument.
+
+### The primary action is neutral, not the accent
+
+The obvious move is an amber button. It is the wrong move here: amber is also
+the severity ramp, and a filled amber block reads as "critical" before it reads
+as "button". So the primary action is an off-white block on near-black —
+`--action` / `--action-ink` — and the accent is spent only on affordances.
+
+This also retires the previous build's teal. Two accents were one too many.
 
 ### The pollen level ramp — ordinal, one hue
 
-Amber → rust, the colour of the material itself.
+Amber → rust, the colour of the material itself. Dark mode **flips the anchor**:
+on a dark surface the light end is the loud one, so level 1 sits nearest the
+surface and level 4 is the most luminous. Keeping the light-mode order would
+make "низкий" pop harder than "критический" — the severity would read
+backwards.
 
-| Level | OKLCH | hex | Text on it |
+Chroma is pulled well below the previous build so the ramp stops glowing;
+lightness does the work.
+
+| Level | OKLCH (dark) | hex | Relative luminance |
 |---|---|---|---|
-| `--lvl-0` none (measured zero) | `oklch(0.945 0.006 92)` | — | ink |
-| `--lvl-1` низкий | `oklch(0.760 0.085 62)` | `#d9a579` | ink 7.21:1 |
-| `--lvl-2` умеренный | `oklch(0.660 0.120 58)` | `#c87e41` | ink 4.89:1 |
-| `--lvl-3` высокий | `oklch(0.555 0.140 48)` | `#b25417` | paper 4.90:1 |
-| `--lvl-4` критический | `oklch(0.430 0.115 40)` | `#823417` | paper 8.35:1 |
-| unmeasured | *no fill* — 45° hatch in `--border` | — | — |
+| `--lvl-0` измеренный ноль | `oklch(0.245 0.006 255)` | — | 0.015 |
+| `--lvl-1` низкий | `oklch(0.425 0.048 66)` | `#614932` | 0.075 |
+| `--lvl-2` умеренный | `oklch(0.545 0.064 60)` | `#8c674a` | 0.158 |
+| `--lvl-3` высокий | `oklch(0.675 0.076 52)` | `#bd8a6b` | 0.301 |
+| `--lvl-4` критический | `oklch(0.82 0.082 46)` | `#f2b497` | 0.538 |
 
-Validator, `--ordinal --mode light --surface #fdfcf9`:
+Validator, `--ordinal --mode dark --surface #0a0c0e`: **ALL CHECKS PASS**
+(monotone lightness, every adjacent ΔL ≥ 0.06, light end clears the surface,
+hue spread 19°).
 
-```
-[PASS] Lightness monotone     steps read light→dark
-[PASS] Adjacent ΔL            all gaps >= 0.06
-[PASS] Light-end contrast     #d9a579 at 2.13:1 vs surface
-[PASS] Single hue             hue spread 22°
-→ ALL CHECKS PASS
-```
+Validator, `--ordinal --mode light --surface #f9fafb`: **ALL CHECKS PASS**.
+The light ramp's first step needed retuning — at `L 0.775` its contrast on the
+surface measured 1.98:1, below the 2:1 floor, and it was darkened to `L 0.745`
+(2.20:1).
 
-Dark mode is **selected, not flipped** — its own steps from the same hue,
-validated against `#17150f`: `#e9bb8f, #d8965a, #c06a30, #9a4a22`, also
-ALL CHECKS PASS.
+Luminance rises monotonically across the whole ramp with gaps of 0.06 to 0.24,
+which is what makes the level survive greyscale. The four-cell stepper is the
+belt to that braces: you can count filled cells with the colour gone.
 
-> **Departure from the research, stated plainly.** The findings say "muted tones
-> at roughly equal lightness". I am doing the opposite: **monotone lightness with
-> ΔL ≥ 0.06 between every step.** Equal-lightness tones are the correct advice
-> for *categorical* colour, where identity must not imply order. Pollen level is
-> ordinal — low → critical is a sequence — and encoding a sequence in colours of
-> equal lightness means the order is carried by hue alone, which is exactly what
-> collapses in grayscale, in CVD, and in `forced-colors`. Equal lightness would
-> have failed verification step 4 by construction. So: one hue, ordered
-> lightness. It is also not a traffic light — no green, no saturated red, one
-> hue family throughout.
+### Colour on data
 
-Colour is never the only channel. Every level appears as **fill + word + a
-four-cell stepper** (see §6).
-
----
+Reserved for the sign of a delta and for alerts. The headline delta is the only
+coloured figure on the Today screen — amber when the count rose, plain ink when
+it fell or held, and it always carries an arrow and a sign so the colour is
+never the only channel. Sparklines are one colour for every row; colouring them
+by level would double-encode what the number beside them already says.
 
 ## 4. Radius, spacing, borders
 

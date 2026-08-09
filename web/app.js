@@ -362,7 +362,7 @@ async function drawToday() {
             { class: 'hero__spark' },
             el('span', { class: 'hero__sparkline' }, sparkline({
               series: win.series,
-              valueOf: (r) => r.total_per_m3,
+              value: (r) => r.total_per_m3,
               scaleMax: win.max_per_m3,
               width: 220,
               height: 34
@@ -1548,7 +1548,7 @@ let explorer = null;
 async function drawYear() {
   explorer ??= makeExplorer({
     el, add, clear, num, label, splitName, api, pool, levelOf, LEVEL_WORD,
-    fmt, plural, statusNode, emptyNode, seasonChart, screenHead, S
+    fmt, plural, statusNode, emptyNode, seasonChart, sparkline, screenHead, S
   });
   const m = S.meta;
   const sec = $('#y-grid');
